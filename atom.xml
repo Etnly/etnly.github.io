@@ -3,7 +3,7 @@
   <title>Etnly&#39;s Blog</title>
   
   <subtitle>Hello,World</subtitle>
-  <link href="/child/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/child/"/>
   <updated>2018-05-08T05:39:13.303Z</updated>
