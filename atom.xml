@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/child/"/>
-  <updated>2018-05-09T10:43:49.131Z</updated>
+  <updated>2018-05-09T11:12:50.889Z</updated>
   <id>http://yoursite.com/child/</id>
   
   <author>
@@ -17,61 +17,19 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/child/2018/05/09/2018-05-09/"/>
-    <id>http://yoursite.com/child/2018/05/09/2018-05-09/</id>
-    <published>2018-05-09T09:39:05.690Z</published>
-    <updated>2018-05-09T10:43:49.131Z</updated>
+    <title>Hello,world</title>
+    <link href="http://yoursite.com/child/2018/05/09/Hello,World/"/>
+    <id>http://yoursite.com/child/2018/05/09/Hello,World/</id>
+    <published>2018-05-09T10:45:55.090Z</published>
+    <updated>2018-05-09T11:12:50.889Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="欢迎来到-Bear"><a href="#欢迎来到-Bear" class="headerlink" title="欢迎来到 Bear"></a>欢迎来到 Bear</h1><p>Bear 是用于优美、流畅写作笔记和文章的应用。 上手和掌握 Bear 非常容易。现在就展示给你。</p><h2 id="Bear-界面包含三部分-📐"><a href="#Bear-界面包含三部分-📐" class="headerlink" title="Bear 界面包含三部分 📐"></a>Bear 界面包含三部分 📐</h2><p>Bear 包含三栏，供你创建、编辑和管理笔记：</p><ul><li><em>侧边栏</em>（左侧）：在笔记中加入标签后，Bear 就会将标签显示在侧边栏中。 你可以当作它们是在写作时可即时创建并使用的文件夹。</li><li><em>笔记列表</em>（中间）：你所有的笔记都在这里，按照修改日期排序。 你也可以 <em>置顶</em> 笔记。</li><li><em>编辑器</em>（右侧）：这里是创作的空间，也是你现在所处的位置。 😄</li></ul><h2 id="Bear-的样式-✒️"><a href="#Bear-的样式-✒️" class="headerlink" title="Bear 的样式 ✒️"></a>Bear 的样式 ✒️</h2><p>Bear 支持许多文本样式，包括：<em>粗体</em>、/斜体/、<em>下划线</em>、-删除线-、1 至 6 号标题以及更多内容。 你可以在 /格式面板/ 中快速找到它们：</p><ul><li>在 Mac 上，点击编辑器右下角的笔图标</li><li>在 iPhone 或 iPad 上，面板就是输入键盘上方的快捷工具条</li></ul><p>Bear 还提供一系列主题为你提供舒服、华丽的写作环境。 这些是在应用内订阅 <a href="bear://x-callback-url/open-bear-pro" target="_blank" rel="noopener">Bear Pro</a> 后解锁的功能。</p><h2 id="将笔记链接起来-⛓"><a href="#将笔记链接起来-⛓" class="headerlink" title="将笔记链接起来 ⛓"></a>将笔记链接起来 ⛓</h2><p>笔记链接是 Bear 既好玩又实用的功能之一。 你可通过链接在同一项目的多篇笔记之间快速跳转，随心管理，或者像我们一样用多篇笔记介绍应用的功能。 比如，你可以通过链接访问下一篇教程 [[管理与发布]]。 😉</p><p>#欢迎#</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;欢迎来到-Bear&quot;&gt;&lt;a href=&quot;#欢迎来到-Bear&quot; class=&quot;headerlink&quot; title=&quot;欢迎来到 Bear&quot;&gt;&lt;/a&gt;欢迎来到 Bear&lt;/h1&gt;&lt;p&gt;Bear 是用于优美、流畅写作笔记和文章的应用。 上手和掌握 Bear 非常容易。现
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://yoursite.com/child/2018/05/09/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%20Bear/"/>
-    <id>http://yoursite.com/child/2018/05/09/欢迎来到 Bear/</id>
-    <published>2018-05-09T09:25:07.307Z</published>
-    <updated>2018-05-09T09:35:29.174Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="欢迎来到-Bear"><a href="#欢迎来到-Bear" class="headerlink" title="欢迎来到 Bear"></a>欢迎来到 Bear</h1><p><img src="https://farm1.staticflickr.com/967/41992350481_3db884bc42_o.jpg" alt=" "><br>Bear 是用于优美、流畅写作笔记和文章的应用。 上手和掌握 Bear 非常容易。现在就展示给你。</p><h2 id="Bear-界面包含三部分-📐"><a href="#Bear-界面包含三部分-📐" class="headerlink" title="Bear 界面包含三部分 📐"></a>Bear 界面包含三部分 📐</h2><p>Bear 包含三栏，供你创建、编辑和管理笔记：</p><ul><li><em>侧边栏</em>（左侧）：在笔记中加入标签后，Bear 就会将标签显示在侧边栏中。 你可以当作它们是在写作时可即时创建并使用的文件夹。</li><li><em>笔记列表</em>（中间）：你所有的笔记都在这里，按照修改日期排序。 你也可以 <em>置顶</em> 笔记。</li><li><em>编辑器</em>（右侧）：这里是创作的空间，也是你现在所处的位置。 😄</li></ul><h2 id="Bear-的样式-✒️"><a href="#Bear-的样式-✒️" class="headerlink" title="Bear 的样式 ✒️"></a>Bear 的样式 ✒️</h2><p>Bear 支持许多文本样式，包括：<em>粗体</em>、/斜体/、<em>下划线</em>、-删除线-、1 至 6 号标题以及更多内容。 你可以在 /格式面板/ 中快速找到它们：</p><ul><li>在 Mac 上，点击编辑器右下角的笔图标</li><li>在 iPhone 或 iPad 上，面板就是输入键盘上方的快捷工具条</li></ul><p>Bear 还提供一系列主题为你提供舒服、华丽的写作环境。 这些是在应用内订阅 <a href="bear://x-callback-url/open-bear-pro" target="_blank" rel="noopener">Bear Pro</a> 后解锁的功能。</p><h2 id="将笔记链接起来-⛓"><a href="#将笔记链接起来-⛓" class="headerlink" title="将笔记链接起来 ⛓"></a>将笔记链接起来 ⛓</h2><p>笔记链接是 Bear 既好玩又实用的功能之一。 你可通过链接在同一项目的多篇笔记之间快速跳转，随心管理，或者像我们一样用多篇笔记介绍应用的功能。 比如，你可以通过链接访问下一篇教程 [[管理与发布]]。 😉</p><p>#欢迎#</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="这是我的第一篇博客"><a href="#这是我的第一篇博客" class="headerlink" title="这是我的第一篇博客"></a>这是我的第一篇博客</h1>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;欢迎来到-Bear&quot;&gt;&lt;a href=&quot;#欢迎来到-Bear&quot; class=&quot;headerlink&quot; title=&quot;欢迎来到 Bear&quot;&gt;&lt;/a&gt;欢迎来到 Bear&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;https://farm1.staticflickr.com/9
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/child/2018/05/08/hello-world/"/>
-    <id>http://yoursite.com/child/2018/05/08/hello-world/</id>
-    <published>2018-05-08T05:39:13.290Z</published>
-    <updated>2018-05-08T05:39:13.303Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+        &lt;h1 id=&quot;这是我的第一篇博客&quot;&gt;&lt;a href=&quot;#这是我的第一篇博客&quot; class=&quot;headerlink&quot; title=&quot;这是我的第一篇博客&quot;&gt;&lt;/a&gt;这是我的第一篇博客&lt;/h1&gt;
       
     
     </summary>
