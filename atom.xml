@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/child/"/>
-  <updated>2018-05-09T11:55:50.265Z</updated>
+  <updated>2018-05-09T14:41:44.273Z</updated>
   <id>http://yoursite.com/child/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/child/2018/05/09/unity%E7%A0%B4%E8%A7%A3/"/>
+    <id>http://yoursite.com/child/2018/05/09/unity破解/</id>
+    <published>2018-05-09T11:55:38.769Z</published>
+    <updated>2018-05-09T14:41:44.273Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>title: Unity破解<br>tags: Hello<br>categories: 介绍<br>thumbnail: <a href="https://ws2.sinaimg.cn/large/006tKfTcgy1fr5glpgr6hj308c08ct8o.jpg" target="_blank" rel="noopener">https://ws2.sinaimg.cn/large/006tKfTcgy1fr5glpgr6hj308c08ct8o.jpg</a></p><hr><h1 id="Mac破解"><a href="#Mac破解" class="headerlink" title="Mac破解"></a>Mac破解</h1><blockquote><p>MAC破解补丁程序, 适用2017.2.x, 2017.3.x, 2017.4.x的Release版本, 补丁版本不支持!<br><code>链接:https://pan.baidu.com/s/18WkbH2MVt_ENoYer_FE94w  密码:p7gr</code></p></blockquote><blockquote><p>若一键破解未成功请参照如下方法：  </p><ul><li>1.右键破解补丁程序，点击显示包内容</li><li>2.双击Contents，双击Resources</li><li>3.复制Unity_lic.ulf文件</li><li>4.打开Finder, 在顶部菜单出选择 前往&gt;电脑, 打开后选择磁盘, 双击资源库</li><li>5.双击Application Support文件夹</li><li>6.找到unity文件夹并双击进入</li><li>7.将之前的Unity_lic.ulf文件覆盖进unity文件夹（注意先文件夹内的文件复制到桌面以做备份）</li></ul></blockquote><h2 id="经测试，此破解方法可以用于2017-2-x-2017-3-x-2017-4-x及2018版本"><a href="#经测试，此破解方法可以用于2017-2-x-2017-3-x-2017-4-x及2018版本" class="headerlink" title="经测试，此破解方法可以用于2017.2.x, 2017.3.x, 2017.4.x及2018版本"></a>经测试，此破解方法可以用于2017.2.x, 2017.3.x, 2017.4.x及2018版本</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;p&gt;title: Unity破解&lt;br&gt;tags: Hello&lt;br&gt;categories: 介绍&lt;br&gt;thumbnail: &lt;a href=&quot;https://ws2.sinaimg.cn/large/006tKfTcgy1fr5glpgr6hj308c08ct8o
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello,world</title>
