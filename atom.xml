@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/child/"/>
-  <updated>2018-05-08T05:39:13.303Z</updated>
+  <updated>2018-05-09T09:25:18.644Z</updated>
   <id>http://yoursite.com/child/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/child/2018/05/09/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%20Bear/"/>
+    <id>http://yoursite.com/child/2018/05/09/欢迎来到 Bear/</id>
+    <published>2018-05-09T09:25:07.307Z</published>
+    <updated>2018-05-09T09:25:18.644Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="欢迎来到-Bear"><a href="#欢迎来到-Bear" class="headerlink" title="欢迎来到 Bear"></a>欢迎来到 Bear</h1><p><a href="http://obq4n17fq.bkt.clouddn.com/blog/2018-05-09-Welcome%402x.jpg-s" target="_blank" rel="noopener"> </a></p><p>Bear 是用于优美、流畅写作笔记和文章的应用。 上手和掌握 Bear 非常容易。现在就展示给你。</p><h2 id="Bear-界面包含三部分-📐"><a href="#Bear-界面包含三部分-📐" class="headerlink" title="Bear 界面包含三部分 📐"></a>Bear 界面包含三部分 📐</h2><p>Bear 包含三栏，供你创建、编辑和管理笔记：</p><ul><li><em>侧边栏</em>（左侧）：在笔记中加入标签后，Bear 就会将标签显示在侧边栏中。 你可以当作它们是在写作时可即时创建并使用的文件夹。</li><li><em>笔记列表</em>（中间）：你所有的笔记都在这里，按照修改日期排序。 你也可以 <em>置顶</em> 笔记。</li><li><em>编辑器</em>（右侧）：这里是创作的空间，也是你现在所处的位置。 😄</li></ul><h2 id="Bear-的样式-✒️"><a href="#Bear-的样式-✒️" class="headerlink" title="Bear 的样式 ✒️"></a>Bear 的样式 ✒️</h2><p>Bear 支持许多文本样式，包括：<em>粗体</em>、/斜体/、<em>下划线</em>、-删除线-、1 至 6 号标题以及更多内容。 你可以在 /格式面板/ 中快速找到它们：</p><ul><li>在 Mac 上，点击编辑器右下角的笔图标</li><li>在 iPhone 或 iPad 上，面板就是输入键盘上方的快捷工具条</li></ul><p>Bear 还提供一系列主题为你提供舒服、华丽的写作环境。 这些是在应用内订阅 <a href="bear://x-callback-url/open-bear-pro" target="_blank" rel="noopener">Bear Pro</a> 后解锁的功能。</p><h2 id="将笔记链接起来-⛓"><a href="#将笔记链接起来-⛓" class="headerlink" title="将笔记链接起来 ⛓"></a>将笔记链接起来 ⛓</h2><p>笔记链接是 Bear 既好玩又实用的功能之一。 你可通过链接在同一项目的多篇笔记之间快速跳转，随心管理，或者像我们一样用多篇笔记介绍应用的功能。 比如，你可以通过链接访问下一篇教程 [[管理与发布]]。 😉</p><p>#欢迎#</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;欢迎来到-Bear&quot;&gt;&lt;a href=&quot;#欢迎来到-Bear&quot; class=&quot;headerlink&quot; title=&quot;欢迎来到 Bear&quot;&gt;&lt;/a&gt;欢迎来到 Bear&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://obq4n17fq.bkt.clouddn.com/
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -30,27 +51,6 @@
       
       
         &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://yoursite.com/child/2018/05/04/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%20Bear/"/>
-    <id>http://yoursite.com/child/2018/05/04/欢迎来到 Bear/</id>
-    <published>2018-05-04T07:03:08.393Z</published>
-    <updated>2018-05-04T07:03:08.393Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="欢迎来到-Bear"><a href="#欢迎来到-Bear" class="headerlink" title="欢迎来到 Bear"></a>欢迎来到 Bear</h1><p><img src="%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%20Bear/Welcome@2x.jpg" alt=""></p><p>Bear 是用于优美、流畅写作笔记和文章的应用。 上手和掌握 Bear 非常容易。现在就展示给你。</p><h2 id="Bear-界面包含三部分-📐"><a href="#Bear-界面包含三部分-📐" class="headerlink" title="Bear 界面包含三部分 📐"></a>Bear 界面包含三部分 📐</h2><p>Bear 包含三栏，供你创建、编辑和管理笔记：</p><ul><li><em>侧边栏</em>（左侧）：在笔记中加入标签后，Bear 就会将标签显示在侧边栏中。 你可以当作它们是在写作时可即时创建并使用的文件夹。</li><li><em>笔记列表</em>（中间）：你所有的笔记都在这里，按照修改日期排序。 你也可以 <em>置顶</em> 笔记。</li><li><em>编辑器</em>（右侧）：这里是创作的空间，也是你现在所处的位置。 😄</li></ul><h2 id="Bear-的样式-✒️"><a href="#Bear-的样式-✒️" class="headerlink" title="Bear 的样式 ✒️"></a>Bear 的样式 ✒️</h2><p>Bear 支持许多文本样式，包括：<em>粗体</em>、/斜体/、<em>下划线</em>、-删除线-、1 至 6 号标题以及更多内容。 你可以在 /格式面板/ 中快速找到它们：</p><ul><li>在 Mac 上，点击编辑器右下角的笔图标</li><li>在 iPhone 或 iPad 上，面板就是输入键盘上方的快捷工具条</li></ul><p>Bear 还提供一系列主题为你提供舒服、华丽的写作环境。 这些是在应用内订阅 <a href="bear://x-callback-url/open-bear-pro" target="_blank" rel="noopener">Bear Pro</a> 后解锁的功能。</p><h2 id="将笔记链接起来-⛓"><a href="#将笔记链接起来-⛓" class="headerlink" title="将笔记链接起来 ⛓"></a>将笔记链接起来 ⛓</h2><p>笔记链接是 Bear 既好玩又实用的功能之一。 你可通过链接在同一项目的多篇笔记之间快速跳转，随心管理，或者像我们一样用多篇笔记介绍应用的功能。 比如，你可以通过链接访问下一篇教程 [[管理与发布]]。 😉</p><p>#欢迎#</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;欢迎来到-Bear&quot;&gt;&lt;a href=&quot;#欢迎来到-Bear&quot; class=&quot;headerlink&quot; title=&quot;欢迎来到 Bear&quot;&gt;&lt;/a&gt;欢迎来到 Bear&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%8
       
     
     </summary>
