@@ -44,10 +44,10 @@
   
   <entry>
     <title>Hello,world</title>
-    <link href="http://yoursite.com/child/2018/05/09/Hello,World/"/>
-    <id>http://yoursite.com/child/2018/05/09/Hello,World/</id>
-    <published>2018-05-09T10:45:55.090Z</published>
-    <updated>2018-05-09T11:55:50.265Z</updated>
+    <link href="http://yoursite.com/child/2015/07/23/Hello,World/"/>
+    <id>http://yoursite.com/child/2015/07/23/Hello,World/</id>
+    <published>2015-07-22T16:00:00.000Z</published>
+    <updated>2018-05-14T14:00:18.160Z</updated>
     
     <content type="html"><![CDATA[<h1 id="First"><a href="#First" class="headerlink" title="First"></a>First</h1>]]></content>
     
