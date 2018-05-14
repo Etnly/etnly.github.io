@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/child/"/>
-  <updated>2018-05-14T09:31:45.419Z</updated>
+  <updated>2018-05-14T09:36:40.741Z</updated>
   <id>http://yoursite.com/child/</id>
   
   <author>
@@ -17,24 +17,28 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>Python基础</title>
     <link href="http://yoursite.com/child/2018/05/14/Python%E5%9F%BA%E7%A1%80/"/>
     <id>http://yoursite.com/child/2018/05/14/Python基础/</id>
     <published>2018-05-14T09:12:40.940Z</published>
-    <updated>2018-05-14T09:31:45.419Z</updated>
+    <updated>2018-05-14T09:36:40.741Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>title: Python基础<br>tags: 基础<br>categories: Python<br>thumbnail: <a href="http://sem.tanzhouedu.com/shiguang/it/python/pc4/img/2.jpg" target="_blank" rel="noopener">http://sem.tanzhouedu.com/shiguang/it/python/pc4/img/2.jpg</a></p><hr><h1 id="Python基础"><a href="#Python基础" class="headerlink" title="Python基础"></a><strong>Python基础</strong></h1><hr><h2 id="Python赋值语句"><a href="#Python赋值语句" class="headerlink" title="Python赋值语句"></a><strong>Python赋值语句</strong></h2><p><strong>赋值语句</strong>可以创建新的变量，并为其赋值：<br>        <code>say = &#39;Hello, World&#39;</code><br>        <code>num = 7</code><br>第一个语句将<strong>字符串</strong>赋给“say”变量；第二个语句将17赋给num。</p><hr><h2 id="Python表达式"><a href="#Python表达式" class="headerlink" title="Python表达式"></a><strong>Python表达式</strong></h2><p><strong>表达式</strong>是变量、值、操作符的组合，单独的值与变量也被看作一个表达式</p><hr><h2 id="Python语句"><a href="#Python语句" class="headerlink" title="Python语句"></a><strong>Python语句</strong></h2><p><strong>语句</strong>是一段可以产生效果的代码单元，如创建一个变量或显示一个值：<br>        <code>say = &#39;Hello, World&#39;</code><br>        <code>print(say)</code><br>print语句显示say的值</p><hr><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a><strong>注释</strong></h2><p>Python中注释以“#”开头：<br>        <code># 这里是注释</code><br>        <code>say = &#39;Hello, World&#39;</code><br>        <code>print(say) #输出say的值</code><br>如上所示，注释可以单独占一行，也可以加入到代码结尾。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Python基础"><a href="#Python基础" class="headerlink" title="Python基础"></a><strong>Python基础</strong></h1><hr><h2 id="Python赋值语句"><a href="#Python赋值语句" class="headerlink" title="Python赋值语句"></a><strong>Python赋值语句</strong></h2><p><strong>赋值语句</strong>可以创建新的变量，并为其赋值：<br>        <code>say = &#39;Hello, World&#39;</code><br>        <code>num = 7</code><br>第一个语句将<strong>字符串</strong>赋给“say”变量；第二个语句将17赋给num。</p><hr><h2 id="Python表达式"><a href="#Python表达式" class="headerlink" title="Python表达式"></a><strong>Python表达式</strong></h2><p><strong>表达式</strong>是变量、值、操作符的组合，单独的值与变量也被看作一个表达式</p><hr><h2 id="Python语句"><a href="#Python语句" class="headerlink" title="Python语句"></a><strong>Python语句</strong></h2><p><strong>语句</strong>是一段可以产生效果的代码单元，如创建一个变量或显示一个值：<br>        <code>say = &#39;Hello, World&#39;</code><br>        <code>print(say)</code><br>print语句显示say的值</p><hr><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a><strong>注释</strong></h2><p>Python中注释以“#”开头：<br>        <code># 这里是注释</code><br>        <code>say = &#39;Hello, World&#39;</code><br>        <code>print(say) #输出say的值</code><br>如上所示，注释可以单独占一行，也可以加入到代码结尾。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;hr&gt;
-&lt;p&gt;title: Python基础&lt;br&gt;tags: 基础&lt;br&gt;categories: Python&lt;br&gt;thumbnail: &lt;a href=&quot;http://sem.tanzhouedu.com/shiguang/it/python/pc4/img/2.jpg&quot;
+        &lt;h1 id=&quot;Python基础&quot;&gt;&lt;a href=&quot;#Python基础&quot; class=&quot;headerlink&quot; title=&quot;Python基础&quot;&gt;&lt;/a&gt;&lt;strong&gt;Python基础&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
+&lt;h2 id=&quot;Python赋值语句&quot;&gt;&lt;a href
       
     
     </summary>
     
+      <category term="Python" scheme="http://yoursite.com/child/categories/Python/"/>
+    
+    
+      <category term="基础" scheme="http://yoursite.com/child/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
