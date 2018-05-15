@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Etnly's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Etnly&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/child/index.html">
+<meta property="og:site_name" content="Etnly&#39;s Blog">
+<meta property="og:description" content="Blog">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Etnly&#39;s Blog">
+<meta name="twitter:description" content="Blog">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/child/"/>
+
+
+
+
+
+  <title>Etnly's Blog</title>
+  
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Etnly's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Hello,World</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/child/2018/05/15/page/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Etnly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/15/page/" itemprop="url">Page</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-15T21:18:16+08:00">
+                2018-05-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/child/2016/06/03/Python面向对象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Etnly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/06/03/Python面向对象/" itemprop="url">Python面向对象</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-03T00:00:00+08:00">
+                2016-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Python面向对象"><a href="#Python面向对象" class="headerlink" title="Python面向对象"></a><strong>Python面向对象</strong></h1><p>🤔</p>
+<hr>
+<h2 id="面向对象的编程"><a href="#面向对象的编程" class="headerlink" title="面向对象的编程"></a><strong>面向对象的编程</strong></h2><ul>
+<li>类与对象是面向对象编程的两个主要方面。一个类能够创建一种新的类型 ，其中对象就是类的实例。可以这样来类比:你可以拥有类型 int 的变量，也就是说存储整数的变量是 int 类的实例。<blockquote>
+<p>即使是整数也会被视为对象。这不同于 C++ 与c#，在它们那儿整数是原始内置类型  </p>
+</blockquote>
+</li>
+<li><strong>在Python中，一切皆为对象</strong>。</li>
+<li>对象可以使用属于它的普通变量来存储数据。这种从属于对象或类的变量叫作字段 。对象还可以使用属于类的函数来实现某些功能，这种函数叫作类的方法 。这两个术语很重要，它有助于我们区分函数与变量，哪些是独立的，哪些又是属于类或对象的。总之，字段与方法通称类的属性。</li>
+<li>字段有两种类型——它们属于某一类的各个实例或对象，或是从属于某一类本身。它们被分别称作实例变量与类变量。</li>
+</ul>
+<hr>
+<h2 id="self"><a href="#self" class="headerlink" title="self"></a><strong>self</strong></h2><ul>
+<li>类方法与普通函数只有一种特定的区别——前者必须有一个额外的名字，这个名字必须添加到参数列表的开头，但是你不用在你调用这个功能时为这个参数赋值，Python 会为它提供。 这种特定的变量引用的是对象本身，按照惯例，它被赋􏰀 self 这一名称<blockquote>
+<p>Python 中的 self 相当于 C++ 中的指针以及 Java 与 C# 中的 this 指针。  </p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="类"><a href="#类" class="headerlink" title="类"></a><strong>类</strong></h2><ul>
+<li>这是一个最简单的类：<br>class Person:  <pre><code>pass   # 空的代码块  
+</code></pre>p = Person()  # 创建Person的对象p  </li>
+</ul>
+<hr>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a><strong>方法</strong></h2><ul>
+<li>一个简单的方法：<br>class Person:  <pre><code>def sayHi(self):  
+   print(‘Hello, World’)  
+</code></pre>p = Person()<br>p.sayHi()<br>输出:  Hello, World  <blockquote>
+<p>唯一与函数不同的地方在于这里多了一个self  </p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a><strong>继承</strong></h2><ul>
+<li>面向对象编程的一大优点是对代码的重用，重用的一种实现方法就是通过继承机制。继承指的是根据一个现有的类型，定义一个修改版本的新类的能力。继承最好是想象成在类之间实现类型与子类型关系的工具。</li>
+</ul>
+<p>class SchoolMember: ‘’’代表任何学校里的成员。’’’<br>def <strong>init</strong>(self, name, age):<br>        self.name = name<br>        self.age = age<br>        print(‘(Initialized SchoolMember: {})’.format(self.name))<br>def tell(self):<br>‘’’告诉我有关我的细节。’’’<br>print(‘Name:”{}” Age:”{}”‘.format(self.name, self.age), end=” “)<br>class Teacher(SchoolMember): ‘’’代表一位老师。’’’<br>def <strong>init</strong>(self, name, age, salary):<br>        SchoolMember.<strong>init</strong>(self, name, age)<br>        self.salary = salary<br>        print(‘(Initialized Teacher: {})’.format(self.name))<br>    def tell(self):<br>        SchoolMember.tell(self)<br>        print(‘Salary: “{:d}”‘.format(self.salary))<br>class Student(SchoolMember): ‘’’代表一位学生。’’’<br>def <strong>init</strong>(self, name, age, marks):<br>        SchoolMember.<strong>init</strong>(self, name, age)<br>        self.marks = marks<br>        print(‘(Initialized Student: {})’.format(self.name))<br>    def tell(self):<br>        SchoolMember.tell(self)<br>        print(‘Marks: “{:d}”‘.format(self.marks))<br>t = Teacher(‘Mrs. Shrividya’, 40, 30000)<br>s = Student(‘Swaroop’, 25, 75)</p>
+<h1 id="打印一行空白行-print"><a href="#打印一行空白行-print" class="headerlink" title="打印一行空白行 print()"></a>打印一行空白行 print()</h1><p>members = [t, s]<br>for member in members:</p>
+<h1 id="对全体师生工作-member-tell"><a href="#对全体师生工作-member-tell" class="headerlink" title="对全体师生工作 member.tell()"></a>对全体师生工作 member.tell()</h1><blockquote>
+<p>有一些特征是他们都具有的，例如姓名、年龄和地址。另外一些特征是他们独有的，一如教师的薪水、课程与假期，学生的成绩和学费。你可以为每一种类型创建两个独立的类，并对它们进行处理。但增添一条共有特征就意味着将其添加进两个独立的类。这很快就会使程序变得笨重。<br>一个更好的方法是创建一个公共类叫作 SchoolMember ，然后让教师和学生从这个类中继承 ，也就是说他们将成为这一类型(类)的子类型，而我们就可以向这些子类型中添加某些该类独有的特征。<br>这种方法有诸多优点。如果我们增加或修改了 SchoolMember 的任何功能，它将自动反映在子类型中。举个例子，你可以通过简单地向 SchoolMember 类进行操作，来为所有老师与学生添加一条新的 ID 卡字段。不过，对某一子类型作出的改动并不会影响到其它子类型。另一大优点是你可以将某一老师或学生对象看作 SchoolMember 的对象并加以引用，这在某些情况下会大为有用，例如清点学校中的成员数量。这被称作多态性(Polymorphism)，在任何情 况下，如果父类型希望，子类型都可以被替换，也就是说，该对象可以被看作父类的实例。<br>同时还需要注意的是我们重用父类的代码，但我们不需要再其它类中重复它们，当我们使用独立类型时才会必要地重复这些代码。  </p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/child/2016/06/01/Python数据结构/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Etnly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/06/01/Python数据结构/" itemprop="url">Python数据结构</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-01T00:00:00+08:00">
+                2016-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Python数据结构"><a href="#Python数据结构" class="headerlink" title="Python数据结构"></a><strong>Python数据结构</strong></h1><p>🤔</p>
+<hr>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a><strong>字符串</strong></h2><ul>
+<li><p><strong>字符串</strong>是字符的序列，可以使用单引号、双引号及三引号来指定字符串<br> name = ‘etnly’<br> name = “etnly”   </p>
+<h1 id="两者工作机制完全相同"><a href="#两者工作机制完全相同" class="headerlink" title="两者工作机制完全相同"></a>两者工作机制完全相同</h1><p> ‘’’这是一个多行字符串<br> 这是第二行<br> 这位是第三行’’’   </p>
+<blockquote>
+<p>在程序中使用的所有字符串都是str类下的对象，并且它也具有自己的方法，具体的方法清单可以查阅   help(str)   。  </p>
+</blockquote>
+<h1 id="返回字符串长度"><a href="#返回字符串长度" class="headerlink" title="返回字符串长度"></a>返回字符串长度</h1><p>name = ‘etnly’<br>len(name)</p>
+<h1 id="遍历字符串"><a href="#遍历字符串" class="headerlink" title="遍历字符串"></a>遍历字符串</h1><p>name = ‘etnly’<br>for i in name:<br>  print(i)</p>
+<h1 id="字符串切片"><a href="#字符串切片" class="headerlink" title="字符串切片"></a>字符串切片</h1><p>print(name[1:3])</p>
+<h1 id="输出-tn"><a href="#输出-tn" class="headerlink" title="输出 tn"></a>输出 tn</h1></li>
+</ul>
+<hr>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a><strong>列表</strong></h2><ul>
+<li><strong>列表</strong>是一种用于保存一系列有序项目的集合，也就是说，你可以利用列表保存一串项目的序列。和字符串类似，在字符串中这些项目是字符，而列表中它可以是任何类型，列表中的值称为<em>元素</em>。</li>
+<li><p>创建列表最简单的方式是使用 [] 方括号：<br> num = [1, 2, 3]<br> name = [‘张三’, ‘李四’]<br> other = [[1, 2, 3], ‘a’, ‘b’ 3.0]   </p>
+<blockquote>
+<p>字符串的值是不可变的，而列表的值是可变的。如：<br> num[1] = 3<br> print(num)<br>输出：<br> [1, 3, 3]<br>列表对象也有自己的方法，具体可以查阅   help(list)   。  </p>
+</blockquote>
+<h1 id="列表遍历"><a href="#列表遍历" class="headerlink" title="列表遍历"></a>列表遍历</h1><p>num = [1, 2, 3]<br>for i in num:<br>  print(i)</p>
+<h1 id="列表拼接"><a href="#列表拼接" class="headerlink" title="列表拼接"></a>列表拼接</h1><p>num2 = [2, 3, 4]<br>num3 = num + num2</p>
+<h1 id="列表切片"><a href="#列表切片" class="headerlink" title="列表切片"></a>列表切片</h1><p>print(num3[1:3])</p>
+<h1 id="这里输出-2-3"><a href="#这里输出-2-3" class="headerlink" title="这里输出 [2, 3]"></a>这里输出 [2, 3]</h1><h1 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h1><p>num.append(4)</p>
+</li>
+</ul>
+<hr>
+<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a><strong>字典</strong></h2><ul>
+<li>字典类似于列表，但更加通用，在列表中下表必须是整数，而字典中，下标基本可以是任意类型。</li>
+<li>字典包含键（下标）和值。每一个键都关联一个值，这种方式称为键值对，字典体现了键到值的映射，所以可以说每一个键映射到一个值。</li>
+<li>新建一个字典可以：<br> d = {‘a’ : 1, ‘b’ : 2, ‘c’ : 3}<br> d = dict() # 新建一个空字典   </li>
+</ul>
+<blockquote>
+<p>字典是通过散列表的方式实现的，意味着键必须是可散列的。<br>散列是一个函数，接收值并返回一个整数，字典使用这些被称为散列值的整数来保存和查找键值对。  </p>
+</blockquote>
+<hr>
+<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a><strong>元组</strong></h2><ul>
+<li>元组用于将多个对象保存到一起，其值可以是任何类型，并按照下标索引，元组和列表非常相似，其二者主要区别在于，元组是不可变的。元组通常用于保证某一语句或某一用户定义的函数可以安全地采用一组数值。</li>
+<li>元组语法上用逗号分隔一列值，可以用括号括起来：<br> t = ‘a’, ‘b’, ‘c’, 1, 2<br> t = (‘a’, ‘b’, ‘c’, 1, 2)   <blockquote>
+<p>用括号括起来单独的值如   t = (‘a’)   并不是元组，如要新建元组可以使用内置函数tuple<br> t = tuple()   </p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>严格的来说函数只能返回一个值，但如果返回的是元组，就可以达到类似返回多个值的效果。  </p>
+</blockquote>
+<h3 id="元组、列表和字典"><a href="#元组、列表和字典" class="headerlink" title="元组、列表和字典"></a><strong>元组、列表和字典</strong></h3><h4 id="列表和元组"><a href="#列表和元组" class="headerlink" title="列表和元组"></a>列表和元组</h4><ul>
+<li>zip函数，接收两个或多个序列，并返回一个元组列表，每个元组包含来自每个序列的一个元素。<br> a = ‘abc’<br> b = [0, 1, 2]<br> print(zip(a, b))<br>结果返回   <zip object="" at="" 0x10d5e1b08="">   <blockquote>
+<p>这是一个zip对象，它知道如何遍历每个元素对，zip对象是一种迭代器，即用来迭代访问一个序列的对象  </p>
+</blockquote>
+</zip></li>
+<li><p>使用zip最常见的方法是在for循环中：<br> for i in zip(a, b):   </p>
+<pre><code>print(i)   
+</code></pre><p>输出：   (‘a’, 0) (‘b’, 1) (‘c’, 2)   </p>
+</li>
+<li><p>如果需要使用列表的操作，可以利用zip对象制作一个列表：<br> list(zip(a, b))   </p>
+</li>
+</ul>
+<h4 id="字典和元组"><a href="#字典和元组" class="headerlink" title="字典和元组"></a>字典和元组</h4><ul>
+<li>字典方法items可以返回一个元组序列，其中每个元组是一个键值对：<br> d = {0 : ‘a’, 1 : ‘b’, 2 : ‘c’}<br> t = d.items()<br> print(t)<br>输出：   dict_items([(0, ‘a’), (1, ‘b’), (2, ‘c’)])   </li>
+<li>反过来可以使用元组列表来初始化一个字典：<br> t = [(0, ‘a’), (1, ‘b’), (2, ‘c’)]<br> d = dict(t)   </li>
+<li>我们可以通过dict和items得到一个简洁的创建新字典的方法：<br>d = dict(zip(‘abc’, range(3)))   </li>
+</ul>
+<hr>
+<h2 id="序列"><a href="#序列" class="headerlink" title="序列"></a><strong>序列</strong></h2><ul>
+<li>列表、元组和字符串可以看作序列(Sequence)的某种表现形式，序列的主要功能是资格测试(也就是 in 与 not in 表达式)和索引操作，它们能够允许我们直接获取序列中的特定项目。</li>
+</ul>
+<hr>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a><strong>引用</strong></h2><ul>
+<li>当你创建了一个对象并将其分配给某个变量时，变量只会查阅某个对象，并且它也 不会代表对象本身。也就是说，变量名只是指向你计算机内存中存储了相应对象的那一部分。这叫作将名称绑定给那一个对象。</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/child/2016/05/30/Python基础(2)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Etnly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/05/30/Python基础(2)/" itemprop="url">Python基础(2)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-30T00:00:00+08:00">
+                2016-05-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Python基础-2"><a href="#Python基础-2" class="headerlink" title="Python基础(2)"></a><strong>Python基础(2)</strong></h1><p>🤔</p>
+<hr>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a><strong>函数</strong></h2><ul>
+<li><p><strong>函数</strong>是指可重复使用的程序片段。它们允许你为某个代码块赋􏰀名字，允许你通过这一特殊的名字在你的程序任何地方来运行代码块，并可重复任何次数。这就是所谓的调用函数。<br>函数可以通过关键字 def 来定义：</p>
+<p> def say():   </p>
+<pre><code>print(&apos;Hello, World&apos;)   
+</code></pre><p> say()   </p>
+</li>
+</ul>
+<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a><strong>函数参数</strong></h3><ul>
+<li><p>函数可以获取参数，这个参数的值由你所提供，借此，函数便可以利用这些值来做一些事情。这些参数与变量类似，这些变量的值在我们调用函数时已被定义，且在函数运行时均已赋值完成。在定义函数 时给定的名称称作“形参”，在调用函数时你所提供给函数的值称作“实参”。</p>
+<p> def reaArea(a, b):   </p>
+<pre><code>s = a * b   
+return s   
+</code></pre><p> x = 10<br> y = 5<br> print(reaArea(x, y))   </p>
+<blockquote>
+<p>以上为计算机型面积的函数，调用reaArea函数时，我们以变量作为实参来调用函数，使得x的值赋给行参a、y的值赋给行参b，并返回两者的乘积。  </p>
+</blockquote>
+</li>
+<li><p>函数参数可以设置默认参数值，如：<br> def reaArea(a , b = 5):   </p>
+</li>
+<li><p>有时可能想定义的函数里面能够有任意数量的变量，也就是参数数量是可变的，这可以通 过使用星号来实现<br> def func(a = 7, *b, **c):   </p>
+<pre><code>print(&apos;a&apos;, a)   
+for i in b:   
+    print(&apos;b&apos;, i)   
+for key, value in c.items():   
+    print(key, value)   
+</code></pre><p> func(10, 9, 8, 7, 6, 5, x = 1, y = 2, z = 3)<br>输出：<br> a 10   b 9   b 8   b 7   b 6   b 5   x 1   y 2   z 3   </p>
+<blockquote>
+<p>当声明一个如*a 星号参数时，从此处开始直到结束的所有位置参数都将被收集并汇集成一个元组。<br>类似地，当声明一个诸如 **b 的双星号参数时，从此处开始直至结束的所有关键字参数都将被收集并汇集成一个字典。  </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a><strong>局部变量</strong></h3><ul>
+<li>在一个函数的定义中声明变量时，它们不会以任何方式与处于函数之外但具有相同名称的变量产生关系，也就是说，这些变量名只存在于函数这一局部。这被称为变量的作用域。所有变量的作用域是它们被定义的块，从定义它们的名字的定义点开始。<br> n = 7<br> def func(n):   <pre><code>print(&quot;1:&quot;, n)   
+n = 10   
+print(&quot;2:&quot;, n)   
+</code></pre> func(n)<br> print(“3:”, n)<br>输出：<br> 1: 7     2: 10     3: 7   <blockquote>
+<p>第一次打印出存在于函数块第一行名为 n 的值时，使用的是在函数声明之上的主代码块中声明的这一参数的值。<br>接着，将10赋值给n。n是我们这一函数的局部变量。因此，当改变函数中n的值的时候，主代码块中的n则不会受到影响。<br>最后一句 print 语句，打印出主代码块中定义的n的值，由此确认它不受先前调用的函数中的局部变量的影响。  </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="global语句"><a href="#global语句" class="headerlink" title="global语句"></a><strong>global语句</strong></h3><ul>
+<li>如果想给一个在程序顶层的变量赋值(也就是说它不存在于任何作用域中，无论是函数还是类)，那么你必须告诉程序这一变量并非局部的，而是全局的。我们需要通过global语句来完成这件事。因为在不使用global语句的情况下，不可能为一个定义于函数之外的变量赋值。<br> n = 7<br> def func():   <pre><code>global n   
+print(&quot;1:&quot;, n)   
+n = 10   
+print(&quot;2:&quot;, n)   
+</code></pre> func()<br> print(“3:”, n)<br>输出：<br> 1: 7     2: 10     3: 10   <blockquote>
+<p>global语句用以声明n是一个全局变量，因此，当我们在函数中为n进行赋值时，这一改动将影响到我们在主代码块中使用的n的值  </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="return-语句"><a href="#return-语句" class="headerlink" title="return 语句"></a><strong>return 语句</strong></h3><ul>
+<li>return 语句用于从函数中返回，也就是中断函数。我们也可以选择在中断函数时从函数中返回一个值。<br> def reaArea(a, b):   <pre><code>s = a * b   
+return s   
+</code></pre> x = 10<br> y = 5<br> print(reaArea(x, y))   <blockquote>
+<p>如果 return 语句没有搭配任何一个值则代表着返回 None 。 None 在 Python 中一个特殊的类型，代表空。  </p>
+</blockquote>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/child/2016/05/27/Python基础(1)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Etnly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/05/27/Python基础(1)/" itemprop="url">Python基础(1)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-27T00:00:00+08:00">
+                2016-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Python基础-1"><a href="#Python基础-1" class="headerlink" title="Python基础(1)"></a><strong>Python基础(1)</strong></h1><p>🤔</p>
+<hr>
+<h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a><strong>赋值</strong></h2><ul>
+<li><strong>赋值语句</strong>可以创建新的变量，并为其赋值：<pre><code>say = &apos;Hello, World&apos;
+num = 7
+</code></pre><blockquote>
+<p>第一个语句将<strong>字符串</strong>赋给“say”变量；第二个语句将17赋给num。  </p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a><strong>表达式</strong></h2><ul>
+<li><strong>表达式</strong>是变量、值、操作符的组合，单独的值与变量也被看作一个表达式</li>
+</ul>
+<hr>
+<h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a><strong>语句</strong></h2><ul>
+<li><strong>语句</strong>是一段可以产生效果的代码单元，如创建一个变量或显示一个值：<pre><code>say = &apos;Hello, World&apos;
+print(say)
+</code></pre><blockquote>
+<p>print语句显示say的值  </p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a><strong>注释</strong></h2><ul>
+<li><p>Python中注释以“#”开头：</p>
+<pre><code># 这里是注释 
+say = &apos;Hello, World&apos; 
+print(say) # 输出say的值 
+</code></pre></li>
+</ul>
+<blockquote>
+<p>如上所示，注释可以单独占一行，也可以加入到代码结尾。  </p>
+</blockquote>
+<hr>
+<h2 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a><strong>控制流</strong></h2><h3 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a><strong>if语句</strong></h3><ul>
+<li><p><strong>if语句</strong>用以检查条件:如果 条件为真(True)，我们将运行一块语句(if 块)，否则 我们将运行另一块语句(else 块)。else 从句是可选 的。</p>
+<p>num = 7<br>if num &gt; 0: </p>
+<pre><code>print(&apos;num为正数&apos;) 
+</code></pre><p>elif num == 0: </p>
+<pre><code>print(&apos;num等于0&apos;) 
+</code></pre><p>else: </p>
+<pre><code>print(&apos;num为负数&apos;) 
+</code></pre></li>
+</ul>
+<p>此处输出：<br> num为正数 </p>
+<h3 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a><strong>for语句</strong></h3><ul>
+<li><p>for…in 语句是循环语句的一种，其特点是会在一系列对象上进行迭代，意即它会遍历序列中的每一个项目。</p>
+<p>for i in range(1, 10):<br>   print(i)<br>else: </p>
+<pre><code>print(&apos;循环结束&apos;) 
+</code></pre></li>
+</ul>
+<p>此处输出：<br> 1 2 3 4 5 6 7 8 9 循环结束 </p>
+<blockquote>
+<p>for 循环就会在(1-9)这一范围内展开递归—— for i in range(1,10) 等价于 for i in [1，2，3， 4，5，6，7，8，9] ，这个操作将依次将队列里的每个数字(或是对象)分配给 i ，一次一个，然后以 每个 i 的值执行语句块<br>else 部分是可选的。当循环中包含他时，它总会在 for 循环结束后开始执 行，除非程序遇到了 break 语句。  </p>
+</blockquote>
+<h3 id="while语句"><a href="#while语句" class="headerlink" title="while语句"></a><strong>while语句</strong></h3><ul>
+<li><p>while 语句能够让你在条件为真的前提下重复执行某块语句。 while 语句也是 一种循环语句。 while 语句同样可以拥有 else 子句作为可选选项。</p>
+<p>num = 7<br>isRun = True<br>while    isRun: </p>
+<pre><code>if num == 0: 
+     isRun = False 
+ else: 
+     num = num - 1 
+</code></pre><p>else: </p>
+<pre><code>print(num) 
+</code></pre></li>
+</ul>
+<p>此处输出：<br> 0 </p>
+<blockquote>
+<p>While会在循环开始前检查变量是否为true，之后再执行相应的 while 块，直到变量为false，循环结束。  </p>
+</blockquote>
+<h3 id="break语句"><a href="#break语句" class="headerlink" title="break语句"></a><strong>break语句</strong></h3><ul>
+<li><p>break 语句用以中断循环语句，也就是中止循环语句的执行，即使循环条件没有变更为 False ，或队列中的项目尚未完全迭代依旧如此。</p>
+<figure class="highlight plain"><figcaption><span>i in range(1, 10): </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   print(i)  </span><br><span class="line">   if i == 3: </span><br><span class="line">	   break </span><br><span class="line">else: 	</span><br><span class="line">   print(&apos;循环结束&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>此处输出：<br> 1 2 3  </p>
+<h3 id="continue语句"><a href="#continue语句" class="headerlink" title="continue语句"></a><strong>continue语句</strong></h3><ul>
+<li>continue 语句用以告诉 Python 跳过当前循环块中的剩余语句，并继续该循环的下一次迭代。<br>while True:<br>   s = input(‘请输入名字’)<br>   if s == ‘yu’: <pre><code>break 
+</code></pre>   if len(s) &lt; 2: <pre><code>print(&apos;请输入至少两个字符&apos;) 
+continue 
+</code></pre>   print(‘名字为’, s) </li>
+</ul>
+<blockquote>
+<p>此处接收用户输入的内容，只有字符串长度大于等于2程序才会对其进行处理。如果其长度小 于 2，便通过使用 continue 语句跳过代码块中的其余语句。  </p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/child/2015/07/23/Hello,World/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Etnly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/07/23/Hello,World/" itemprop="url">Hello,world</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-23T00:00:00+08:00">
+                2015-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/介绍/" itemprop="url" rel="index">
+                    <span itemprop="name">介绍</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="One"><a href="#One" class="headerlink" title="One"></a><strong>One</strong></h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Yu</p>
+              <p class="site-description motion-element" itemprop="description">Blog</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
