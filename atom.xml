@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/child/"/>
-  <updated>2018-05-16T04:20:36.731Z</updated>
+  <updated>2018-05-15T16:07:32.152Z</updated>
   <id>http://yoursite.com/child/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="http://yoursite.com/child/2018/05/16/googlec4970d28f4e88570/"/>
-    <id>http://yoursite.com/child/2018/05/16/googlec4970d28f4e88570/</id>
-    <published>2018-05-16T04:20:36.731Z</published>
-    <updated>2018-05-16T04:20:36.731Z</updated>
-    
-    <content type="html"><![CDATA[google-site-verification: googlec4970d28f4e88570.html]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        google-site-verification: googlec4970d28f4e88570.html
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>Python面向对象</title>
