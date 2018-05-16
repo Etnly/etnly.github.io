@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="Etnly&#39;s Blog">
 <meta property="og:description" content="Python基础(1)🤔">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-16T07:43:19.520Z">
+<meta property="og:updated_time" content="2018-05-16T09:59:43.545Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python基础(1)">
 <meta name="twitter:description" content="Python基础(1)🤔">
@@ -454,18 +454,18 @@
 </ul>
 <h3 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a><strong>for语句</strong></h3><p>for…in 语句是循环语句的一种，其特点是会在一系列对象上进行迭代，意即它会遍历序列中的每一个项目。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for i in range(1, 10): </span><br><span class="line"> print(i) </span><br><span class="line">else: </span><br><span class="line">   print(&apos;循环结束&apos;)</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li>此处输出：<br><code>1 2 3 4 5 6 7 8 9 循环结束</code><blockquote>
+<li>此处输出：<br><code>1 2 3 4 5 6 7 8 9 循环结束</code></li>
+</ul>
+<blockquote>
 <p>for 循环就会在(1-9)这一范围内展开递归—— for i in range(1,10) 等价于 for i in [1，2，3， 4，5，6，7，8，9] ，这个操作将依次将队列里的每个数字(或是对象)分配给 i ，一次一个，然后以 每个 i 的值执行语句块<br>else 部分是可选的。当循环中包含他时，它总会在 for 循环结束后开始执 行，除非程序遇到了 break 语句。  </p>
 </blockquote>
-</li>
-</ul>
 <h3 id="while语句"><a href="#while语句" class="headerlink" title="while语句"></a><strong>while语句</strong></h3><p>while 语句能够让你在条件为真的前提下重复执行某块语句。 while 语句也是 一种循环语句。 while 语句同样可以拥有 else 子句作为可选选项。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">num = 7 </span><br><span class="line">isRun = True </span><br><span class="line">while	isRun: </span><br><span class="line">  if num == 0: </span><br><span class="line">	   isRun = False </span><br><span class="line">   else: </span><br><span class="line">	   num = num - 1 </span><br><span class="line">else: </span><br><span class="line">   print(num)</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li>此处输出：<br><code>0</code><blockquote>
+<li>此处输出：<br><code>0</code></li>
+</ul>
+<blockquote>
 <p>While会在循环开始前检查变量是否为true，之后再执行相应的 while 块，直到变量为false，循环结束。  </p>
 </blockquote>
-</li>
-</ul>
 <h3 id="break语句"><a href="#break语句" class="headerlink" title="break语句"></a><strong>break语句</strong></h3><p>break 语句用以中断循环语句，也就是中止循环语句的执行，即使循环条件没有变更为 False ，或队列中的项目尚未完全迭代依旧如此。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for i in range(1, 10): </span><br><span class="line">   print(i)  </span><br><span class="line">   if i == 3: </span><br><span class="line">	   break </span><br><span class="line">else: 	</span><br><span class="line">   print(&apos;循环结束&apos;)</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>此处输出：<br><code>1 2 3</code></li>
