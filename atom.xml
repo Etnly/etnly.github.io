@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gyunch.org/"/>
-  <updated>2018-05-16T13:29:10.456Z</updated>
+  <updated>2018-05-16T13:33:14.919Z</updated>
   <id>http://gyunch.org/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Lua简介</title>
+    <link href="http://gyunch.org/2016/07/03/Lua%E7%AE%80%E4%BB%8B/"/>
+    <id>http://gyunch.org/2016/07/03/Lua简介/</id>
+    <published>2016-07-02T16:00:00.000Z</published>
+    <updated>2018-05-16T13:33:14.919Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Lua简介"><a href="#Lua简介" class="headerlink" title="Lua简介"></a><strong>Lua简介</strong></h1><p>🤔</p><hr><a id="more"></a><p>Lua 是一种轻量小巧的脚本语言，用标准C语言编写并以源代码形式开放， 其设计目的是为了嵌入应用程序中，从而为应用程序提供灵活的扩展和定制功能。<br>Lua 是巴西里约热内卢天主教大学（Pontifical Catholic University of Rio de Janeiro）里的一个研究小组于 1993 年开发的，该小组成员有：Roberto Ierusalimschy、Waldemar Celes 和 Luiz Henrique de Figueiredo。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Lua简介&quot;&gt;&lt;a href=&quot;#Lua简介&quot; class=&quot;headerlink&quot; title=&quot;Lua简介&quot;&gt;&lt;/a&gt;&lt;strong&gt;Lua简介&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;🤔&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="Lua" scheme="http://gyunch.org/categories/Lua/"/>
+    
+    
+      <category term="基础" scheme="http://gyunch.org/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>C#简介</title>

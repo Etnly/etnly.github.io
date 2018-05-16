@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="Python基础(2)🤔">
+<meta name="description" content="Lua简介🤔">
 <meta name="keywords" content="基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python基础(2)">
-<meta property="og:url" content="http://gyunch.org/2016/03/30/Python基础(2)/index.html">
+<meta property="og:title" content="Lua简介">
+<meta property="og:url" content="http://gyunch.org/2016/07/03/Lua简介/index.html">
 <meta property="og:site_name" content="Etnly&#39;s Blog">
-<meta property="og:description" content="Python基础(2)🤔">
+<meta property="og:description" content="Lua简介🤔">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-16T12:49:47.319Z">
+<meta property="og:updated_time" content="2018-05-16T13:33:14.919Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python基础(2)">
-<meta name="twitter:description" content="Python基础(2)🤔">
+<meta name="twitter:title" content="Lua简介">
+<meta name="twitter:description" content="Lua简介🤔">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://gyunch.org/2016/03/30/Python基础(2)/"/>
+  <link rel="canonical" href="http://gyunch.org/2016/07/03/Lua简介/"/>
 
 
 
 
 
-  <title>Python基础(2) | Etnly's Blog</title>
+  <title>Lua简介 | Etnly's Blog</title>
   
 
 
@@ -322,7 +322,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://gyunch.org/2016/03/30/Python基础(2)/">
+    <link itemprop="mainEntityOfPage" href="http://gyunch.org/2016/07/03/Lua简介/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="宇">
@@ -339,7 +339,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Python基础(2)</h2>
+          <h2 class="post-title" itemprop="name headline">Lua简介</h2>
         
 
         <div class="post-meta">
@@ -351,8 +351,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-30T00:00:00+08:00">
-                2016-03-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-03T00:00:00+08:00">
+                2016-07-03
               </time>
             
 
@@ -374,8 +374,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/Lua/" itemprop="url" rel="index">
+                    <span itemprop="name">Lua</span>
                   </a>
                 </span>
 
@@ -392,9 +392,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/03/30/Python基础(2)/#comments" itemprop="discussionUrl">
+                <a href="/2016/07/03/Lua简介/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/03/30/Python基础(2)/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2016/07/03/Lua简介/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -427,48 +427,10 @@
       
 
       
-        <h1 id="Python基础-2"><a href="#Python基础-2" class="headerlink" title="Python基础(2)"></a><strong>Python基础(2)</strong></h1><p>🤔</p>
+        <h1 id="Lua简介"><a href="#Lua简介" class="headerlink" title="Lua简介"></a><strong>Lua简介</strong></h1><p>🤔</p>
 <hr>
 <a id="more"></a>
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a><strong>函数</strong></h2><p><strong>函数</strong>是指可重复使用的程序片段。它们允许你为某个代码块赋􏰀名字，允许你通过这一特殊的名字在你的程序任何地方来运行代码块，并可重复任何次数。这就是所谓的调用函数。</p>
-<ul>
-<li>函数可以通过关键字 def 来定义：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def say():   </span><br><span class="line">    print(&apos;Hello, World&apos;)   </span><br><span class="line">say()</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a><strong>函数参数</strong></h3><p>函数可以获取参数，这个参数的值由你所提供，借此，函数便可以利用这些值来做一些事情。这些参数与变量类似，这些变量的值在我们调用函数时已被定义，且在函数运行时均已赋值完成。在定义函数 时给定的名称称作“形参”，在调用函数时你所提供给函数的值称作“实参”。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def reaArea(a, b):   </span><br><span class="line">    s = a * b   </span><br><span class="line">    return s   </span><br><span class="line">x = 10   </span><br><span class="line">y = 5   </span><br><span class="line">print(reaArea(x, y))</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>以上为计算机型面积的函数，调用reaArea函数时，我们以变量作为实参来调用函数，使得x的值赋给行参a、y的值赋给行参b，并返回两者的乘积。  </p>
-</blockquote>
-<ul>
-<li>函数参数可以设置默认参数值，如：<br><code>def reaArea(a , b = 5):</code></li>
-</ul>
-<p>有时可能想定义的函数里面能够有任意数量的变量，也就是参数数量是可变的，这可以通 过使用星号来实现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def func(a = 7, *b, **c):   </span><br><span class="line">    print(&apos;a&apos;, a)   </span><br><span class="line">    for i in b:   </span><br><span class="line">        print(&apos;b&apos;, i)   </span><br><span class="line">    for key, value in c.items():   </span><br><span class="line">        print(key, value)   </span><br><span class="line">func(10, 9, 8, 7, 6, 5, x = 1, y = 2, z = 3)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>输出：<br><code>a 10   b 9   b 8   b 7   b 6   b 5   x 1   y 2   z 3</code></li>
-</ul>
-<blockquote>
-<p>当声明一个如*a 星号参数时，从此处开始直到结束的所有位置参数都将被收集并汇集成一个元组。<br>类似地，当声明一个诸如 **b 的双星号参数时，从此处开始直至结束的所有关键字参数都将被收集并汇集成一个字典。  </p>
-</blockquote>
-<h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a><strong>局部变量</strong></h3><p>在一个函数的定义中声明变量时，它们不会以任何方式与处于函数之外但具有相同名称的变量产生关系，也就是说，这些变量名只存在于函数这一局部。这被称为变量的作用域。所有变量的作用域是它们被定义的块，从定义它们的名字的定义点开始。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n = 7   </span><br><span class="line">def func(n):   </span><br><span class="line">    print(&quot;1:&quot;, n)   </span><br><span class="line">    n = 10   </span><br><span class="line">    print(&quot;2:&quot;, n)   </span><br><span class="line">func(n)   </span><br><span class="line">print(&quot;3:&quot;, n)</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>输出：<br><code>1: 7     2: 10     3: 7</code></li>
-</ul>
-<blockquote>
-<p>第一次打印出存在于函数块第一行名为 n 的值时，使用的是在函数声明之上的主代码块中声明的这一参数的值。<br>接着，将10赋值给n。n是我们这一函数的局部变量。因此，当改变函数中n的值的时候，主代码块中的n则不会受到影响。<br>最后一句 print 语句，打印出主代码块中定义的n的值，由此确认它不受先前调用的函数中的局部变量的影响。  </p>
-</blockquote>
-<h3 id="global语句"><a href="#global语句" class="headerlink" title="global语句"></a><strong>global语句</strong></h3><p>如果想给一个在程序顶层的变量赋值(也就是说它不存在于任何作用域中，无论是函数还是类)，那么你必须告诉程序这一变量并非局部的，而是全局的。我们需要通过global语句来完成这件事。因为在不使用global语句的情况下，不可能为一个定义于函数之外的变量赋值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">n = 7   </span><br><span class="line">def func():   </span><br><span class="line">    global n   </span><br><span class="line">    print(&quot;1:&quot;, n)   </span><br><span class="line">    n = 10   </span><br><span class="line">    print(&quot;2:&quot;, n)   </span><br><span class="line">func()   </span><br><span class="line">print(&quot;3:&quot;, n)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>输出：<br> <code>1: 7     2: 10     3: 10</code></li>
-</ul>
-<blockquote>
-<p>global语句用以声明n是一个全局变量，因此，当我们在函数中为n进行赋值时，这一改动将影响到我们在主代码块中使用的n的值  </p>
-</blockquote>
-<h3 id="return-语句"><a href="#return-语句" class="headerlink" title="return 语句"></a><strong>return 语句</strong></h3><p> return 语句用于从函数中返回，也就是中断函数。我们也可以选择在中断函数时从函数中返回一个值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def reaArea(a, b):   </span><br><span class="line">    s = a * b   </span><br><span class="line">    return s   </span><br><span class="line">x = 10   </span><br><span class="line">y = 5   </span><br><span class="line">print(reaArea(x, y))</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>如果 return 语句没有搭配任何一个值则代表着返回 None 。 None 在 Python 中一个特殊的类型，代表空。  </p>
-</blockquote>
+<p>Lua 是一种轻量小巧的脚本语言，用标准C语言编写并以源代码形式开放， 其设计目的是为了嵌入应用程序中，从而为应用程序提供灵活的扩展和定制功能。<br>Lua 是巴西里约热内卢天主教大学（Pontifical Catholic University of Rio de Janeiro）里的一个研究小组于 1993 年开发的，该小组成员有：Roberto Ierusalimschy、Waldemar Celes 和 Luiz Henrique de Figueiredo。</p>
 
       
     </div>
@@ -507,8 +469,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/27/Python基础(1)/" rel="next" title="Python基础(1)">
-                <i class="fa fa-chevron-left"></i> Python基础(1)
+              <a href="/2016/05/01/c#介绍/" rel="next" title="C#简介">
+                <i class="fa fa-chevron-left"></i> C#简介
               </a>
             
           </div>
@@ -516,10 +478,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/01/Python面向对象/" rel="prev" title="Python面向对象">
-                Python面向对象 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -894,7 +852,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python基础-2"><span class="nav-number">1.</span> <span class="nav-text">Python基础(2)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">1.1.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数参数"><span class="nav-number">1.1.1.</span> <span class="nav-text">函数参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局部变量"><span class="nav-number">1.1.2.</span> <span class="nav-text">局部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#global语句"><span class="nav-number">1.1.3.</span> <span class="nav-text">global语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#return-语句"><span class="nav-number">1.1.4.</span> <span class="nav-text">return 语句</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lua简介"><span class="nav-number">1.</span> <span class="nav-text">Lua简介</span></a></li></ol></div>
             
 
           </div>
@@ -1090,9 +1048,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://gyunch.org/2016/03/30/Python基础(2)/';
-          this.page.identifier = '2016/03/30/Python基础(2)/';
-          this.page.title = 'Python基础(2)';
+          this.page.url = 'http://gyunch.org/2016/07/03/Lua简介/';
+          this.page.identifier = '2016/07/03/Lua简介/';
+          this.page.title = 'Lua简介';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://http-gyunch-org.disqus.com/embed.js';
