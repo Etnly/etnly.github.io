@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://gyunch.org/2016/07/03/Lua%E7%AE%80%E4%BB%8B/</loc>
+    <lastmod>2018-05-16T14:03:04.110Z</lastmod>
+    <data>
+        <display>
+        <title>Lua简介</title>
+        <pubTime>2016-07-02T16:00:00.000Z</pubTime>
+        
+        <tag>基础</tag>
+         
+         
+           
+             
+              <breadCrumb title="Lua" url="http://gyunch.org/categories/Lua/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://gyunch.org/2016/05/01/C#%E7%AE%80%E4%BB%8B/</loc>
     <lastmod>2018-05-16T13:53:42.599Z</lastmod>
     <data>
@@ -17,26 +37,6 @@
            
              
               <breadCrumb title="C#" url="http://gyunch.org/categories/C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://gyunch.org/2016/07/03/Lua%E7%AE%80%E4%BB%8B/</loc>
-    <lastmod>2018-05-16T13:33:14.919Z</lastmod>
-    <data>
-        <display>
-        <title>Lua简介</title>
-        <pubTime>2016-07-02T16:00:00.000Z</pubTime>
-        
-        <tag>基础</tag>
-         
-         
-           
-             
-              <breadCrumb title="Lua" url="http://gyunch.org/categories/Lua/"/>
           
         </display>
     </data>
