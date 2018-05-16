@@ -5,9 +5,9 @@
   <subtitle>Hello,World</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/child/"/>
+  <link href="http://gyunch.org/"/>
   <updated>2018-05-15T16:07:32.152Z</updated>
-  <id>http://yoursite.com/child/</id>
+  <id>http://gyunch.org/</id>
   
   <author>
     <name>宇</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Python面向对象</title>
-    <link href="http://yoursite.com/child/2016/06/03/Python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
-    <id>http://yoursite.com/child/2016/06/03/Python面向对象/</id>
+    <link href="http://gyunch.org/2016/06/03/Python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://gyunch.org/2016/06/03/Python面向对象/</id>
     <published>2016-06-02T16:00:00.000Z</published>
     <updated>2018-05-15T16:07:32.152Z</updated>
     
@@ -32,17 +32,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://yoursite.com/child/categories/Python/"/>
+      <category term="Python" scheme="http://gyunch.org/categories/Python/"/>
     
     
-      <category term="OOP" scheme="http://yoursite.com/child/tags/OOP/"/>
+      <category term="OOP" scheme="http://gyunch.org/tags/OOP/"/>
     
   </entry>
   
   <entry>
     <title>Python数据结构</title>
-    <link href="http://yoursite.com/child/2016/06/01/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    <id>http://yoursite.com/child/2016/06/01/Python数据结构/</id>
+    <link href="http://gyunch.org/2016/06/01/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <id>http://gyunch.org/2016/06/01/Python数据结构/</id>
     <published>2016-05-31T16:00:00.000Z</published>
     <updated>2018-05-15T16:07:19.890Z</updated>
     
@@ -55,17 +55,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://yoursite.com/child/categories/Python/"/>
+      <category term="Python" scheme="http://gyunch.org/categories/Python/"/>
     
     
-      <category term="基础" scheme="http://yoursite.com/child/tags/%E5%9F%BA%E7%A1%80/"/>
+      <category term="基础" scheme="http://gyunch.org/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>Python基础(2)</title>
-    <link href="http://yoursite.com/child/2016/05/30/Python%E5%9F%BA%E7%A1%80(2)/"/>
-    <id>http://yoursite.com/child/2016/05/30/Python基础(2)/</id>
+    <link href="http://gyunch.org/2016/05/30/Python%E5%9F%BA%E7%A1%80(2)/"/>
+    <id>http://gyunch.org/2016/05/30/Python基础(2)/</id>
     <published>2016-05-29T16:00:00.000Z</published>
     <updated>2018-05-15T16:07:08.992Z</updated>
     
@@ -78,17 +78,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://yoursite.com/child/categories/Python/"/>
+      <category term="Python" scheme="http://gyunch.org/categories/Python/"/>
     
     
-      <category term="基础" scheme="http://yoursite.com/child/tags/%E5%9F%BA%E7%A1%80/"/>
+      <category term="基础" scheme="http://gyunch.org/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>Python基础(1)</title>
-    <link href="http://yoursite.com/child/2016/05/27/Python%E5%9F%BA%E7%A1%80(1)/"/>
-    <id>http://yoursite.com/child/2016/05/27/Python基础(1)/</id>
+    <link href="http://gyunch.org/2016/05/27/Python%E5%9F%BA%E7%A1%80(1)/"/>
+    <id>http://gyunch.org/2016/05/27/Python基础(1)/</id>
     <published>2016-05-26T16:00:00.000Z</published>
     <updated>2018-05-15T16:06:49.575Z</updated>
     
@@ -101,17 +101,17 @@
     
     </summary>
     
-      <category term="Python" scheme="http://yoursite.com/child/categories/Python/"/>
+      <category term="Python" scheme="http://gyunch.org/categories/Python/"/>
     
     
-      <category term="基础" scheme="http://yoursite.com/child/tags/%E5%9F%BA%E7%A1%80/"/>
+      <category term="基础" scheme="http://gyunch.org/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>Hello,world</title>
-    <link href="http://yoursite.com/child/2015/07/23/Hello,World/"/>
-    <id>http://yoursite.com/child/2015/07/23/Hello,World/</id>
+    <link href="http://gyunch.org/2015/07/23/Hello,World/"/>
+    <id>http://gyunch.org/2015/07/23/Hello,World/</id>
     <published>2015-07-22T16:00:00.000Z</published>
     <updated>2018-05-15T16:01:16.466Z</updated>
     
@@ -127,10 +127,10 @@
     
     </summary>
     
-      <category term="介绍" scheme="http://yoursite.com/child/categories/%E4%BB%8B%E7%BB%8D/"/>
+      <category term="介绍" scheme="http://gyunch.org/categories/%E4%BB%8B%E7%BB%8D/"/>
     
     
-      <category term="Hello" scheme="http://yoursite.com/child/tags/Hello/"/>
+      <category term="Hello" scheme="http://gyunch.org/tags/Hello/"/>
     
   </entry>
   
