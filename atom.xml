@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gyunch.org/"/>
-  <updated>2018-05-16T13:17:40.496Z</updated>
+  <updated>2018-05-16T13:29:10.456Z</updated>
   <id>http://gyunch.org/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://gyunch.org/2016/05/01/c#%E4%BB%8B%E7%BB%8D/"/>
     <id>http://gyunch.org/2016/05/01/c#介绍/</id>
     <published>2016-04-30T16:00:00.000Z</published>
-    <updated>2018-05-16T13:17:40.496Z</updated>
+    <updated>2018-05-16T13:29:10.456Z</updated>
     
     <content type="html"><![CDATA[<h1 id="c-简介"><a href="#c-简介" class="headerlink" title="c#简介"></a><strong>c#简介</strong></h1><hr><a id="more"></a><ul><li>C# 是一种面向对象的语言。不仅如此，C# 还进一步支持面向组件的编程。 当代软件设计越来越依赖采用自描述的独立功能包形式的软件组件。 此类组件的关键特征包括：为编程模型提供属性、方法和事件；包含提供组件声明性信息的特性；包含自己的文档。 C# 提供了语言构造来直接支持这些概念，让 C# 成为一种非常自然的语言，可用于创建和使用软件组件。</li><li>多项 C# 功能有助于构造可靠耐用的应用程序：垃圾回收可自动回收无法访问的未使用对象占用的内存；异常处理提供了一种结构化的可扩展方法来执行错误检测和恢复；C# 语言的类型安全设计禁止读取未初始化的变量、为范围之外的数组编制索引或执行未检查的类型转换。</li><li>C# 采用统一的类型系统。 所有 C# 类型（包括 int 和 double 等基元类型）均继承自一个根 object 类型。 因此，所有类型共用一组通用运算，任何类型的值都可以一致地进行存储、传输和处理。 此外，C# 还支持用户定义的引用类型和值类型，从而支持对象动态分配以及轻量级结构的内嵌式存储。<br>为了确保 C# 程序和库能够随着时间的推移以兼容的方式发展，C# 设计更强调版本控制。 许多编程语言很少关注这个问题，因此，当引入新版依赖库时，用这些语言编写的程序会出现更多不必要的中断现象。 由于更强调版本控制，直接受影响的 C# 设计方面包括单独的 virtual 和 override 修饰符、关于方法重载决策的规则，以及对显式接口成员声明的支持。<br>详细指南可参考msdn，.net官方指南<a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/index" target="_blank" rel="noopener">C# 指南 | Microsoft Docs</a></li></ul>]]></content>
     
