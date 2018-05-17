@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gyunch.org/"/>
-  <updated>2018-05-17T12:45:04.055Z</updated>
+  <updated>2018-05-17T12:54:24.628Z</updated>
   <id>http://gyunch.org/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://gyunch.org/2016/07/04/Lua%E5%9F%BA%E7%A1%80/"/>
     <id>http://gyunch.org/2016/07/04/Lua基础/</id>
     <published>2016-07-03T16:00:00.000Z</published>
-    <updated>2018-05-17T12:45:04.055Z</updated>
+    <updated>2018-05-17T12:54:24.628Z</updated>
     
-    <content type="html"><![CDATA[<p>🤔</p><hr><a id="more"></a><h2 id="Lua-IDE"><a href="#Lua-IDE" class="headerlink" title="Lua IDE"></a><strong>Lua IDE</strong></h2><p>Mac端Lua IDE推荐使用Intellij+EmmyLua。这也是我使用过最好的Lua IDE<br>下载地址：<a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener">IntelliJ IDEA</a><br>EmmyLua安装方法：Preferences ——&gt;Plugins ——&gt;搜索EmmyLua<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1frejiznphnj31di14m7ew.jpg" alt=""></p><hr><h2 id="Lua-数据类型"><a href="#Lua-数据类型" class="headerlink" title="Lua 数据类型"></a><strong>Lua 数据类型</strong></h2><p>Lua是一种动态类型的语言。在语言中没有类型定义的语法，每个值都携带了它自身的类型信息。<br>在Lua中有8种基础类型，分别是nil、boolean、number、string、userdata、function、thread和table<br>| 名称 | 数据类型 | 描述 |<br>| - | - |<br>| nil | 空类型 | 表示一个无效值 |<br>| boolean | 布尔 | 包含两个值：false和true |<br>| number | 数字 | 双精度类型的实浮点数 |<br>| string | 字符串 | 由一对双引号或单引号来表示 |<br>| userdata | 自定义类型 |  任意存储在变量中的C数据结构 |<br>| function | 函数 | 由 C 或 Lua 编写的函数 |<br>| thread | 线程 | 表示执行的独立线路，用于执行协同程序 |<br>| table | 表 | Lua 中的表其实是一个”关联数组” |</p>]]></content>
+    <content type="html"><![CDATA[<p>🤔</p><hr><a id="more"></a><h2 id="Lua-IDE"><a href="#Lua-IDE" class="headerlink" title="Lua IDE"></a><strong>Lua IDE</strong></h2><p>Mac端Lua IDE推荐使用Intellij+EmmyLua。这也是我使用过最好的Lua IDE<br>下载地址：<a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener">IntelliJ IDEA</a><br>EmmyLua安装方法：Preferences ——&gt;Plugins ——&gt;搜索EmmyLua<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1frejiznphnj31di14m7ew.jpg" alt=""></p><hr><h2 id="Lua-数据类型"><a href="#Lua-数据类型" class="headerlink" title="Lua 数据类型"></a><strong>Lua 数据类型</strong></h2><p>Lua是一种动态类型的语言。在语言中没有类型定义的语法，每个值都携带了它自身的类型信息。<br>在Lua中有8种基础类型，分别是nil、boolean、number、string、userdata、function、thread和table<br>| 名称      | 数据类型  | 描述                             |<br>| ——– |:——–:|:——————————-:|<br>| nil      | 空类型    | 表示一个无效值                    |<br>| boolean  | 布尔      | 包含两个值：false和true           |<br>| number   | 数字      | 双精度类型的实浮点数               |<br>| string   | 字符串    | 由一对双引号或单引号来表示          |<br>| userdata | 自定义类型 |  任意存储在变量中的C数据结构        |<br>| function | 函数      | 由 C 或 Lua 编写的函数            |<br>| thread   | 线程      | 表示执行的独立线路，用于执行协同程序 |<br>| table    | 表        | Lua 中的表其实是一个”关联数组”     |</p>]]></content>
     
     <summary type="html">
     
