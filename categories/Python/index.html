@@ -87,7 +87,7 @@
 <meta name="description" content="The best way to predict the future is to invent it.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Etnly&#39;s Blog">
-<meta property="og:url" content="http://gyunch.org/categories/Python/index.html">
+<meta property="og:url" content="http://gyunch.org/categories/python/index.html">
 <meta property="og:site_name" content="Etnly&#39;s Blog">
 <meta property="og:description" content="The best way to predict the future is to invent it.">
 <meta property="og:locale" content="zh-Hans">
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://gyunch.org/categories/Python/"/>
+  <link rel="canonical" href="http://gyunch.org/categories/python/"/>
 
 
 
 
 
-  <title>分类: Python | Etnly's Blog</title>
+  <title>分类: python | Etnly's Blog</title>
   
 
 
@@ -313,7 +313,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h2>Python<small>分类</small>
+        <h2>python<small>分类</small>
         </h2>
       </div>
 
@@ -325,37 +325,9 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2016/04/01/Python数据结构/" itemprop="url">
+            <a class="post-title-link" href="/2016/10/27/python函数式编程/" itemprop="url">
               
-                <span itemprop="name">Python数据结构</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-04-01T00:00:00+08:00"
-              content="2016-04-01" >
-          04-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2016/04/01/Python面向对象/" itemprop="url">
-              
-                <span itemprop="name">Python面向对象</span>
+                <span itemprop="name">Python函数式编程</span>
               
             </a>
         
@@ -363,65 +335,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2016-04-01T00:00:00+08:00"
-              content="2016-04-01" >
-          04-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2016/03/30/Python基础(2)/" itemprop="url">
-              
-                <span itemprop="name">Python基础(2)</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-03-30T00:00:00+08:00"
-              content="2016-03-30" >
-          03-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2016/03/27/Python基础(1)/" itemprop="url">
-              
-                <span itemprop="name">Python基础(1)</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-03-27T00:00:00+08:00"
-              content="2016-03-27" >
-          03-27
+              datetime="2016-10-27T00:00:00+08:00"
+              content="2016-10-27" >
+          10-27
         </time>
       </div>
 
@@ -1233,6 +1149,94 @@
                 }
               });
               var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+class=\"search-result-list\">';
               resultItems.forEach(function (result) {
                 searchResultList += result.item;
               })
