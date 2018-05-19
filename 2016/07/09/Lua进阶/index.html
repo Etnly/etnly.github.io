@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="Etnly&#39;s Blog">
 <meta property="og:description" content="🤔">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-19T04:56:40.707Z">
+<meta property="og:updated_time" content="2018-05-19T05:03:47.826Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lua进阶">
 <meta name="twitter:description" content="🤔">
@@ -528,7 +528,84 @@
 <h3 id="算数类元方法"><a href="#算数类元方法" class="headerlink" title="算数类元方法"></a><strong>算数类元方法</strong></h3><ul>
 <li>Lua中每种算数操作符都有对应的字段名，如下所示：</li>
 </ul>
-<p>| ———– | ————— |<br>| <strong>add       | 对应运算符”+”    |<br>| </strong>sub       | 对应运算符”-”    |<br>| <strong>mul       | 对应运算符”*”    |<br>| </strong>div       | 对应运算符”/”    |<br>| <strong>unm       | 对应运算符”-”    |<br>| </strong>concat    | 对应运算符”..”   |<br>| <strong>eq        | 对应运算符”==”   |<br>| </strong>mod       | 对应运算符”%”    |<br>| <strong>pow       | 对应运算符”^”    |<br>| </strong>lt        | 对应运算符”&lt;”    |</p>
+<table>
+<thead>
+<tr>
+<th>__add</th>
+<th>对应运算符”+”</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>__sub</td>
+<td>对应运算符”-”</td>
+</tr>
+<tr>
+<td>———–</td>
+<td>—————</td>
+</tr>
+<tr>
+<td>__mul</td>
+<td>对应运算符”*”</td>
+</tr>
+<tr>
+<td>———–</td>
+<td>—————</td>
+</tr>
+<tr>
+<td>__div</td>
+<td>对应运算符”/”</td>
+</tr>
+<tr>
+<td>———–</td>
+<td>—————</td>
+</tr>
+<tr>
+<td>__unm</td>
+<td>对应运算符”-”</td>
+</tr>
+<tr>
+<td>———–</td>
+<td>—————</td>
+</tr>
+<tr>
+<td>__concat</td>
+<td>对应运算符”..”</td>
+</tr>
+<tr>
+<td>———–</td>
+<td>—————</td>
+</tr>
+<tr>
+<td>__eq</td>
+<td>对应运算符”==”</td>
+</tr>
+<tr>
+<td>———–</td>
+<td>—————</td>
+</tr>
+<tr>
+<td>__mod</td>
+<td>对应运算符”%”</td>
+</tr>
+<tr>
+<td>———–</td>
+<td>—————</td>
+</tr>
+<tr>
+<td>__pow</td>
+<td>对应运算符”^”</td>
+</tr>
+<tr>
+<td>———–</td>
+<td>—————</td>
+</tr>
+<tr>
+<td>__lt</td>
+<td>对应运算符”&lt;”</td>
+</tr>
+</tbody>
+</table>
 <h3 id="tostring元方法"><a href="#tostring元方法" class="headerlink" title="__tostring元方法"></a><strong>__tostring元方法</strong></h3><ul>
 <li>函数print总是调用tostring来格式化输出。当格式化任意值时，tosrting会检查该值是否有__tostring元方法，如果有，tostring就会用该值作为参数来调用这个元方法。</li>
 </ul>
