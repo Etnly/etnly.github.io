@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="Etnly&#39;s Blog">
 <meta property="og:description" content="🤔">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-19T04:49:02.697Z">
+<meta property="og:updated_time" content="2018-05-19T04:56:40.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lua进阶">
 <meta name="twitter:description" content="🤔">
@@ -500,7 +500,7 @@
 <li>通常Lua中的每个值都有一套预定义的操作集合。例如数字四则运算，字符串链接，增加table的键值对等。但无法将两个table相加,无法对函数做比较，也无法调用字符串。</li>
 <li>我们可以通过元表来修改一个值的行为，使其在面对一个非预定义的操作时执行一个指定的操作。如上所诉，可以通过元表让两个table相加。当Lua试图将两个table相加时，会先检测两者之一是否有元表，然后检测该元表中是否有__add字段，若找到该字段，就调用该字段对应的值。这个值也就是所谓的元方法（通常是一个函数或者table），这个函数会用于计算两个table的和。</li>
 <li>Lua中的每一个值都有一个元表，table和userdata可以有各自独立的元表，其他类型则共享其类型所属的单一元表。Lua在创建新的table时不会创建元表。<blockquote>
-<p>Lua中有两个重要的函数处理元表：  </p>
+<p>Lua中有两个重要的函数处理元表:</p>
 </blockquote>
 </li>
 <li><strong>setmetatable(table, metatable):</strong> 对指定table设置元表(metatable)，如果元表(metatable)中存在__metatable键值，setmetatable会失败 。</li>
@@ -528,7 +528,7 @@
 <h3 id="算数类元方法"><a href="#算数类元方法" class="headerlink" title="算数类元方法"></a><strong>算数类元方法</strong></h3><ul>
 <li>Lua中每种算数操作符都有对应的字段名，如下所示：</li>
 </ul>
-<p>| <strong>add       | 对应运算符”+”    |<br>| </strong>sub       | 对应运算符”-”    |<br>| <strong>mul       | 对应运算符”*”    |<br>| </strong>div       | 对应运算符”/”    |<br>| <strong>unm       | 对应运算符”-”    |<br>| </strong>concat    | 对应运算符”..”   |<br>| <strong>eq        | 对应运算符”==”   |<br>| </strong>mod       | 对应运算符”%”    |<br>| <strong>pow       | 对应运算符”^”    |<br>| </strong>lt        | 对应运算符”&lt;”    |</p>
+<p>| ———– | ————— |<br>| <strong>add       | 对应运算符”+”    |<br>| </strong>sub       | 对应运算符”-”    |<br>| <strong>mul       | 对应运算符”*”    |<br>| </strong>div       | 对应运算符”/”    |<br>| <strong>unm       | 对应运算符”-”    |<br>| </strong>concat    | 对应运算符”..”   |<br>| <strong>eq        | 对应运算符”==”   |<br>| </strong>mod       | 对应运算符”%”    |<br>| <strong>pow       | 对应运算符”^”    |<br>| </strong>lt        | 对应运算符”&lt;”    |</p>
 <h3 id="tostring元方法"><a href="#tostring元方法" class="headerlink" title="__tostring元方法"></a><strong>__tostring元方法</strong></h3><ul>
 <li>函数print总是调用tostring来格式化输出。当格式化任意值时，tosrting会检查该值是否有__tostring元方法，如果有，tostring就会用该值作为参数来调用这个元方法。</li>
 </ul>
