@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="Etnly&#39;s Blog">
 <meta property="og:description" content="🤔">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-19T04:39:14.131Z">
+<meta property="og:updated_time" content="2018-05-19T04:46:39.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lua进阶">
 <meta name="twitter:description" content="🤔">
@@ -435,7 +435,36 @@
 <li>线程与协同程序的主要区别在于，一个具有多个线程的程序可以同时运行几个线程，而协同程序却需要彼此协作的运行。就是说，一个具有多个协程的程序在任意时刻只能运行一个协程，并且正在运行的协程只有在其显式的要求挂起时，他的执行才会暂停。</li>
 <li>Lua将所有协程相关的函数放在一个名为“coroutine”的table中，其中主要方法有：</li>
 </ul>
-<p>| 方法          | 描述                                                                                               |<br>| ————- | —————————————————————— |<br>| create()    | 用于创建新的协程，返回一个协程类型的值，参数是一个函数 |<br>| resume()  | 用于启动或重启一个协程                                                              |<br>| yield()       | 挂起一个协程                                                                                |<br>| wrap()       | 创建一个新协程，返回一个函数，调用函数时开启协程            |<br>| status()     | 查看协程状态                                                                                |</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create()</td>
+<td>用于创建新的协程，返回一个协程类型的值，参数是一个函数</td>
+</tr>
+<tr>
+<td>resume()</td>
+<td>用于启动或重启一个协程</td>
+</tr>
+<tr>
+<td>yield()</td>
+<td>挂起一个协程</td>
+</tr>
+<tr>
+<td>wrap()</td>
+<td>创建一个新协程，返回一个函数，调用函数时开启协程</td>
+</tr>
+<tr>
+<td>status()</td>
+<td>查看协程状态</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p>通过status可以查看到一个协程可以处于4种不同的状态，分别是挂起（suspended）、运行（running）、死亡（dead）、正常（normal），当创建一个协程时，它处于挂起状态:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">co = coroutine.create(</span><br><span class="line">        function ()</span><br><span class="line">            print(&apos;Hello, World&apos;)</span><br><span class="line">        end</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">print(coroutine.status(co))</span><br></pre></td></tr></table></figure></p>
 </blockquote>
@@ -497,8 +526,9 @@
 <p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">value1</span><br><span class="line">nil   新值2</span><br><span class="line">新值1   nil</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <h3 id="算数类元方法"><a href="#算数类元方法" class="headerlink" title="算数类元方法"></a><strong>算数类元方法</strong></h3><ul>
-<li>Lua中每种算数操作符都有对应的字段名，如下所示：<br>| <strong>add       | 对应运算符”+”    |<br>| </strong>sub       | 对应运算符”-”     |<br>| <strong>mul       | 对应运算符”*”     |<br>| </strong>div        | 对应运算符”/”      |<br>| <strong>unm      | 对应运算符”-”     |<br>| </strong>concat  | 对应运算符”..”     |<br>| <strong>eq         | 对应运算符”==”   |<br>| </strong>mod      | 对应运算符”%”    |<br>| <strong>pow       | 对应运算符”^”     |<br>| </strong>lt            | 对应运算符”&lt;”     |</li>
+<li>Lua中每种算数操作符都有对应的字段名，如下所示：</li>
 </ul>
+<p>| <strong>add       | 对应运算符”+”    |<br>| </strong>sub       | 对应运算符”-”    |<br>| <strong>mul       | 对应运算符”*”    |<br>| </strong>div       | 对应运算符”/”    |<br>| <strong>unm       | 对应运算符”-”    |<br>| </strong>concat    | 对应运算符”..”   |<br>| <strong>eq        | 对应运算符”==”   |<br>| </strong>mod       | 对应运算符”%”    |<br>| <strong>pow       | 对应运算符”^”    |<br>| </strong>lt        | 对应运算符”&lt;”    |</p>
 <h3 id="tostring元方法"><a href="#tostring元方法" class="headerlink" title="__tostring元方法"></a><strong>__tostring元方法</strong></h3><ul>
 <li>函数print总是调用tostring来格式化输出。当格式化任意值时，tosrting会检查该值是否有__tostring元方法，如果有，tostring就会用该值作为参数来调用这个元方法。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">t = setmetatable(&#123; 10, 20, 30 &#125;, &#123;</span><br><span class="line">    __tostring = function(t)</span><br><span class="line">        sum = 0</span><br><span class="line">        for k, v in pairs(t) do</span><br><span class="line">            sum = sum + v</span><br><span class="line">        end</span><br><span class="line">        return &quot;表所有元素的和为 &quot; .. sum</span><br><span class="line">    end</span><br><span class="line">&#125;)</span><br><span class="line">print(t)</span><br></pre></td></tr></table></figure>
 </li>
