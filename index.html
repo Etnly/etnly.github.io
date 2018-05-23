@@ -321,6 +321,162 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://gyunch.org/2018/05/23/FSM状态机/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="宇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Etnly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/23/FSM状态机/" itemprop="url">未命名</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-23T18:11:09+08:00">
+                2018-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/23/FSM状态机/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/23/FSM状态机/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="FSM状态机"><a href="#FSM状态机" class="headerlink" title="FSM状态机"></a>FSM状态机</h1><ul>
+<li>有限状态机，FSM，简称状态机，是表示有限个 以及在这些状态之间的转移和动作等行为的</li>
+<li>在unitu中我们经常会判断一个人物（或怪物）的运动状态，如巡逻、追逐、攻击、死亡等，然后作出相应的操作，这些时候我们可以使用有限状态机来集中管理这些状态。</li>
+<li>FSM在unity中算是一个比较重要的技巧</li>
+</ul>
+<blockquote>
+<p>以下是我写的一个简单的FSM状态机的例子：<br>FSMState.cs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using UnityEngine.SceneManagement;</span><br><span class="line">using UnityEngine;</span><br><span class="line"></span><br><span class="line">public abstract class FSMState &#123;</span><br><span class="line">	//字典，字典中每一项都记录了一个“转换-状态”对 的信息</span><br><span class="line">	protected Dictionary&lt;Transition, FSMStateID&gt; map = new Dictionary&lt;Transition, FSMStateID&gt;();</span><br><span class="line">	//状态编号ID</span><br><span class="line">	protected FSMStateID stateID;</span><br><span class="line">	public FSMStateID ID &#123; get &#123; return stateID; &#125; &#125;</span><br><span class="line">	//目标点位置</span><br><span class="line">	protected Vector3 destPos;</span><br><span class="line">	//巡逻点数组</span><br><span class="line">	protected Transform[] waypoints;</span><br><span class="line">	//旋转速度</span><br><span class="line">	protected float curRotSpeed;</span><br><span class="line">	//移动速度</span><br><span class="line">	protected float curSpeed;</span><br><span class="line">	//发现对面的距离</span><br><span class="line">	public float chaseDistance&#123;</span><br><span class="line">		get &#123;</span><br><span class="line">			if (SceneManager.GetActiveScene ().name == &quot;PTMainScenes&quot;)</span><br><span class="line">				return 10f;</span><br><span class="line">			else</span><br><span class="line">				return 1f;&#125;&#125;</span><br><span class="line">	//攻击距离</span><br><span class="line">	public float SRAttackDistance&#123;		</span><br><span class="line">		get &#123;</span><br><span class="line">		if (SceneManager.GetActiveScene ().name == &quot;PTMainScenes&quot;)</span><br><span class="line">			return 1f;</span><br><span class="line">		else</span><br><span class="line">			return 0.1f;&#125;&#125;</span><br><span class="line">	//目标点距离</span><br><span class="line">	protected float arriveDistance&#123;		</span><br><span class="line">		get &#123;</span><br><span class="line">			if (SceneManager.GetActiveScene ().name == &quot;PTMainScenes&quot;)</span><br><span class="line">				return 2f;</span><br><span class="line">			else</span><br><span class="line">				return 0.2f;&#125;&#125;</span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 向字典添加项，每项是一个&quot;转换--状态&quot;对</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	/// &lt;param name=&quot;transition&quot;&gt;&lt;/param&gt;</span><br><span class="line">	/// &lt;param name=&quot;id&quot;&gt;&lt;/param&gt;</span><br><span class="line">	public void AddTransition(Transition transition, FSMStateID id)</span><br><span class="line">	&#123;</span><br><span class="line">		if (map.ContainsKey(transition))</span><br><span class="line">		&#123;</span><br><span class="line">			return;</span><br><span class="line">		&#125;</span><br><span class="line">		map.Add(transition, id);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 从字典中删除项</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	/// &lt;param name=&quot;trans&quot;&gt;&lt;/param&gt;</span><br><span class="line">	public void DeleteTransition(Transition trans)</span><br><span class="line">	&#123;</span><br><span class="line">		if (map.ContainsKey(trans))</span><br><span class="line">		&#123;</span><br><span class="line">			map.Remove(trans);</span><br><span class="line">			return;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 通过查询字典，确定在当前状态下，发生trans转换时，应该转换到新的状态编号并返回</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	/// &lt;param name=&quot;trans&quot;&gt;&lt;/param&gt;</span><br><span class="line">	/// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">	public FSMStateID GetOutputState(Transition trans)</span><br><span class="line">	&#123;</span><br><span class="line">		return map[trans];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 用来确定是否需要转换到其他状态，应该发生哪个转换</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	/// &lt;param name=&quot;player&quot;&gt;&lt;/param&gt;</span><br><span class="line">	/// &lt;param name=&quot;npc&quot;&gt;&lt;/param&gt;</span><br><span class="line">	public abstract void Reason(Transform hero, Transform monster);</span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 定义了在本状态的角色行为，移动，动画等</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	/// &lt;param name=&quot;player&quot;&gt;&lt;/param&gt;</span><br><span class="line">	/// &lt;param name=&quot;npc&quot;&gt;&lt;/param&gt;</span><br><span class="line">	public abstract void Act(Transform hero, Transform monster);</span><br><span class="line"></span><br><span class="line">	public virtual void Enter (Transform hero, Transform monster)&#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 选择随机逻辑点</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	public void FindNextPoint()&#123;</span><br><span class="line">		int rndIndex = Random.Range (0, waypoints.Length);</span><br><span class="line">		Vector3 rndPosition = Vector3.zero;</span><br><span class="line">		destPos = waypoints [rndIndex].position + rndPosition;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>FSM.cs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line"></span><br><span class="line">public class FSM : MonoBehaviour&#123;</span><br><span class="line">	// 玩家位置</span><br><span class="line">	protected Transform playerTranform;</span><br><span class="line">	// 下一个巡逻点</span><br><span class="line">	protected Vector3 destPos;</span><br><span class="line">	// 巡逻点表单</span><br><span class="line">	protected GameObject[] pointList;</span><br><span class="line">	//</span><br><span class="line"></span><br><span class="line">	protected float elapsedTime;</span><br><span class="line"></span><br><span class="line">	protected virtual void Initialize()&#123;&#125;</span><br><span class="line">	protected virtual void FSMUpdate()&#123;&#125;</span><br><span class="line">	protected virtual void FSMFixedUpdate()&#123;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	// 初始化</span><br><span class="line">	void Start()&#123;</span><br><span class="line">		Initialize ();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//循环执行 </span><br><span class="line">	void Update()&#123;</span><br><span class="line">		FSMUpdate ();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	void FixedUpdate()&#123;</span><br><span class="line">		FSMFixedUpdate ();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>AdvancedFSM.cs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using UnityEngine;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public enum Transition&#123;</span><br><span class="line">	SawPlayer = 0, //是否看到玩家</span><br><span class="line">	ReachPlayer, //接近玩家</span><br><span class="line">	LostPlayer, //玩家离开视线</span><br><span class="line">	NoHealth, //死亡</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public enum FSMStateID&#123;</span><br><span class="line">	Patrolling = 0, // 巡逻编号</span><br><span class="line">	Chasing, // 追踪编号</span><br><span class="line">	Attacking,</span><br><span class="line">	Dead, // 死亡编号</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class AdvancedFSM : FSM</span><br><span class="line">&#123;</span><br><span class="line">	//FSM中的所有状态组成的列表</span><br><span class="line">	private List&lt;FSMState&gt; fsmStates;</span><br><span class="line">	//当前状态的编号</span><br><span class="line">	private FSMStateID currentStateID;</span><br><span class="line">	public FSMStateID CurrentStateID &#123; get &#123; return currentStateID; &#125; &#125;</span><br><span class="line">	//当前状态</span><br><span class="line">	private FSMState currentState;</span><br><span class="line">	public FSMState CurrentState &#123; get &#123; return currentState; &#125; &#125;</span><br><span class="line"></span><br><span class="line">	public AdvancedFSM()</span><br><span class="line">	&#123;</span><br><span class="line">		//新建一个空的状态列表</span><br><span class="line">		fsmStates = new List&lt;FSMState&gt;();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	///向状态列表中加入一个新的状态</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	public void AddFSMState(FSMState fsmState)</span><br><span class="line">	&#123;</span><br><span class="line">		if (fsmState == null)</span><br><span class="line">		&#123;</span><br><span class="line">			Debug.LogError(&quot;状态为空&quot;);</span><br><span class="line">			return;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		if (fsmStates.Count == 0)</span><br><span class="line">		&#123;</span><br><span class="line">			fsmStates.Add(fsmState);</span><br><span class="line">			currentState = fsmState;</span><br><span class="line">			currentStateID = fsmState.ID;</span><br><span class="line">			return;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		foreach (FSMState state in fsmStates)</span><br><span class="line">		&#123;</span><br><span class="line">			if (state.ID == fsmState.ID)</span><br><span class="line">			&#123;</span><br><span class="line">				Debug.LogError(&quot;状态已存在&quot;);</span><br><span class="line">				return;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		//如果要加入的状态不在列表中，将它加入列表</span><br><span class="line">		fsmStates.Add(fsmState);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	//从状态中删除一个状态   </span><br><span class="line">	public void DeleteState(FSMStateID fsmState)</span><br><span class="line">	&#123;</span><br><span class="line">		// 搜索整个状态列表，如果要删除的状态在列表中，那么将它移除，否则报错</span><br><span class="line">		foreach (FSMState state in fsmStates)</span><br><span class="line">		&#123;</span><br><span class="line">			if (state.ID == fsmState)</span><br><span class="line">			&#123;</span><br><span class="line">				fsmStates.Remove(state);</span><br><span class="line">				return;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		Debug.LogError(&quot;要删除的状态不在列表中&quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 根据当前状态，和参数中传递的转换，转换到新状态</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	public void PerformTransition(Transition trans)</span><br><span class="line">	&#123;  </span><br><span class="line">		FSMStateID id = currentState.GetOutputState(trans);        </span><br><span class="line">      </span><br><span class="line">		currentStateID = id;</span><br><span class="line"></span><br><span class="line">		foreach (FSMState state in fsmStates)</span><br><span class="line">		&#123;</span><br><span class="line">			if (state.ID == currentStateID)</span><br><span class="line">			&#123;</span><br><span class="line">				currentState = state;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>AttackState.cs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">using System.Collections;</span><br><span class="line">using UnityEngine;</span><br><span class="line"></span><br><span class="line">public class AttackState : FSMState &#123;</span><br><span class="line"></span><br><span class="line">	Animator monsterAnimator;</span><br><span class="line">	AnimatorStateInfo stateInfo;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	public AttackState(Transform[] wp)&#123;</span><br><span class="line">		waypoints = wp;</span><br><span class="line">		stateID = FSMStateID.Attacking;</span><br><span class="line"></span><br><span class="line">		curRotSpeed = 12;</span><br><span class="line">		curSpeed = 100;</span><br><span class="line"></span><br><span class="line">		FindNextPoint ();</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public override void Enter (Transform hero, Transform monster)</span><br><span class="line">	&#123;</span><br><span class="line">		monsterAnimator = monster.GetComponent&lt;Animator&gt;();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public override void Reason(Transform hero, Transform monster)&#123;</span><br><span class="line">		if (hero != null) &#123;</span><br><span class="line">			stateInfo = monsterAnimator.GetCurrentAnimatorStateInfo (0);</span><br><span class="line">			float dist = Vector3.Distance (monster.position, hero.position);</span><br><span class="line">			if (dist &gt;= SRAttackDistance &amp;&amp; dist &lt; chaseDistance) &#123;</span><br><span class="line">				if (stateInfo.IsName (&quot;skill&quot;) &amp;&amp; stateInfo.normalizedTime % 1 &gt; 0.9f)</span><br><span class="line">					monster.GetComponent&lt;MonsterAIController&gt; ().SetTransition (Transition.SawPlayer);</span><br><span class="line">			&#125; else if (dist &gt;= chaseDistance) &#123;</span><br><span class="line">				if (stateInfo.IsName (&quot;skill&quot;) &amp;&amp; stateInfo.normalizedTime % 1 &gt; 0.9f)</span><br><span class="line">					monster.GetComponent&lt;MonsterAIController&gt; ().SetTransition (Transition.LostPlayer);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			monster.GetComponent&lt;MonsterAIController&gt; ().SetTransition (Transition.LostPlayer);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	public override void Act(Transform hero, Transform monster)&#123;</span><br><span class="line">		destPos = hero.position;</span><br><span class="line">		Quaternion targetRotation = Quaternion.LookRotation (destPos - monster.position);</span><br><span class="line">		monster.rotation = Quaternion.Slerp (monster.rotation, targetRotation, Time.deltaTime * curRotSpeed);</span><br><span class="line"></span><br><span class="line">//		CharacterController controller = monster.GetComponent&lt;CharacterController&gt; ();</span><br><span class="line">//		controller.SimpleMove (monster.transform.forward * Time.deltaTime * curSpeed);</span><br><span class="line"></span><br><span class="line">		//播放攻击动画</span><br><span class="line"></span><br><span class="line">//		Animator monsterAnimator = monster.GetComponent&lt;Animator&gt;();</span><br><span class="line">		monsterAnimator.SetBool (&quot;isRun&quot;,false);</span><br><span class="line">		monsterAnimator.SetBool (&quot;isAttack&quot;, true);</span><br><span class="line">		monsterAnimator.SetBool (&quot;isWalk&quot;, false);</span><br><span class="line">		monsterAnimator.SetBool (&quot;isDead&quot;, false);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>ChaseState.cs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using UnityEngine.AI;</span><br><span class="line">using UnityEngine;</span><br><span class="line">using UnityEngine.SceneManagement;</span><br><span class="line"></span><br><span class="line">public class ChaseState : FSMState &#123;</span><br><span class="line"></span><br><span class="line">	NavMeshAgent monsterAgent;</span><br><span class="line">	Animator monsterAnimator;</span><br><span class="line"></span><br><span class="line">	public ChaseState(Transform[] wp)&#123;</span><br><span class="line">		waypoints = wp;</span><br><span class="line">		stateID = FSMStateID.Chasing;</span><br><span class="line"></span><br><span class="line">		curRotSpeed = 7;</span><br><span class="line">		curSpeed = 300;</span><br><span class="line">	</span><br><span class="line">		FindNextPoint ();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	public override void Enter (Transform hero, Transform monster)</span><br><span class="line">	&#123;</span><br><span class="line">		monsterAnimator = monster.GetComponent&lt;Animator&gt;();</span><br><span class="line">		monsterAgent = monster.GetComponent&lt;NavMeshAgent&gt; ();</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">	public override void Reason(Transform hero, Transform monster)&#123;</span><br><span class="line"></span><br><span class="line">		if (hero != null) &#123;</span><br><span class="line">			destPos = hero.position;</span><br><span class="line">			float dist = Vector3.Distance (monster.position, destPos);</span><br><span class="line">			if (dist &lt;= SRAttackDistance) &#123;</span><br><span class="line">				AudioManager.Instance.PlayFXAudio (&quot;Sound_MonsterPatrolPlayer&quot;, monster.transform.position);</span><br><span class="line">				monster.GetComponent&lt;MonsterAIController&gt; ().SetTransition (Transition.ReachPlayer);</span><br><span class="line">		</span><br><span class="line">			&#125; else if (dist &gt;= chaseDistance) &#123;</span><br><span class="line">				monster.GetComponent&lt;MonsterAIController&gt; ().SetTransition (Transition.LostPlayer);</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			monster.GetComponent&lt;MonsterAIController&gt; ().SetTransition (Transition.LostPlayer);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	public override void Act(Transform hero, Transform monster)&#123;</span><br><span class="line">		destPos = hero.position;</span><br><span class="line">		Quaternion targetRotation = Quaternion.LookRotation (destPos - monster.position);</span><br><span class="line">		monster.rotation = Quaternion.Slerp (monster.rotation, targetRotation, Time.deltaTime * curRotSpeed);</span><br><span class="line">		monsterAgent.SetDestination (destPos);</span><br><span class="line">		if(SceneManager.GetActiveScene().name == &quot;PTMainScenes&quot;)</span><br><span class="line">			monster.GetComponent&lt;NavMeshAgent&gt; ().speed = 2;</span><br><span class="line">		if (SceneManager.GetActiveScene ().name == &quot;ARMainScenes&quot;)</span><br><span class="line">			monster.GetComponent&lt;NavMeshAgent&gt; ().speed = 0.2f;</span><br><span class="line"></span><br><span class="line">		//播放奔跑动画</span><br><span class="line"></span><br><span class="line">		monsterAnimator.SetBool (&quot;isRun&quot;,true);</span><br><span class="line">		monsterAnimator.SetBool (&quot;isAttack&quot;, false);</span><br><span class="line">		monsterAnimator.SetBool (&quot;isWalk&quot;, false);</span><br><span class="line">		monsterAnimator.SetBool (&quot;isDead&quot;, false);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>PatrolState.cs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using UnityEngine.AI;</span><br><span class="line">using UnityEngine;</span><br><span class="line">using UnityEngine.SceneManagement;</span><br><span class="line"></span><br><span class="line">public class PatrolState : FSMState&#123;</span><br><span class="line"></span><br><span class="line">	Animator monsterAnimator;</span><br><span class="line">	NavMeshAgent monsterAgent;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	public PatrolState(Transform[] wp)&#123;</span><br><span class="line">		waypoints = wp;</span><br><span class="line">		stateID = FSMStateID.Patrolling;</span><br><span class="line">		curRotSpeed = 6;</span><br><span class="line">		curSpeed = 200;</span><br><span class="line"></span><br><span class="line">		FindNextPoint ();</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public override void Enter (Transform hero, Transform monster)</span><br><span class="line">	&#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public override void Reason(Transform hero, Transform monster)&#123;</span><br><span class="line">		if (hero != null) &#123;</span><br><span class="line">			if (Vector3.Distance (monster.position, hero.position) &lt;= chaseDistance) &#123;</span><br><span class="line">				AudioManager.Instance.PlayFXAudio (&quot;Sound_MonsterSawPlayer&quot;, monster.transform.position);</span><br><span class="line">				monster.GetComponent&lt;MonsterAIController&gt; ().SetTransition (Transition.SawPlayer);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	public override void Act(Transform hero, Transform monster)&#123;</span><br><span class="line">		monsterAgent = monster.GetComponent&lt;NavMeshAgent&gt; ();</span><br><span class="line">		if (!(monsterAgent.pathPending || monsterAgent.remainingDistance &gt; (monsterAgent.stoppingDistance + 0.5f) || monsterAgent.velocity != Vector3.zero)) &#123;</span><br><span class="line">			FindNextPoint ();</span><br><span class="line">		</span><br><span class="line">		&#125;</span><br><span class="line">//		Physics.SphereCastAll ();</span><br><span class="line">//		Quaternion targetRotation = Quaternion.LookRotation (destPos - monster.position);</span><br><span class="line">//		monster.rotation = Quaternion.Slerp (monster.rotation, targetRotation, Time.deltaTime * curRotSpeed);</span><br><span class="line">		monsterAgent.SetDestination (destPos);</span><br><span class="line">		if(SceneManager.GetActiveScene().name == &quot;PTMainScenes&quot;)</span><br><span class="line">			monster.GetComponent&lt;NavMeshAgent&gt; ().speed = 1;</span><br><span class="line">		if (SceneManager.GetActiveScene ().name == &quot;ARMainScenes&quot;)</span><br><span class="line">			monster.GetComponent&lt;NavMeshAgent&gt; ().speed = 0.1f;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		//播放行走动画</span><br><span class="line"></span><br><span class="line">		monsterAnimator = monster.GetComponent&lt;Animator&gt; ();</span><br><span class="line">		monsterAnimator.SetBool (&quot;isRun&quot;,false);</span><br><span class="line">		monsterAnimator.SetBool (&quot;isAttack&quot;, false);</span><br><span class="line">		monsterAnimator.SetBool (&quot;isWalk&quot;, true);</span><br><span class="line">		monsterAnimator.SetBool (&quot;isDead&quot;, false);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>DeadState.cs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using UnityEngine;</span><br><span class="line">using UnityEngine.AI;</span><br><span class="line"></span><br><span class="line">public class DeadState : FSMState &#123;</span><br><span class="line">	public DeadState()&#123;</span><br><span class="line">		stateID = FSMStateID.Dead;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public override void Enter (Transform hero, Transform monster)</span><br><span class="line">	&#123;</span><br><span class="line">		monster.GetComponent&lt;NavMeshAgent&gt; ().enabled = false;</span><br><span class="line">		monster.GetComponent&lt;Collider&gt; ().enabled = false;</span><br><span class="line">		GameManager.Instance.AddScore ();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	public override void Reason(Transform hero, Transform monster)&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	public override void Act (Transform hero, Transform monster)&#123;</span><br><span class="line">		</span><br><span class="line">		//播放死亡动画</span><br><span class="line">		Animator monsterAnimator = monster.GetComponent&lt;Animator&gt;();</span><br><span class="line">		monsterAnimator.SetBool (&quot;isRun&quot;,false);</span><br><span class="line">		monsterAnimator.SetBool (&quot;isAttack&quot;, false);</span><br><span class="line">		monsterAnimator.SetBool (&quot;isWalk&quot;, false);</span><br><span class="line">		monsterAnimator.SetBool (&quot;isDead&quot;, true);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://gyunch.org/2016/08/10/unity对象池/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1730,164 +1886,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://gyunch.org/2016/04/01/Python面向对象/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="宇">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Etnly's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/04/01/Python面向对象/" itemprop="url">Python面向对象</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-01T00:00:00+08:00">
-                2016-04-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/04/01/Python面向对象/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/04/01/Python面向对象/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>🤔</p>
-<hr>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/04/01/Python面向对象/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1942,7 +1940,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
