@@ -98,7 +98,7 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1frmla5dcpcj317q0tcnbc.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1frmlk5eb8pj30ck0wy0xj.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1frmlp40rguj312s0ae44d.jpg">
-<meta property="og:updated_time" content="2018-05-24T10:43:12.861Z">
+<meta property="og:updated_time" content="2018-05-24T10:44:02.546Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LuaFramework">
 <meta name="twitter:description" content="🤔">
@@ -505,16 +505,16 @@
 <li><p>当你按下Lua/Clear wrap Files 时，会有弹出框，按下确定框架就会自动生成一堆Wrap结尾的文件，这个自动生成的文件所对应的就是一个叫 AppConst 的类，而这个框架就是让 Lua 通过访问这些自动生成的 wrap 的类来达到访问 C#类的目的<br><img src="https://ws1.sinaimg.cn/large/006tNc79gy1frmlk5eb8pj30ck0wy0xj.jpg" alt=" "> </p>
 </li>
 <li><p>接下来就是资源的加载与生成：</p>
-<blockquote>
-<p>在ResourceManager类中，框架提供了三个重载LoadPrefab方法<br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1frmlp40rguj312s0ae44d.jpg" alt=" "><br>其参数分别是：  </p>
-</blockquote>
 </li>
 </ul>
+<blockquote>
+<p>在ResourceManager类中，框架提供了三个重载LoadPrefab方法<br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1frmlp40rguj312s0ae44d.jpg" alt=" "><br>其参数分别是：  </p>
 <ol>
 <li>要加载的AssetBundle包的名字</li>
 <li>需要加载此包中哪些美术素材</li>
 <li>回调方法（这个方法的参数列表有一个UnityEngine.Object[]类型的变量的，这个数组变量存的就是你所加载的美术资源）</li>
 </ol>
+</blockquote>
 <blockquote>
 <p>Lua中调用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function Main()					</span><br><span class="line">	print(&quot;logic start&quot;)</span><br><span class="line">	LuaHelper = LuaFramework.LuaHelper</span><br><span class="line">	resMgr = LuaHelper.GetResManager</span><br><span class="line">	resMgr: LoadPrefab(&quot;myprefabs.unity3d&quot;, &#123;&quot;Sphere&quot;, &quot;Cube&quot;&#125;, LoadAssetBundle)</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">function LoadAssetBundle(go)</span><br><span class="line">	for i = 0, go.Length - 1, 1 do</span><br><span class="line">		UnityEngine.GameObject.Instantiate(go[i])</span><br><span class="line">		--go是userdata类型，遍历的时候必须用Length去取得长度</span><br><span class="line">	end</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
 </blockquote>
