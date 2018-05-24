@@ -71,7 +71,7 @@
 
 
 
-  <meta name="keywords" content="基础," />
+  <meta name="keywords" content="爬虫," />
 
 
 
@@ -85,16 +85,16 @@
 
 
 <meta name="description" content="🤔">
-<meta name="keywords" content="基础">
+<meta name="keywords" content="爬虫">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Lua进阶">
-<meta property="og:url" content="http://gyunch.org/2016/07/09/Lua进阶/index.html">
+<meta property="og:title" content="Python爬虫基础">
+<meta property="og:url" content="http://gyunch.org/2016/07/20/python爬虫基础/index.html">
 <meta property="og:site_name" content="Etnly&#39;s Blog">
 <meta property="og:description" content="🤔">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-19T05:15:50.393Z">
+<meta property="og:updated_time" content="2018-05-24T03:57:16.428Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lua进阶">
+<meta name="twitter:title" content="Python爬虫基础">
 <meta name="twitter:description" content="🤔">
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://gyunch.org/2016/07/09/Lua进阶/"/>
+  <link rel="canonical" href="http://gyunch.org/2016/07/20/python爬虫基础/"/>
 
 
 
 
 
-  <title>Lua进阶 | Etnly's Blog</title>
+  <title>Python爬虫基础 | Etnly's Blog</title>
   
 
 
@@ -322,7 +322,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://gyunch.org/2016/07/09/Lua进阶/">
+    <link itemprop="mainEntityOfPage" href="http://gyunch.org/2016/07/20/python爬虫基础/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="宇">
@@ -339,7 +339,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Lua进阶</h2>
+          <h2 class="post-title" itemprop="name headline">Python爬虫基础</h2>
         
 
         <div class="post-meta">
@@ -351,8 +351,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-09T00:00:00+08:00">
-                2016-07-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-20T00:00:00+08:00">
+                2016-07-20
               </time>
             
 
@@ -374,8 +374,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Lua/" itemprop="url" rel="index">
-                    <span itemprop="name">Lua</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -392,9 +392,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/07/09/Lua进阶/#comments" itemprop="discussionUrl">
+                <a href="/2016/07/20/python爬虫基础/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/07/09/Lua进阶/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2016/07/20/python爬虫基础/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -430,161 +430,28 @@
         <p>🤔</p>
 <hr>
 <a id="more"></a>
-<h2 id="Lua协程"><a href="#Lua协程" class="headerlink" title="Lua协程"></a>Lua协程</h2><ul>
-<li>协程类似于线程，是一条执行序列，拥有自己独立的栈、局部变量和指令指针，同时与其他协程共享全局变量等。</li>
-<li>线程与协同程序的主要区别在于，一个具有多个线程的程序可以同时运行几个线程，而协同程序却需要彼此协作的运行。就是说，一个具有多个协程的程序在任意时刻只能运行一个协程，并且正在运行的协程只有在其显式的要求挂起时，他的执行才会暂停。</li>
-<li>Lua将所有协程相关的函数放在一个名为“coroutine”的table中，其中主要方法有：</li>
+<h2 id="爬虫介绍"><a href="#爬虫介绍" class="headerlink" title="爬虫介绍"></a><strong>爬虫介绍</strong></h2><ul>
+<li>（以下定义来源于百度）：是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>create()</td>
-<td>用于创建新的协程，返回一个协程类型的值，参数是一个函数</td>
-</tr>
-<tr>
-<td>resume()</td>
-<td>用于启动或重启一个协程</td>
-</tr>
-<tr>
-<td>yield()</td>
-<td>挂起一个协程</td>
-</tr>
-<tr>
-<td>wrap()</td>
-<td>创建一个新协程，返回一个函数，调用函数时开启协程</td>
-</tr>
-<tr>
-<td>status()</td>
-<td>查看协程状态</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>通过status可以查看到一个协程可以处于4种不同的状态，分别是挂起（suspended）、运行（running）、死亡（dead）、正常（normal），当创建一个协程时，它处于挂起状态:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">co = coroutine.create(</span><br><span class="line">        function ()</span><br><span class="line">            print(&apos;Hello, World&apos;)</span><br><span class="line">        end</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">print(coroutine.status(co))</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>输出：<code>suspended --协程处于挂起状态</code>  </p>
-</blockquote>
-<blockquote>
-<p>通过resume启动这个协程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">coroutine.resume(co)</span><br><span class="line">print(coroutine.status(co))</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hello, World</span><br><span class="line">dead -- 处于死亡状态</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>协程真正强大之处在于yield函数，该函数可以使一个运行中的协程处于挂起，而后再恢复他的运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">co = coroutine.create(</span><br><span class="line">        function ()</span><br><span class="line">            for i = 1, 10 do</span><br><span class="line">                print(i)</span><br><span class="line">                coroutine.yield()</span><br><span class="line">            end</span><br><span class="line"> end)</span><br><span class="line"></span><br><span class="line">coroutine.resume(co)</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">suspended --处于挂起状态</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>在这里，当唤醒协程时它开始执行，直到遇到yield，协程会被挂起，此时的活动都发生在yield调用中，当恢复协程执行，对于yield的调用才会最终返回，然后写成继续执行，直到下一个yield或执行结束：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for i = 1, 10 do</span><br><span class="line">    coroutine.resume(co)</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>输出：<code>2 3 4 5 6 7 8 9 10</code><br>再最后一次调用时，协程的内容已经执行完毕，并已经返回。因此这是的协程处于死亡状态，没有输出，如果试图再次执行它，resume将返回false及一条错误信息：<code>print(coroutine.resume(co))</code><br>输出：<code>false    cannot resume dead coroutine</code>  </p>
-</blockquote>
-<blockquote>
-<p>下面是一个综合的实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">function foo (a)</span><br><span class="line">    print(&quot;foo 函数输出&quot;, a)</span><br><span class="line">    return coroutine.yield(2 * a) -- 返回  2*a 的值</span><br><span class="line">end</span><br><span class="line"> </span><br><span class="line">co = coroutine.create(function (a , b)</span><br><span class="line">    print(&quot;第一次协同程序执行输出&quot;, a, b) -- co-body 1 10</span><br><span class="line">    local r = foo(a + 1)</span><br><span class="line">     </span><br><span class="line">    print(&quot;第二次协同程序执行输出&quot;, r)</span><br><span class="line">    local r, s = coroutine.yield(a + b, a - b)  -- a，b的值为第一次调用协同程序时传入</span><br><span class="line">     </span><br><span class="line">    print(&quot;第三次协同程序执行输出&quot;, r, s)</span><br><span class="line">    return b, &quot;结束协同程序&quot;                   -- b的值为第二次调用协同程序时传入</span><br><span class="line">end)</span><br><span class="line">        </span><br><span class="line">print(&quot;main&quot;, coroutine.resume(co, 1, 10)) -- true, 4</span><br><span class="line">print(&quot;--分割线----&quot;)</span><br><span class="line">print(&quot;main&quot;, coroutine.resume(co, &quot;r&quot;)) -- true 11 -9</span><br><span class="line">print(&quot;---分割线---&quot;)</span><br><span class="line">print(&quot;main&quot;, coroutine.resume(co, &quot;x&quot;, &quot;y&quot;)) -- true 10 end</span><br><span class="line">print(&quot;---分割线---&quot;)</span><br><span class="line">print(&quot;main&quot;, coroutine.resume(co, &quot;x&quot;, &quot;y&quot;)) -- cannot resume dead coroutine</span><br><span class="line">print(&quot;---分割线---&quot;)</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>输出:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">第一次协同程序执行输出     1     10</span><br><span class="line">foo 函数输出     2</span><br><span class="line">main     true     4</span><br><span class="line">--分割线----</span><br><span class="line">第二次协同程序执行输出     r</span><br><span class="line">main     true     11     -9</span><br><span class="line">---分割线---</span><br><span class="line">第三次协同程序执行输出     x     y</span><br><span class="line">main     true     10     结束协同程序</span><br><span class="line">---分割线---</span><br><span class="line">main     false     cannot resume dead coroutine</span><br><span class="line">---分割线---</span><br></pre></td></tr></table></figure></p>
-</blockquote>
 <hr>
-<h2 id="Lua元表和元方法"><a href="#Lua元表和元方法" class="headerlink" title="Lua元表和元方法"></a>Lua元表和元方法</h2><ul>
-<li>通常Lua中的每个值都有一套预定义的操作集合。例如数字四则运算，字符串链接，增加table的键值对等。但无法将两个table相加,无法对函数做比较，也无法调用字符串。</li>
-<li>我们可以通过元表来修改一个值的行为，使其在面对一个非预定义的操作时执行一个指定的操作。如上所诉，可以通过元表让两个table相加。当Lua试图将两个table相加时，会先检测两者之一是否有元表，然后检测该元表中是否有__add字段，若找到该字段，就调用该字段对应的值。这个值也就是所谓的元方法（通常是一个函数或者table），这个函数会用于计算两个table的和。</li>
-<li>Lua中的每一个值都有一个元表，table和userdata可以有各自独立的元表，其他类型则共享其类型所属的单一元表。Lua在创建新的table时不会创建元表。<blockquote>
-<p>Lua中有两个重要的函数处理元表:</p>
-</blockquote>
+<h2 id="爬虫的目的"><a href="#爬虫的目的" class="headerlink" title="爬虫的目的"></a><strong>爬虫的目的</strong></h2><ol>
+<li>爬取数据，进行市场调研和商业分析。</li>
+<li>作为机器学习、数据挖掘的原始数据</li>
+<li>爬取优质的资源</li>
+</ol>
+<hr>
+<h2 id="爬虫实现过程"><a href="#爬虫实现过程" class="headerlink" title="爬虫实现过程"></a><strong>爬虫实现过程</strong></h2><ul>
+<li>大部分爬虫都是按“发送请求——获得页面——解析页面——抽取并储存内容”这样的流程来进行，这其实也是模拟了我们使用浏览器获取网页信息的过程。</li>
+</ul>
+<hr>
+<h2 id="python中的相关包"><a href="#python中的相关包" class="headerlink" title="python中的相关包"></a><strong>python中的相关包</strong></h2><ul>
+<li>在python中有很多爬虫可用的包，如：urllib、requests、bs4、scrapy、pyspider 等</li>
+</ul>
+<hr>
+<h2 id="简单的爬虫实例"><a href="#简单的爬虫实例" class="headerlink" title="简单的爬虫实例"></a><strong>简单的爬虫实例</strong></h2><ul>
+<li>以下是一个简单的python爬虫，爬取前程无忧上成都unity3d的人才需求：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">from pprint import pprint</span><br><span class="line">import csv</span><br><span class="line">from collections import Counter</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">import requests</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import jieba</span><br><span class="line">from wordcloud import WordCloud</span><br><span class="line"></span><br><span class="line">class JobSpider:</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.company = []</span><br><span class="line">        self.text = &quot;&quot;</span><br><span class="line">        self.headers = &#123;&apos;X-Requested-With&apos;: &apos;XMLHttpRequest&apos;,&apos;User-Agent&apos;: &apos;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36&apos;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    def job_spider(self):</span><br><span class="line">        &quot;&quot;&quot; 爬虫入口</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        url = &quot;https://search.51job.com/list/090200,000000,0000,00,9,99,Unity3d,2,1.html?lang=c&amp;stype=&amp;postchannel=0000&amp;workyear=99&amp;cotype=99&amp;degreefrom=99&amp;jobterm=99&amp;companysize=99&amp;providesalary=99&amp;lonlat=0%2C0&amp;radius=-1&amp;ord_field=0&amp;confirmdate=9&amp;fromType=&amp;dibiaoid=0&amp;address=&amp;line=&amp;specialarea=00&amp;from=&amp;welfare=&quot;</span><br><span class="line">        urls = [url.format(p) for p in range(1, 100)]</span><br><span class="line">        for url in urls:</span><br><span class="line">            r = requests.get(url, headers=self.headers).content</span><br><span class="line">            bs = BeautifulSoup(r, &apos;lxml&apos;).find(&quot;div&quot;, class_=&quot;dw_table&quot;).find_all(&quot;div&quot;, class_=&quot;el&quot;)</span><br><span class="line">            for b in bs:</span><br><span class="line">                try:</span><br><span class="line">                    href, post = b.find(&apos;a&apos;)[&apos;href&apos;], b.find(&apos;a&apos;)[&apos;title&apos;]</span><br><span class="line">                    locate = b.find(&apos;span&apos;, class_=&apos;t3&apos;).text</span><br><span class="line">                    salary = b.find(&apos;span&apos;, class_=&apos;t4&apos;).text</span><br><span class="line">                    d = &#123;</span><br><span class="line">                        &apos;href&apos;: href,</span><br><span class="line">                        &apos;post&apos;: post,</span><br><span class="line">                        &apos;locate&apos;: locate,</span><br><span class="line">                        &apos;salary&apos;: salary</span><br><span class="line">                    &#125;</span><br><span class="line">                    self.company.append(d)</span><br><span class="line">                except Exception:</span><br><span class="line">                    pass</span><br><span class="line"></span><br><span class="line">    def post_require(self):</span><br><span class="line">        &quot;&quot;&quot; 爬取职位描述</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        for c in self.company:</span><br><span class="line">            r = requests.get(</span><br><span class="line">                c.get(&apos;href&apos;), headers=self.headers).content.decode(&apos;gbk&apos;)</span><br><span class="line">            bs = BeautifulSoup(r, &apos;lxml&apos;).find(</span><br><span class="line">                &apos;div&apos;, class_=&quot;bmsg job_msg inbox&quot;).text</span><br><span class="line">            s = bs.replace(&quot;举报&quot;, &quot;&quot;).replace(&quot;分享&quot;, &quot;&quot;).replace(&quot;\t&quot;, &quot;&quot;).strip()</span><br><span class="line">            self.text += s</span><br><span class="line">        print(self.text)</span><br><span class="line">        with open(os.path.join(&quot;data&quot;, &quot;post_require.txt&quot;), &quot;w+&quot;) as f:</span><br><span class="line">            f.write(self.text)</span><br><span class="line"></span><br><span class="line">    @staticmethod</span><br><span class="line">    def post_desc_counter():</span><br><span class="line">        &quot;&quot;&quot; 职位描述统计</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        post = open(os.path.join(&quot;data&quot;, &quot;post_require.txt&quot;),</span><br><span class="line">                    &quot;r&quot;).read()</span><br><span class="line"></span><br><span class="line">        # 使用 jieba 分词</span><br><span class="line">        file_path = os.path.join(&quot;data&quot;, &quot;user_dict.txt&quot;)</span><br><span class="line">        jieba.load_userdict(file_path)</span><br><span class="line">        seg_list = jieba.cut(post, cut_all=False)</span><br><span class="line">        counter = dict()</span><br><span class="line">        for seg in seg_list:</span><br><span class="line">            counter[seg] = counter.get(seg, 1) + 1</span><br><span class="line">        counter_sort = sorted(</span><br><span class="line">            counter.items(), key=lambda value: value[1], reverse=True)</span><br><span class="line">        pprint(counter_sort)</span><br><span class="line">        with open(os.path.join(&quot;data&quot;, &quot;post_pre_desc_counter.csv&quot;), &quot;w+&quot;, encoding=&quot;utf-8&quot;) as f:</span><br><span class="line">            f_csv = csv.writer(f)</span><br><span class="line">            f_csv.writerows(counter_sort)</span><br><span class="line"></span><br><span class="line">    def post_counter(self):</span><br><span class="line">        &quot;&quot;&quot; 职位统计</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        lst = [c.get(&apos;post&apos;) for c in self.company]</span><br><span class="line">        counter = Counter(lst)</span><br><span class="line">        counter_most = counter.most_common()</span><br><span class="line">        pprint(counter_most)</span><br><span class="line">        with open(os.path.join(&quot;data&quot;, &quot;post_pre_counter.csv&quot;),</span><br><span class="line">                  &quot;w+&quot;, encoding=&quot;utf-8&quot;) as f:</span><br><span class="line">            f_csv = csv.writer(f)</span><br><span class="line">            f_csv.writerows(counter_most)</span><br><span class="line"></span><br><span class="line">    def post_salary_locate(self):</span><br><span class="line">        &quot;&quot;&quot; 招聘大概信息，职位，薪酬以及工作地点</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        lst = []</span><br><span class="line">        for c in self.company:</span><br><span class="line">            lst.append((c.get(&apos;salary&apos;), c.get(&apos;post&apos;),c.get(&apos;title&apos;), c.get(&apos;href&apos;), c.get(&apos;locate&apos;)))</span><br><span class="line">        pprint(lst)</span><br><span class="line">        file_path = os.path.join(&quot;data&quot;, &quot;post_salary_locate.csv&quot;)</span><br><span class="line">        with open(file_path, &quot;w+&quot;) as f:</span><br><span class="line">            f_csv = csv.writer(f)</span><br><span class="line">            f_csv.writerows(lst)</span><br><span class="line"></span><br><span class="line">    @staticmethod</span><br><span class="line">    def post_salary():</span><br><span class="line">        &quot;&quot;&quot; 薪酬统一处理</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        mouth = []</span><br><span class="line">        year = []</span><br><span class="line">        thousand = []</span><br><span class="line">        with open(os.path.join(&quot;data&quot;, &quot;post_salary_locate.csv&quot;),</span><br><span class="line">                  &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:</span><br><span class="line">            f_csv = csv.reader(f)</span><br><span class="line">            for row in f_csv:</span><br><span class="line">                if &quot;万/月&quot; in row[0]:</span><br><span class="line">                    mouth.append((row[0][:-3], row[2], row[1]))</span><br><span class="line">                elif &quot;万/年&quot; in row[0]:</span><br><span class="line">                    year.append((row[0][:-3], row[2], row[1]))</span><br><span class="line">                elif &quot;千/月&quot; in row[0]:</span><br><span class="line">                    thousand.append((row[0][:-3], row[2], row[1]))</span><br><span class="line">        # pprint(mouth)</span><br><span class="line"></span><br><span class="line">        calc = []</span><br><span class="line">        for m in mouth:</span><br><span class="line">            s = m[0].split(&quot;-&quot;)</span><br><span class="line">            calc.append(</span><br><span class="line">                (round(</span><br><span class="line">                    (float(s[1]) - float(s[0])) * 0.4 + float(s[0]), 1),</span><br><span class="line">                 m[1], m[2]))</span><br><span class="line">        for y in year:</span><br><span class="line">            s = y[0].split(&quot;-&quot;)</span><br><span class="line">            calc.append(</span><br><span class="line">                (round(</span><br><span class="line">                    ((float(s[1]) - float(s[0])) * 0.4 + float(s[0])) / 12, 1),</span><br><span class="line">                 y[1], y[2]))</span><br><span class="line">        for t in thousand:</span><br><span class="line">            s = t[0].split(&quot;-&quot;)</span><br><span class="line">            calc.append(</span><br><span class="line">                (round(</span><br><span class="line">                    ((float(s[1]) - float(s[0])) * 0.4 + float(s[0])) / 10, 1),</span><br><span class="line">                 t[1], t[2]))</span><br><span class="line">        pprint(calc)</span><br><span class="line">        with open(os.path.join(&quot;data&quot;, &quot;post_salary.csv&quot;),</span><br><span class="line">                  &quot;w+&quot;, encoding=&quot;utf-8&quot;) as f:</span><br><span class="line">            f_csv = csv.writer(f)</span><br><span class="line">            f_csv.writerows(calc)</span><br><span class="line"></span><br><span class="line">    @staticmethod</span><br><span class="line">    def post_salary_counter():</span><br><span class="line">        # 薪酬统计</span><br><span class="line">        with open(os.path.join(&quot;data&quot;, &quot;post_salary.csv&quot;),</span><br><span class="line">                  &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:</span><br><span class="line">            f_csv = csv.reader(f)</span><br><span class="line">            lst = [row[0] for row in f_csv]</span><br><span class="line">        counter = Counter(lst).most_common()</span><br><span class="line">        pprint(counter)</span><br><span class="line">        with open(os.path.join(&quot;data&quot;, &quot;post_salary_counter1.csv&quot;),</span><br><span class="line">                  &quot;w+&quot;, encoding=&quot;utf-8&quot;) as f:</span><br><span class="line">            f_csv = csv.writer(f)</span><br><span class="line">            f_csv.writerows(counter)</span><br><span class="line"></span><br><span class="line">    @staticmethod</span><br><span class="line">    def world_cloud():</span><br><span class="line">        &quot;&quot;&quot; 生成词云</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        counter = &#123;&#125;</span><br><span class="line">        with open(os.path.join(&quot;data&quot;, &quot;post_pre_desc_counter.csv&quot;),</span><br><span class="line">                  &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:</span><br><span class="line">            f_csv = csv.reader(f)</span><br><span class="line">            for row in f_csv:</span><br><span class="line">                counter[row[0]] = counter.get(row[0], int(row[1]))</span><br><span class="line">            pprint(counter)</span><br><span class="line">        file_path = os.path.join(&quot;font&quot;, &quot;msyh.ttf&quot;)</span><br><span class="line">        wc = WordCloud(font_path=file_path,</span><br><span class="line">                       max_words=100,</span><br><span class="line">                       height=600,</span><br><span class="line">                       width=1200)</span><br><span class="line">        wc.generate_from_frequencies(counter)</span><br><span class="line">        plt.imshow(wc)</span><br><span class="line">        plt.axis(&apos;off&apos;)</span><br><span class="line">        plt.show()</span><br><span class="line">        wc.to_file(os.path.join(&quot;images&quot;, &quot;wc.jpg&quot;))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    spider = JobSpider()</span><br><span class="line">    spider.job_spider()</span><br><span class="line">    spider.post_salary_locate()</span><br><span class="line">    spider.post_salary()</span><br><span class="line">    spider.post_salary_counter()</span><br><span class="line">    spider.post_counter()</span><br><span class="line">    spider.world_cloud()</span><br></pre></td></tr></table></figure>
 </li>
-<li><strong>setmetatable(table, metatable):</strong> 对指定table设置元表(metatable)，如果元表(metatable)中存在__metatable键值，setmetatable会失败 。</li>
-<li><strong>getmetatable(table):</strong> 返回对象的元表(metatable)。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t = &#123;&#125;</span><br><span class="line">t1 = &#123;&#125;</span><br><span class="line">setmetatable(t, t1)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>上面的代码可以简化为一行：<br><code>t = setmetatable({}, {})</code></p>
-</blockquote>
-<ul>
-<li>任何table都可以作为任何值的元表，而一组相关的table也可以共享一个通用的元表，此元表描述了他们的共同行为。一个table甚至可以作为其自己的元表，用于描述其特有的行为。</li>
-<li>在Lua代码中只能设置table的元表，若要设置其他类型值的元表，则必须通过c代码来完成。</li>
-</ul>
-<h3 id="index元方法"><a href="#index元方法" class="headerlink" title="__index元方法"></a><strong>__index元方法</strong></h3><ul>
-<li>当访问一个table不存在的字段时，会返回nil。这些访问会促使解释器去查找一个叫做__index的元方法，如果没有这个方法，那么访问结果就会为nil，否则就由这个元方法来提供结果。</li>
-</ul>
-<p>假设要创建一个窗口的table，table中需要有位置、大小、背景等参数，所有参数都有默认值，因此希望在创建窗口对象时可以仅指定除了默认值的其他参数，这里我们可以这样实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">window = &#123;&#125; --命名空间</span><br><span class="line">window.prototype = &#123;x = 0, y = 0, width = 70, height = 70&#125; --原型窗口</span><br><span class="line">window.mt = &#123;&#125; --创建元表</span><br><span class="line">function window.new(o) --声明构造函数</span><br><span class="line">    setmetatable(o, window.mt)</span><br><span class="line">    return o</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">window.mt.__index = function(table, key) --定义元方法</span><br><span class="line">    return window.prototype[key]</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">w = window.new&#123;x = 10, y = 20&#125; -- 创建一个新窗口</span><br><span class="line">print(w.width)--查询它没有的字段</span><br><span class="line">--这里输出 70</span><br></pre></td></tr></table></figure></p>
-<h3 id="newindex元方法"><a href="#newindex元方法" class="headerlink" title="__newindex元方法"></a><strong>__newindex元方法</strong></h3><ul>
-<li><strong>newindex元方法和</strong>index类似，不同之处在于前者用于table更新，而后者用于在table中查询，当对一个table中不存在的索引赋值时，解释器就会查找这个元方法，如果有，解释器就调用它，而不是执行赋值。如果这个元方法是一个table，解释器就在这个table中赋值，而不是对原来的table。例：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">t1 = &#123;&#125;</span><br><span class="line">t = setmetatable(&#123;key1 = &quot;value1&quot;&#125;, &#123; __newindex = t1 &#125;)</span><br><span class="line"></span><br><span class="line">print(t.key1)</span><br><span class="line"></span><br><span class="line">t.newkey = &quot;新值2&quot;</span><br><span class="line">print(t.newkey,t1.newkey)</span><br><span class="line"></span><br><span class="line">t.key1 = &quot;新值1&quot;</span><br><span class="line">print(t.key1,t1.key1)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">value1</span><br><span class="line">nil   新值2</span><br><span class="line">新值1   nil</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="算数类元方法"><a href="#算数类元方法" class="headerlink" title="算数类元方法"></a><strong>算数类元方法</strong></h3><ul>
-<li>Lua中每种算数操作符都有对应的字段名，如下所示：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>字段名</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>__add</td>
-<td>对应运算符”+”</td>
-</tr>
-<tr>
-<td>__sub</td>
-<td>对应运算符”-”</td>
-</tr>
-<tr>
-<td>__mul</td>
-<td>对应运算符”*”</td>
-</tr>
-<tr>
-<td>__div</td>
-<td>对应运算符”/”</td>
-</tr>
-<tr>
-<td>__unm</td>
-<td>对应运算符”-”</td>
-</tr>
-<tr>
-<td>__concat</td>
-<td>对应运算符”..”</td>
-</tr>
-<tr>
-<td>__eq</td>
-<td>对应运算符”==”</td>
-</tr>
-<tr>
-<td>__mod</td>
-<td>对应运算符”%”</td>
-</tr>
-<tr>
-<td>__pow</td>
-<td>对应运算符”^”</td>
-</tr>
-<tr>
-<td>__lt</td>
-<td>对应运算符”&lt;”</td>
-</tr>
-</tbody>
-</table>
-<h3 id="tostring元方法"><a href="#tostring元方法" class="headerlink" title="__tostring元方法"></a><strong>__tostring元方法</strong></h3><ul>
-<li>函数print总是调用tostring来格式化输出。当格式化任意值时，tosrting会检查该值是否有__tostring元方法，如果有，tostring就会用该值作为参数来调用这个元方法。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">t = setmetatable(&#123; 10, 20, 30 &#125;, &#123;</span><br><span class="line">    __tostring = function(t)</span><br><span class="line">        sum = 0</span><br><span class="line">        for k, v in pairs(t) do</span><br><span class="line">            sum = sum + v</span><br><span class="line">        end</span><br><span class="line">        return &quot;表所有元素的和为 &quot; .. sum</span><br><span class="line">    end</span><br><span class="line">&#125;)</span><br><span class="line">print(t)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>输出：<code>表所有元素的和为 60</code>  </p>
-</blockquote>
 
       
     </div>
@@ -610,7 +477,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/基础/" rel="tag"># 基础</a>
+            <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
           
         </div>
       
@@ -623,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/04/Lua基础/" rel="next" title="Lua基础">
-                <i class="fa fa-chevron-left"></i> Lua基础
+              <a href="/2016/07/14/Lua面向对象/" rel="next" title="Lua面向对象">
+                <i class="fa fa-chevron-left"></i> Lua面向对象
               </a>
             
           </div>
@@ -633,8 +500,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/14/Lua面向对象/" rel="prev" title="Lua面向对象">
-                Lua面向对象 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/07/Unity单例/" rel="prev" title="Unity单例">
+                Unity单例 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1010,7 +877,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lua协程"><span class="nav-number">1.</span> <span class="nav-text">Lua协程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lua元表和元方法"><span class="nav-number">2.</span> <span class="nav-text">Lua元表和元方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#index元方法"><span class="nav-number">2.1.</span> <span class="nav-text">__index元方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#newindex元方法"><span class="nav-number">2.2.</span> <span class="nav-text">__newindex元方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算数类元方法"><span class="nav-number">2.3.</span> <span class="nav-text">算数类元方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tostring元方法"><span class="nav-number">2.4.</span> <span class="nav-text">__tostring元方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#爬虫介绍"><span class="nav-number">1.</span> <span class="nav-text">爬虫介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#爬虫的目的"><span class="nav-number">2.</span> <span class="nav-text">爬虫的目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#爬虫实现过程"><span class="nav-number">3.</span> <span class="nav-text">爬虫实现过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python中的相关包"><span class="nav-number">4.</span> <span class="nav-text">python中的相关包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的爬虫实例"><span class="nav-number">5.</span> <span class="nav-text">简单的爬虫实例</span></a></li></ol></div>
             
 
           </div>
@@ -1206,9 +1073,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://gyunch.org/2016/07/09/Lua进阶/';
-          this.page.identifier = '2016/07/09/Lua进阶/';
-          this.page.title = 'Lua进阶';
+          this.page.url = 'http://gyunch.org/2016/07/20/python爬虫基础/';
+          this.page.identifier = '2016/07/20/python爬虫基础/';
+          this.page.title = 'Python爬虫基础';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://http-gyunch-org.disqus.com/embed.js';
