@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://gyunch.org/2016/09/02/K-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/</loc>
+    
+    <lastmod>2018-05-24T05:42:10.508Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://gyunch.org/2015/07/23/Hello,World/</loc>
+    
+    <lastmod>2018-05-24T05:40:57.099Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://gyunch.org/2016/07/20/python%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80/</loc>
     
     <lastmod>2018-05-24T04:13:49.981Z</lastmod>
@@ -131,13 +145,6 @@
     <loc>http://gyunch.org/tags/index.html</loc>
     
     <lastmod>2018-05-16T06:34:04.185Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://gyunch.org/2015/07/23/Hello,World/</loc>
-    
-    <lastmod>2018-05-15T16:01:16.466Z</lastmod>
     
   </url>
   
