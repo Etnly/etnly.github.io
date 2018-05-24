@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://gyunch.org/2016/09/02/K-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2018-05-24T07:40:02.212Z</lastmod>
+    <data>
+        <display>
+        <title>K-近邻算法</title>
+        <pubTime>2016-09-01T16:00:00.000Z</pubTime>
+        
+        <tag>机器学习</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://gyunch.org/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://gyunch.org/2016/05/01/C#%E7%AE%80%E4%BB%8B/</loc>
     <lastmod>2018-05-24T07:35:52.363Z</lastmod>
     <data>
@@ -77,26 +97,6 @@
            
              
               <breadCrumb title="Unity" url="http://gyunch.org/categories/Unity/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://gyunch.org/2016/09/02/K-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2018-05-24T05:42:10.508Z</lastmod>
-    <data>
-        <display>
-        <title>K-近邻算法</title>
-        <pubTime>2016-09-01T16:00:00.000Z</pubTime>
-        
-        <tag>AI</tag>
-         
-         
-           
-             
-              <breadCrumb title="Python" url="http://gyunch.org/categories/Python/"/>
           
         </display>
     </data>
