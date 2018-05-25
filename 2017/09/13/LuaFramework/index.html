@@ -98,7 +98,7 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1frmla5dcpcj317q0tcnbc.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1frmlk5eb8pj30ck0wy0xj.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1frmlp40rguj312s0ae44d.jpg">
-<meta property="og:updated_time" content="2018-05-25T16:08:56.927Z">
+<meta property="og:updated_time" content="2018-05-25T16:11:01.348Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LuaFramework">
 <meta name="twitter:description" content="🤔">
@@ -458,6 +458,7 @@
 <hr>
 <h2 id="添加新的Lua脚本到AssetBundle包"><a href="#添加新的Lua脚本到AssetBundle包" class="headerlink" title="添加新的Lua脚本到AssetBundle包"></a><strong>添加新的Lua脚本到AssetBundle包</strong></h2><ul>
 <li>将Lua脚本存放到 Assets/LuaFramework/Lua 目录,因为，当按下LuaFramework-Build XXX Resources的时候，框架会自动将Assets/LuaFramework/Lua下的所有内容打成AssetBundle包，放在StreamingAssets下，可以发现，StreamingAssets文件夹下会有个Lua文件夹，里面放的就是Assets/LuaFramework/Lua在打包之后的结果</li>
+<li>主要注意以下几点</li>
 </ul>
 <blockquote>
 <p>1：打开StreamingAssets/Lua，会发现，这个文件夹下大致分为两部分，3rd文件夹，和一堆资源包<br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1frmk17od2vj30d00y2ad5.jpg" alt=" "><br>其中，资源包的命名特点是对应路径信息的，例如lua_3rd_cjson和lua_3rd_cjson.unity3d这一组资源包,他对应着的是LuaFramework/Lua/3rd/cjson里面的Lua文件，这组资源包就是这个文件夹下的lua文件打包出来的结果。  </p>
