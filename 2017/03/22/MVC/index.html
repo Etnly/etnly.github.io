@@ -71,7 +71,7 @@
 
 
 
-  <meta name="keywords" content="区块链," />
+  <meta name="keywords" content="框架," />
 
 
 
@@ -85,17 +85,19 @@
 
 
 <meta name="description" content="🤔">
-<meta name="keywords" content="区块链">
+<meta name="keywords" content="框架">
 <meta property="og:type" content="article">
-<meta property="og:title" content="区块链">
-<meta property="og:url" content="http://gyunch.org/2018/01/30/区块链/index.html">
+<meta property="og:title" content="MVC">
+<meta property="og:url" content="http://gyunch.org/2017/03/22/MVC/index.html">
 <meta property="og:site_name" content="Etnly&#39;s Blog">
 <meta property="og:description" content="🤔">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-25T16:12:00.420Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1frs20vwdt1g30ck08cjr8.gif">
+<meta property="og:updated_time" content="2018-05-29T04:31:57.302Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="区块链">
+<meta name="twitter:title" content="MVC">
 <meta name="twitter:description" content="🤔">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1frs20vwdt1g30ck08cjr8.gif">
 
 
 
@@ -125,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://gyunch.org/2018/01/30/区块链/"/>
+  <link rel="canonical" href="http://gyunch.org/2017/03/22/MVC/"/>
 
 
 
 
 
-  <title>区块链 | Etnly's Blog</title>
+  <title>MVC | Etnly's Blog</title>
   
 
 
@@ -322,7 +324,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://gyunch.org/2018/01/30/区块链/">
+    <link itemprop="mainEntityOfPage" href="http://gyunch.org/2017/03/22/MVC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="宇">
@@ -339,7 +341,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">区块链</h2>
+          <h2 class="post-title" itemprop="name headline">MVC</h2>
         
 
         <div class="post-meta">
@@ -351,8 +353,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-30T00:00:00+08:00">
-                2018-01-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-22T00:00:00+08:00">
+                2017-03-22
               </time>
             
 
@@ -374,8 +376,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/文章/" itemprop="url" rel="index">
-                    <span itemprop="name">文章</span>
+                  <a href="/categories/Unity/" itemprop="url" rel="index">
+                    <span itemprop="name">Unity</span>
                   </a>
                 </span>
 
@@ -392,9 +394,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/30/区块链/#comments" itemprop="discussionUrl">
+                <a href="/2017/03/22/MVC/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/01/30/区块链/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/03/22/MVC/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -430,25 +432,36 @@
         <p>🤔</p>
 <hr>
 <a id="more"></a>
-<h2 id="什么是区块链"><a href="#什么是区块链" class="headerlink" title="什么是区块链"></a><strong>什么是区块链</strong></h2><blockquote>
-<p>区块链源起比特币，但并不局限在币圈。区块链技术是储存、验证和数据保护等问题的实际解决办法。区块链可被视为分散的、极度安全的数据库。更专业一点来说，区块链是分布式的点对点的基于密码学的共享账本，可以在金融服务、保险、医疗、政府等领域内被广泛应用。  </p>
+<h2 id="MVC概述"><a href="#MVC概述" class="headerlink" title="MVC概述"></a><strong>MVC概述</strong></h2><ul>
+<li>MVC全名是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范。</li>
+<li>根据名称定义在MVC中可以分为三层，也就是Model 层，View 层，Controller 控制层</li>
+<li><blockquote>
+<p><strong>Model(模型)</strong> :“数据模型”（Model）用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法。模型有对数据直接访问的权力，例如对数据库的访问。模型不依赖视图和控制器，也就是说，模型不关心它会被如何显示或是如何被操作。但是模型中数据的变化一般会通过一种刷新机制被公布。为了实现这种机制，那些用于监视此模型的视图必须事先在此模型上注册，从而，视图可以了解在数据模型上发生的改变。  </p>
+<p><strong>View(视图)</strong> :视图层能够实现数据有目的的显示（理论上，这不是必需的）。在视图中一般没有程序上的逻辑。为了实现视图上的刷新功能，视图需要访问它监视的数据模型（Model），因此应该事先在被它监视的数据那里注册。  </p>
+<p><strong>Controller(控制器)</strong> :控制器起到不同层面间的组织作用，用于控制应用程序的流程。它处理事件并作出响应。事件包括用户的行为和数据模型上的改变  </p>
 </blockquote>
-<ul>
-<li><p>理解区块链，首先需要明确的是，区块链是一套协议和规范，用英文表述就是 Protocol，不是具体的代码或者项目。理解了这套协议，你可以基于不同的语言和技术去实现它，这和我们平时定义了一套 API，然后基于不同的技术实现没有什么分别。</p>
-</li>
-<li><p>但是区块链在不同领域的人眼里，可能是不同的东西。角度不同，我们得出的结论也不一样。金融领域的人会认为区块链是个分布式的账本，是一个分布式的去中心化的记账系统。搞安全和密码学的人会说区块链是基于密码学构建的对等网络。而我们程序员了解了区块链技术，会认为这不就是一个保证最终一致性的分布式数据库嘛。</p>
 </li>
 </ul>
+<p>下图展现了MVC不同层的类型和功能：<br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1frs20vwdt1g30ck08cjr8.gif" alt=" "></p>
 <hr>
-<h2 id="记账系统"><a href="#记账系统" class="headerlink" title="记账系统"></a>记账系统</h2><p>对于普通人来说，记账系统最容易理解，我们从账本说起。比如大家一起做生意，总要有个账本，最初这个账本由账房先生管理。但一个人管，总会出现对账不平衡的情况（比如挪用），于是大家开始轮流管。这种方式也有问题，在某个人保管账本和记账期间，一旦发生了数据丢失或账本损坏的情况，也会搞不清真实原因。最后大家决定用一种新的记账方式，每个人一个自己的账本，任何人改动了自己的账本都要告诉其他所有人，其他人也会在自己的账本记上一笔。只要有人发现新的账目不对，可以拒绝接受。最后以大多数人一致的账目为准。<br>这就是分布式的去中心化的记账系统。但这种做法时间长了还是会有问题，有人天天记，有人偷懒不记，会产生不公平。于是大家决定每天早上掷骰子，根据点数决定谁来记当天的账，其他人核对一下，没问题就复制过来。并且，当天的记账者会获得一点点奖励（这就是挖矿）。</p>
-<hr>
-<h2 id="去中心化的分布式数据库"><a href="#去中心化的分布式数据库" class="headerlink" title="去中心化的分布式数据库"></a>去中心化的分布式数据库</h2><p>把上面的记账系统用软件技术实现了，就是去中心化的分布式数据库。<br>什么是中心化，早期互联网大都采用 CS 架构，一个服务器 N 个客户端，Client 和 Server 之间进行通讯，系统可靠性严重依赖 Server，这叫中性化。<br>随着业务复杂度的增加，服务器端也开始分拆，横向和纵向扩展，读写分离等等，这就是我们常用的分布式架构系统，系统可靠性依赖分布式系统的热备份和容灾恢复能力。这时候服务器虽然分布了，但依然是中性化的。大部分商业公司都采用类似的架构和模式。<br>去中心化是怎么回事呢？就是数据库不属于任何机构和管理员。只要服务器端被某个机构或管理员控制，就存在宕机或数据篡改的风险。区块链和 P2P 的网络通信技术最终实现了去中心化。区块链的作用就是存储信息，可以认为是一个数据库，而任何人都可以通过 P2P 网络架设服务器，接入区块链网络，成为一个节点。这下人人平等了，大家都是 Server，也就没有了 Server，每个节点既是生产者也是消费者。<br>你可以向任何一个节点读写数据，一旦写入就是历史，最后所有的节点都会同步数据，保证「账本」的一致性。<br>区块链是没有管理员的，也不需要人工审核和干涉。那人人都能写数据，数据的可信度怎么保证呢？数据被篡改了咋办？别担心，P2P 网络只是进行信息通讯，保证数据安全的还有共识算法和加密算法。</p>
-<hr>
-<h2 id="共识算法"><a href="#共识算法" class="headerlink" title="共识算法"></a>共识算法</h2><p>关于共识算法、拜占庭将军问题，大家可以参考这一篇文章，很长，但容易看懂。<br><strong>分布式一致性与共识算法</strong>（<a href="https://draveness.me/consensus）" target="_blank" rel="noopener">https://draveness.me/consensus）</a><br>简单来说，共识算法就是保证少数服从多数，也就是我在记账系统中写过的「最后以大多数人一致的账目为准」。大多数人认可的事情，就是事实。这种规则听起来挺吓人的，比如我们常常在文学作品和历史经验中知道，真理往往掌握在少数人手里。但是在 P2P 的网络里，有无数的节点，要想大部分节点一起作恶，除非这些节点都被某个组织控制了。这种可能性虽然不是没有，但几率非常小。<br>总的来说，共识算法解决的是对某个提案（Proposal）达成一致意见的过程。提案的含义在分布式系统中十分宽泛，包括多个事件发生的顺序、某个键对应的值…等等，可以认为任何需要达成一致的信息都是一个提案。<br>有了共识算法和相关的加密算法，就可以保证数据的安全性和一致性。</p>
-<hr>
-<h2 id="为什么会挖矿？"><a href="#为什么会挖矿？" class="headerlink" title="为什么会挖矿？"></a>为什么会挖矿？</h2><p>谈到比特币，大家耳熟能详的就是挖矿和矿机这种事。那为什么会挖矿呢？挖矿其实是一种激励和竞争机制。<br>在区块链系统中，总有些节点被选中进行数据整理、验证、打包，并把相关的改动广播出去，这个工作还是挺耗资源的，所以会有奖励机制。负责打包的节点会获得系统的奖励，类似积分，对于比特币系统来说，就是奖励比特币。有了奖励，很多节点都希望获得这样的奖励，于是有些区块链系统，比如比特币就会设计出一种竞争机制，让各个节点凭借自己的算力和资源去抢，能抢到这个数据打包的机会，就会获得奖励，也就是比特币。这个竞争的过程就是挖矿。<br>什么是算力呢？就是计算机每秒产生 hash 碰撞的能力。也就是说，手里的矿机每秒能做多少次 hash 碰撞。算力越高，获得的奖励越多。</p>
-<hr>
-<h2 id="区块链的未来"><a href="#区块链的未来" class="headerlink" title="区块链的未来"></a>区块链的未来</h2><p>很多人觉得区块链的唯一应用就是发行虚拟货币，最近国内外市场也是烽烟四起，比如超过百年历史的伊士曼柯达公司宣布推出基于区块链技术的「柯达币」（KodakCoin）和 KodakOne 平台，让全球的摄影师能够更好的控制图片的版权和交易。然后股价就飙升了……<br>了解了区块链的技术特点，我们就知道，区块链的能力远不止虚拟货币领域，未来的 <strong>金融服务、物流、保险、医疗、共享经济、智能合约领域</strong>，应该都会有区块链的身影。<br>繁华落尽，洗尽铅华，所有的技术都将经历时间的洗礼。历经爆发期、衰退期并进入成熟期的技术，才是真正能具备生命力的技术。</p>
+<h2 id="Unity中的MVC"><a href="#Unity中的MVC" class="headerlink" title="Unity中的MVC"></a><strong>Unity中的MVC</strong></h2><ul>
+<li>在unity中常见并在大型项目中常用到的的ui框架有基于MVVM的uFrame、基于MVC的PureMVC和基于MVCS的StrangeIoC，三者各有优劣。关于这三个框架及MVVM和MVCS的结构我们之后再说，这里通过代码来了解一下在Unity中的MVC：</li>
+</ul>
+<blockquote>
+<p>mvc核心控制类:<br>MVC.cs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// puremvc核心控制器</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class MVC : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    private static Dictionary&lt;string, Model&gt; Models = new Dictionary&lt;string, Model&gt;();</span><br><span class="line">    private static Dictionary&lt;string, View&gt; Views = new Dictionary&lt;string, View&gt;();</span><br><span class="line">    private static Dictionary&lt;string, Type&gt; Commands = new Dictionary&lt;string, Type&gt;();</span><br><span class="line"></span><br><span class="line">    #region Model Method</span><br><span class="line">    /// &lt;summary&gt;</span><br><span class="line">    /// 注册model</span><br><span class="line">    /// &lt;/summary&gt;</span><br><span class="line">    /// &lt;param name=&quot;model&quot;&gt;Model.&lt;/param&gt;</span><br><span class="line">    public static void RegisterModel(Model model)</span><br><span class="line">    &#123;</span><br><span class="line">        if (!Models.ContainsKey(model.Name))</span><br><span class="line">        &#123;</span><br><span class="line">            Models.Add(model.Name, model);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void UnRegisterModel(Model model)</span><br><span class="line">    &#123;</span><br><span class="line">        if (Models.ContainsKey(model.Name))</span><br><span class="line">        &#123;</span><br><span class="line">            Models.Remove(model.Name);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static T GetModel&lt;T&gt;(string name) where T : Model</span><br><span class="line">    &#123;</span><br><span class="line">        foreach (string n in Models.Keys)</span><br><span class="line">        &#123;</span><br><span class="line">            if (n == name)</span><br><span class="line">            &#123;</span><br><span class="line">                return Models[name] as T;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    #endregion</span><br><span class="line"></span><br><span class="line">    #region View Method</span><br><span class="line">    /// &lt;summary&gt;</span><br><span class="line">    /// 注册view</span><br><span class="line">    /// &lt;/summary&gt;</span><br><span class="line">    /// &lt;param name=&quot;view&quot;&gt;View.&lt;/param&gt;</span><br><span class="line">    public static void RegisterView(View view)</span><br><span class="line">    &#123;</span><br><span class="line">        if (!Views.ContainsKey(view.Name))</span><br><span class="line">        &#123;</span><br><span class="line">            Views.Add(view.Name, view);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void UnRegisterView(View view)</span><br><span class="line">    &#123;</span><br><span class="line">        if (Views.ContainsKey(view.Name))</span><br><span class="line">        &#123;</span><br><span class="line">            Views.Remove(view.Name);</span><br><span class="line">            view.RegisterNotification();</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static T GetView&lt;T&gt;(string name) where T : View</span><br><span class="line">    &#123;</span><br><span class="line">        foreach (string n in Views.Keys)</span><br><span class="line">        &#123;</span><br><span class="line">            if (n == name)</span><br><span class="line">            &#123;</span><br><span class="line">                return Views[name] as T;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">    #endregion</span><br><span class="line"></span><br><span class="line">    #region Command Method</span><br><span class="line">    /// &lt;summary&gt;</span><br><span class="line">    /// 注册controller</span><br><span class="line">    /// &lt;/summary&gt;</span><br><span class="line">    /// &lt;param name=&quot;name&quot;&gt;Name.&lt;/param&gt;</span><br><span class="line">    /// &lt;param name=&quot;type&quot;&gt;Type.&lt;/param&gt;</span><br><span class="line">    public static void RegisterCommand(string name, Type type)&#123;</span><br><span class="line">        if (!Commands.ContainsKey(name))&#123;</span><br><span class="line">            Commands.Add(name, type);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void UnRegisterCommand(string name, Type type)&#123;</span><br><span class="line">        if(Commands.ContainsKey(name))&#123;</span><br><span class="line">            Commands.Remove(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void HandleNotifition(string name, object data = null)&#123;</span><br><span class="line">        //判断事件是否存在，如果存在则实例化对象并执行事件</span><br><span class="line">        if(Commands.ContainsKey(name))&#123;</span><br><span class="line">            Controller command = Activator.CreateInstance(Commands[name]) as Controller;</span><br><span class="line">            command.Execute(data);</span><br><span class="line">        &#125;</span><br><span class="line">        //判断视图是否关注该事件，如果关注则执行事件</span><br><span class="line">        foreach(View view in Views.Values)&#123;</span><br><span class="line">            if (view.ContainsNotification(name))&#123;</span><br><span class="line">                view.HandleNotification(name, data);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    #endregion</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>Model基类<br>Model.cs:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// mov中的Model基类</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public abstract class Model&#123;</span><br><span class="line">    /// &lt;summary&gt;</span><br><span class="line">    /// model的名字</span><br><span class="line">    /// &lt;/summary&gt;</span><br><span class="line">    /// &lt;value&gt;The name.&lt;/value&gt;</span><br><span class="line">    public abstract string Name &#123; get; &#125; </span><br><span class="line"></span><br><span class="line">    /// &lt;summary&gt;</span><br><span class="line">    /// 发送通知</span><br><span class="line">    /// &lt;/summary&gt;</span><br><span class="line">    /// &lt;param name=&quot;name&quot;&gt;事件名称&lt;/param&gt;</span><br><span class="line">    /// &lt;param name=&quot;data&quot;&gt;事件执行参数&lt;/param&gt;</span><br><span class="line">    public virtual void SendNotification(string name, object data = null)&#123;</span><br><span class="line">        MVC.HandleNotifition(name, data);</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>View基类<br>View.cs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// mvc中的View基类</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public abstract class View&#123;</span><br><span class="line">    /// &lt;summary&gt;</span><br><span class="line">    /// View的名字</span><br><span class="line">    /// &lt;/summary&gt;</span><br><span class="line">    /// &lt;value&gt;The name.&lt;/value&gt;</span><br><span class="line">    public abstract string Name &#123; get; &#125;</span><br><span class="line">    /// &lt;summary&gt;</span><br><span class="line">    /// 发送通知</span><br><span class="line">    /// &lt;/summary&gt;</span><br><span class="line">    /// &lt;param name=&quot;name&quot;&gt;事件名称&lt;/param&gt;</span><br><span class="line">    /// &lt;param name=&quot;data&quot;&gt;事件执行参数&lt;/param&gt;</span><br><span class="line">    public virtual void SendNotification(string name, object data = null)&#123;</span><br><span class="line">        MVC.HandleNotifition(name, data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /// &lt;summary&gt;</span><br><span class="line">    /// 获取模型model</span><br><span class="line">    /// &lt;/summary&gt;</span><br><span class="line">    /// &lt;returns&gt;The model.&lt;/returns&gt;</span><br><span class="line">    /// &lt;param name=&quot;name&quot;&gt;model名称&lt;/param&gt;</span><br><span class="line">    /// &lt;typeparam name=&quot;T&quot;&gt;The 1st type parameter.&lt;/typeparam&gt;</span><br><span class="line">    public T GetModel&lt;T&gt;(string name) where T : Model&#123;</span><br><span class="line">        return MVC.GetModel&lt;T&gt;(name) as T;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /// &lt;summary&gt;</span><br><span class="line">    /// 保存通知 </span><br><span class="line">    /// &lt;/summary&gt;</span><br><span class="line">    private List&lt;string&gt; InterestNotification = new List&lt;string&gt;();</span><br><span class="line"></span><br><span class="line">    public virtual void RegisterNotification()&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    public bool ContainsNotification(string name)&#123;</span><br><span class="line">        return InterestNotification.Contains(name);</span><br><span class="line">    &#125;</span><br><span class="line">    /// &lt;summary&gt;</span><br><span class="line">    /// 处理事件</span><br><span class="line">    /// &lt;/summary&gt;</span><br><span class="line">    /// &lt;param name=&quot;name&quot;&gt;事件名称&lt;/param&gt;</span><br><span class="line">    /// &lt;param name=&quot;data&quot;&gt;事件参数&lt;/param&gt;</span><br><span class="line">    public virtual void HandleNotification(string name, object data = null)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>Controller基类<br>Controller.cs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// mvc中的Controller基类</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public abstract class Controller</span><br><span class="line">&#123;</span><br><span class="line">    /// &lt;summary&gt;</span><br><span class="line">    /// Controller的名字</span><br><span class="line">    /// &lt;/summary&gt;</span><br><span class="line">    /// &lt;value&gt;The name.&lt;/value&gt;</span><br><span class="line">    public abstract string Name &#123; get; &#125;</span><br><span class="line"></span><br><span class="line">    public T GetModel&lt;T&gt;(string name) where T : Model</span><br><span class="line">    &#123;</span><br><span class="line">        return MVC.GetModel&lt;T&gt;(name);</span><br><span class="line">    &#125;</span><br><span class="line">    public T GetView&lt;T&gt;(string name) where T : View</span><br><span class="line">    &#123;</span><br><span class="line">        return MVC.GetView&lt;T&gt;(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void RegisterView(View view)</span><br><span class="line">    &#123;</span><br><span class="line">        MVC.RegisterView(view);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void RegisterModel(Model model)</span><br><span class="line">    &#123;</span><br><span class="line">        MVC.RegisterModel(model);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void RegisterCommand(string name, Type type)</span><br><span class="line">    &#123;</span><br><span class="line">        MVC.UnRegisterCommand(name, type);</span><br><span class="line">    &#125;</span><br><span class="line">    /// &lt;summary&gt;</span><br><span class="line">    /// 发送通知</span><br><span class="line">    /// &lt;/summary&gt;</span><br><span class="line">    /// &lt;param name=&quot;data&quot;&gt;事件执行参数&lt;/param&gt;</span><br><span class="line">    public abstract void Execute(object data = null);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a><strong>写在最后</strong></h2><ul>
+<li>这里只是为了介绍unity中mvc的简单使用，但于我看来，在游戏项目中mvc框架并不非常适用，MVC是ui专用的模式，游戏不同于web前端，不同类型的游戏其架构相差非常之大（比如棋牌类游戏，rpg游戏，moba类游戏，跑酷类游戏之间的差别） ，所以游戏中mvc不同的层很难有非常清晰的定义。并不是说MVC在游戏项目中完全没用，但只有它还远远不够。游戏项目最合理的方式是由主程根据项目需求制定一套新的结构和各部分的依赖关系，并事先想好各部分的扩展和通信方式。</li>
+</ul>
 
       
     </div>
@@ -474,7 +487,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/区块链/" rel="tag"># 区块链</a>
+            <a href="/tags/框架/" rel="tag"># 框架</a>
           
         </div>
       
@@ -487,8 +500,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/13/LuaFramework/" rel="next" title="LuaFramework">
-                <i class="fa fa-chevron-left"></i> LuaFramework
+              <a href="/2016/09/07/Shader入门/" rel="next" title="Shader入门">
+                <i class="fa fa-chevron-left"></i> Shader入门
               </a>
             
           </div>
@@ -496,6 +509,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/13/LuaFramework/" rel="prev" title="LuaFramework">
+                LuaFramework <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -870,7 +887,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是区块链"><span class="nav-number">1.</span> <span class="nav-text">什么是区块链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#记账系统"><span class="nav-number">2.</span> <span class="nav-text">记账系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#去中心化的分布式数据库"><span class="nav-number">3.</span> <span class="nav-text">去中心化的分布式数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#共识算法"><span class="nav-number">4.</span> <span class="nav-text">共识算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么会挖矿？"><span class="nav-number">5.</span> <span class="nav-text">为什么会挖矿？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区块链的未来"><span class="nav-number">6.</span> <span class="nav-text">区块链的未来</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC概述"><span class="nav-number">1.</span> <span class="nav-text">MVC概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unity中的MVC"><span class="nav-number">2.</span> <span class="nav-text">Unity中的MVC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写在最后"><span class="nav-number">3.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
             
 
           </div>
@@ -1066,9 +1083,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://gyunch.org/2018/01/30/区块链/';
-          this.page.identifier = '2018/01/30/区块链/';
-          this.page.title = '区块链';
+          this.page.url = 'http://gyunch.org/2017/03/22/MVC/';
+          this.page.identifier = '2017/03/22/MVC/';
+          this.page.title = 'MVC';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://http-gyunch-org.disqus.com/embed.js';
