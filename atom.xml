@@ -44,7 +44,7 @@
     <link href="http://gyunch.org/2017/09/13/LuaFramework/"/>
     <id>http://gyunch.org/2017/09/13/LuaFramework/</id>
     <published>2017-09-12T16:00:00.000Z</published>
-    <updated>2018-05-25T16:14:05.431Z</updated>
+    <updated>2018-06-02T08:52:58.353Z</updated>
     
     <content type="html"><![CDATA[<p>🤔</p><hr><a id="more"></a><blockquote><p><strong>LuaFramework是基于UGUI+tolua的简单游戏框架</strong><br>tolua作者:<a href="https://github.com/topameng" target="_blank" rel="noopener">蒙哥</a>，LuaFramework作者:<a href="https://github.com/jarjin/LuaFramework_UGUI" target="_blank" rel="noopener">骏擎</a><br>想了解更多tolua及luaframework相关，可以关注博客<a href="http://doc.ulua.org/default.asp" target="_blank" rel="noopener">uLua/cstolua</a><br>tolua技术群:286510803  , tolua技术讨论群:434341400(已满) 543826216<br>此文档更新于 2018/5/1 ，这里讲的部分方法是所对应的最新版本 </p></blockquote><hr><h2 id="LuaFramework热更新流程"><a href="#LuaFramework热更新流程" class="headerlink" title="LuaFramework热更新流程"></a><strong>LuaFramework热更新流程</strong></h2><ol><li>Main脚本调用启动函数Startup；</li><li>游戏管理器GameManager生成；</li><li>GameManager调用CheckExtractResource函数，检查“数据目录”是否存在；</li><li>若“数据目录”不存在，说明是初次运行游戏，将“游戏包资源目录”的内容解压缩到“数据目录”；</li><li>若“数据目录”存在，检查是否需要从服务器下载资源，GameManager调用OnUpdateResource函数下载“网络资源地址”上的files.txt，然后与“数据目录”中文件的md5码做对比，更新有变化的文件；</li><li>更新完成后，GameManager调用OnResourceInited函数，启动Lua状态机，游戏开始。</li></ol><ul><li>调试：在Main.lua加入调试语句，在LuaManager的StartMain访问热更新增的Lua脚本，生成新打包的Prefab</li></ul><blockquote><p>AppConst类的UpdateMode设为true，则从指定服务器下载资源，否则从本地“数据目录”获取。LuaBundleMode设为true，则从AssetBundle解压Lua脚本，否则直接读取项目脚本。<br>可以打开AssetsLuaFrameworkEditorCustomSettings.cs看到所有可以供lua调用的类  </p></blockquote><hr><h2 id="添加新的Lua脚本到AssetBundle包"><a href="#添加新的Lua脚本到AssetBundle包" class="headerlink" title="添加新的Lua脚本到AssetBundle包"></a><strong>添加新的Lua脚本到AssetBundle包</strong></h2><ul><li>将Lua脚本存放到 Assets/LuaFramework/Lua 目录,因为，当按下LuaFramework-Build XXX Resources的时候，框架会自动将Assets/LuaFramework/Lua下的所有内容打成AssetBundle包，放在StreamingAssets下，可以发现，StreamingAssets文件夹下会有个Lua文件夹，里面放的就是Assets/LuaFramework/Lua在打包之后的结果</li><li>主要注意以下几点</li></ul><blockquote><p>1：打开StreamingAssets/Lua，会发现，这个文件夹下大致分为两部分，3rd文件夹，和一堆资源包<br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1frmk17od2vj30d00y2ad5.jpg" alt=" "><br>其中，资源包的命名特点是对应路径信息的，例如lua_3rd_cjson和lua_3rd_cjson.unity3d这一组资源包,他对应着的是LuaFramework/Lua/3rd/cjson里面的Lua文件，这组资源包就是这个文件夹下的lua文件打包出来的结果。  </p></blockquote><blockquote><p>2：StreamingAssets/Lua文件夹下，除了资源包外，还有一个3rd文件夹，可以打开Assets/LuaFramework/Lua/3rd 目录，然后打开其中一个，例如cjson的文件夹，可以发现，这文件夹里除了一些lua文件，还有一些txt配置文件或说明文件，所以，这个StreamingAssets/Lua/3rd文件夹下，放的就是这些lua文件外的文件资源  </p></blockquote><blockquote><p>3：综上所述，如果我们要打包一个自定义的Lua文件（不是框架提供的Main.lua文件）的话，那么我们完全可以先在Assets/LuaFramework/Lua这个文件夹下，自定义一个专门存放我们编写的Lua文件的文件夹，当打包出来后，会发现，StreamingAssets/Lua下会有一个自定义的文件夹名.unity3d的一组资源包。  </p></blockquote><blockquote><p>4：更改Lua入口，不用框架提供给我们的Main.lua这个文件：找到LuaManger这个类，然后找到StartMain()这个方法，<img src="https://ws1.sinaimg.cn/large/006tNc79gy1frmk80irnuj30qy08sac7.jpg" alt=" "><br>只需要把lua.DoFile里面的参数修改为你自定义的lua文件名，然后LuaFunction main=lua.GetFunction(“Main”)这一行的括号内的参数，修改为作为入口且存在于你自定义的lua文件中的lua方法即可。<br>不管是不是自己定义lua入口文件，最好都放在Assets/LuaFramework/Lua下，不要再另外加文件夹，因为放在Assets/LuaFramework/Lua路径下的所有lua文件都会直接一同打包在lua.unity3d资源包中，而程序设置好就是去这个包里读取lua的入口文件，除非你会改动lua入口文件的读取路径。  </p></blockquote><blockquote><p>5：可以读取多个lua文件:<br><img src="https://ws1.sinaimg.cn/large/006tNc79gy1frmkcdrsdaj30o607q40m.jpg" alt=" ">  </p></blockquote><hr><h2 id="创建新的AssetBundle包"><a href="#创建新的AssetBundle包" class="headerlink" title="创建新的AssetBundle包"></a><strong>创建新的AssetBundle包</strong></h2><ul><li>LuaFramework/Build XXX Resources 的功能全都写在了Assets/LuaFramework/Editor/Packager.cs，这个类中，以及跟随打包生成的 StreamingAssets/files 这个MD5校验码文件是如何生成，也是写在这个Packager.cs 文件中，所以，如果想打包一些此框架没提供的平台资源，可以到这个Packager 模仿增加对应的打包方法 </li></ul><blockquote><p>打包函数的主体代码是 Packager.cs 中的 BuildAssetResource ， HandleExampleBundle ， AddBuildMap ， HandleLuaBundle ， HandleLuaFile 这五个方法  </p><ul><li>BuildAssetResource进行资源文件夹刷新，并且根据AppConst类里静态布尔属性设置情况的不同，分别调用HandleExampleBundle ， HandleLuaBundle ， HandleLuaFile 函数</li><li>HandleExampleBundle 作用是告诉使用者如何打包美术素材，框架格式是什么，如果有打包的美术资源，可以根据这个格式自定义一个方法，来进行打包，AddBuildMap 方法里第一个参数：打包出来的资源名字，这个名字是用 AppConst.ExtName （值为 unity3D ）作为后缀名。第二个参数：要打包的资源原本的格式， *.XXX 代表所有这种格式的资源。第三个参数：次框架是对指定路径的文件夹进行整体打包操作的，所以，第三个参数是你要打包的资源位于项目哪个文件夹中</li><li>所以综上所述，如果你要打包美术资源，先在项目中创建一个专门存放你自己的美术资源的文件夹，然后在 Packager.cs 中新建一个函数，里面的代码复制HandleExampleBundle，然后修改 AddBuildMap 参数，在完成上述步骤后，因为你的项目打包出来之前会删掉框架提供的示例场景，所以要把 AppConst 中的 ExampleMode 设置为 false ，最后在 Packager.cs 加入如图else代码，调用你的自定义打包函数<br><img src="https://ws1.sinaimg.cn/large/006tNc79gy1frmla5dcpcj317q0tcnbc.jpg" alt=" "></li></ul></blockquote><ul><li>HandleLuaBundle ， HandleLuaFile 这两个函数是告诉用户如何将 Lua 文件打包成 AssetBundle 的，通常状况下不建议修改，因为功能已经很齐全了，当然，如果你想将这种功能实现应用到如 Xlua 中，可以去查看这两个函数是如何写的。</li></ul><p>热更新主要由三部分组成：</p><ol><li>C# 与 Lua 的互相调用机制</li><li>Lua 文件的打包</li><li>网络传输，校验<br>XLua ， ToLua ， ULua… 只是提供了 C# 与 Lua 的互相调用机制，并没有提供其余两者的功能实现，所以如果自己想开发个基于如 Xlua 这样的热更新框架，可以参照这个基于 ToLua 的框架</li></ol><hr><h2 id="使用框架对下载的资源进行加载"><a href="#使用框架对下载的资源进行加载" class="headerlink" title="使用框架对下载的资源进行加载"></a><strong>使用框架对下载的资源进行加载</strong></h2><ul><li>在此之前，你要明白为何这个框架可以让lua脚本访问到C#的类</li><li><p>当你按下Lua/Clear wrap Files 时，会有弹出框，按下确定框架就会自动生成一堆Wrap结尾的文件，这个自动生成的文件所对应的就是一个叫 AppConst 的类，而这个框架就是让 Lua 通过访问这些自动生成的 wrap 的类来达到访问 C#类的目的<br><img src="https://ws1.sinaimg.cn/large/006tNc79gy1frmlk5eb8pj30ck0wy0xj.jpg" alt=" "> </p></li><li><p>接下来就是资源的加载与生成：</p></li></ul><blockquote><p>在ResourceManager类中，框架提供了三个重载LoadPrefab方法<br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1frmlp40rguj312s0ae44d.jpg" alt=" "><br>其参数分别是：  </p><ol><li>要加载的AssetBundle包的名字</li><li>需要加载此包中哪些美术素材</li><li>回调方法（这个方法的参数列表有一个UnityEngine.Object[]类型的变量的，这个数组变量存的就是你所加载的美术资源）</li></ol></blockquote><blockquote><p>Lua中调用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function Main()</span><br><span class="line">print(&quot;logic start&quot;)</span><br><span class="line">LuaHelper = LuaFramework.LuaHelper</span><br><span class="line">resMgr = LuaHelper.GetResManager</span><br><span class="line">resMgr: LoadPrefab(&quot;myprefabs.unity3d&quot;, &#123;&quot;Sphere&quot;, &quot;Cube&quot;&#125;, LoadAssetBundle)</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">function LoadAssetBundle(go)</span><br><span class="line">for i = 0, go.Length - 1, 1 do</span><br><span class="line">UnityEngine.GameObject.Instantiate(go[i])</span><br><span class="line">--go是userdata类型，遍历的时候必须用Length去取得长度</span><br><span class="line">end</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p></blockquote>]]></content>
     
@@ -55,7 +55,7 @@
     
     </summary>
     
-      <category term="toLua" scheme="http://gyunch.org/categories/toLua/"/>
+      <category term="uLua" scheme="http://gyunch.org/categories/uLua/"/>
     
     
       <category term="框架" scheme="http://gyunch.org/tags/%E6%A1%86%E6%9E%B6/"/>
@@ -385,34 +385,11 @@
   </entry>
   
   <entry>
-    <title>C#</title>
-    <link href="http://gyunch.org/2016/05/01/C#%E7%AE%80%E4%BB%8B/"/>
-    <id>http://gyunch.org/2016/05/01/C#简介/</id>
-    <published>2016-04-30T16:00:00.000Z</published>
-    <updated>2018-05-24T07:35:52.363Z</updated>
-    
-    <content type="html"><![CDATA[<p>🤔</p><hr><a id="more"></a><ul><li>C# 是一种面向对象的语言。不仅如此，C# 还进一步支持面向组件的编程。 当代软件设计越来越依赖采用自描述的独立功能包形式的软件组件。 此类组件的关键特征包括：为编程模型提供属性、方法和事件；包含提供组件声明性信息的特性；包含自己的文档。 C# 提供了语言构造来直接支持这些概念，让 C# 成为一种非常自然的语言，可用于创建和使用软件组件。</li><li>多项 C# 功能有助于构造可靠耐用的应用程序：垃圾回收可自动回收无法访问的未使用对象占用的内存；异常处理提供了一种结构化的可扩展方法来执行错误检测和恢复；C# 语言的类型安全设计禁止读取未初始化的变量、为范围之外的数组编制索引或执行未检查的类型转换。</li><li>C# 采用统一的类型系统。 所有 C# 类型（包括 int 和 double 等基元类型）均继承自一个根 object 类型。 因此，所有类型共用一组通用运算，任何类型的值都可以一致地进行存储、传输和处理。 此外，C# 还支持用户定义的引用类型和值类型，从而支持对象动态分配以及轻量级结构的内嵌式存储。<br>为了确保 C# 程序和库能够随着时间的推移以兼容的方式发展，C# 设计更强调版本控制。 许多编程语言很少关注这个问题，因此，当引入新版依赖库时，用这些语言编写的程序会出现更多不必要的中断现象。 由于更强调版本控制，直接受影响的 C# 设计方面包括单独的 virtual 和 override 修饰符、关于方法重载决策的规则，以及对显式接口成员声明的支持。</li><li>C# 是专为公共语言基础结构（CLI）设计的。CLI 由可执行代码和运行时环境组成，允许在不同的计算机平台和体系结构上使用各种高级语言。<br>下面列出了 C# 成为一种广泛应用的专业语言的原因：<br>现代的、通用的编程语言。<br>面向对象。<br>面向组件。<br>容易学习。<br>结构化语言。<br>它产生高效率的程序。<br>它可以在多种计算机平台上编译。<br>.Net 框架的一部分。<br>C# 强大的编程功能<br>虽然 C# 的构想十分接近于传统高级语言 C 和 C++，是一门面向对象的编程语言，但是它与 Java 非常相似，有许多强大的编程功能，因此得到广大程序员的青睐。<br>下面列出 C# 一些重要的功能：<br>布尔条件（Boolean Conditions）<br>自动垃圾回收（Automatic Garbage Collection）<br>标准库（Standard Library）<br>组件版本（Assembly Versioning）<br>属性（Properties）和事件（Events）<br>委托（Delegates）和事件管理（Events Management）<br>易于使用的泛型（Generics）<br>索引器（Indexers）<br>条件编译（Conditional Compilation）<br>简单的多线程（Multithreading）<br>LINQ 和 Lambda 表达式<br>集成 Windows<br>详细指南可参考msdn，.net官方指南</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;🤔&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="C#" scheme="http://gyunch.org/categories/C/"/>
-    
-    
-      <category term="基础" scheme="http://gyunch.org/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
     <title>C#结构导图</title>
     <link href="http://gyunch.org/2016/05/01/C#%E7%BB%93%E6%9E%84%E5%AF%BC%E5%9B%BE/"/>
     <id>http://gyunch.org/2016/05/01/C#结构导图/</id>
     <published>2016-04-30T16:00:00.000Z</published>
-    <updated>2018-06-02T08:48:18.013Z</updated>
+    <updated>2018-06-02T08:58:17.571Z</updated>
     
     <content type="html"><![CDATA[<p>🤔</p><hr><a id="more"></a><p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1frwxc9xza1j31kw1ajnpe.jpg" alt=" "></p>]]></content>
     
@@ -423,7 +400,30 @@
     
     </summary>
     
-      <category term="C#" scheme="http://gyunch.org/categories/C/"/>
+      <category term=".NET" scheme="http://gyunch.org/categories/NET/"/>
+    
+    
+      <category term="基础" scheme="http://gyunch.org/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C#</title>
+    <link href="http://gyunch.org/2016/05/01/C#%E7%AE%80%E4%BB%8B/"/>
+    <id>http://gyunch.org/2016/05/01/C#简介/</id>
+    <published>2016-04-30T16:00:00.000Z</published>
+    <updated>2018-06-02T08:58:23.272Z</updated>
+    
+    <content type="html"><![CDATA[<p>🤔</p><hr><a id="more"></a><ul><li>C# 是一种面向对象的语言。不仅如此，C# 还进一步支持面向组件的编程。 当代软件设计越来越依赖采用自描述的独立功能包形式的软件组件。 此类组件的关键特征包括：为编程模型提供属性、方法和事件；包含提供组件声明性信息的特性；包含自己的文档。 C# 提供了语言构造来直接支持这些概念，让 C# 成为一种非常自然的语言，可用于创建和使用软件组件。</li><li>多项 C# 功能有助于构造可靠耐用的应用程序：垃圾回收可自动回收无法访问的未使用对象占用的内存；异常处理提供了一种结构化的可扩展方法来执行错误检测和恢复；C# 语言的类型安全设计禁止读取未初始化的变量、为范围之外的数组编制索引或执行未检查的类型转换。</li><li>C# 采用统一的类型系统。 所有 C# 类型（包括 int 和 double 等基元类型）均继承自一个根 object 类型。 因此，所有类型共用一组通用运算，任何类型的值都可以一致地进行存储、传输和处理。 此外，C# 还支持用户定义的引用类型和值类型，从而支持对象动态分配以及轻量级结构的内嵌式存储。<br>为了确保 C# 程序和库能够随着时间的推移以兼容的方式发展，C# 设计更强调版本控制。 许多编程语言很少关注这个问题，因此，当引入新版依赖库时，用这些语言编写的程序会出现更多不必要的中断现象。 由于更强调版本控制，直接受影响的 C# 设计方面包括单独的 virtual 和 override 修饰符、关于方法重载决策的规则，以及对显式接口成员声明的支持。</li><li>C# 是专为公共语言基础结构（CLI）设计的。CLI 由可执行代码和运行时环境组成，允许在不同的计算机平台和体系结构上使用各种高级语言。<br>下面列出了 C# 成为一种广泛应用的专业语言的原因：<br>现代的、通用的编程语言。<br>面向对象。<br>面向组件。<br>容易学习。<br>结构化语言。<br>它产生高效率的程序。<br>它可以在多种计算机平台上编译。<br>.Net 框架的一部分。<br>C# 强大的编程功能<br>虽然 C# 的构想十分接近于传统高级语言 C 和 C++，是一门面向对象的编程语言，但是它与 Java 非常相似，有许多强大的编程功能，因此得到广大程序员的青睐。<br>下面列出 C# 一些重要的功能：<br>布尔条件（Boolean Conditions）<br>自动垃圾回收（Automatic Garbage Collection）<br>标准库（Standard Library）<br>组件版本（Assembly Versioning）<br>属性（Properties）和事件（Events）<br>委托（Delegates）和事件管理（Events Management）<br>易于使用的泛型（Generics）<br>索引器（Indexers）<br>条件编译（Conditional Compilation）<br>简单的多线程（Multithreading）<br>LINQ 和 Lambda 表达式<br>集成 Windows<br>详细指南可参考msdn，.net官方指南</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;🤔&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term=".NET" scheme="http://gyunch.org/categories/NET/"/>
     
     
       <category term="基础" scheme="http://gyunch.org/tags/%E5%9F%BA%E7%A1%80/"/>
