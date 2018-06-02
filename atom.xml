@@ -385,13 +385,13 @@
   </entry>
   
   <entry>
-    <title>C#简介</title>
-    <link href="http://gyunch.org/2016/05/01/Csharp%E7%AE%80%E4%BB%8B/"/>
-    <id>http://gyunch.org/2016/05/01/Csharp简介/</id>
+    <title>C#结构导图</title>
+    <link href="http://gyunch.org/2016/05/01/Csharp%E7%BB%93%E6%9E%84%E5%AF%BC%E5%9B%BE/"/>
+    <id>http://gyunch.org/2016/05/01/Csharp结构导图/</id>
     <published>2016-04-30T16:00:00.000Z</published>
-    <updated>2018-06-02T09:10:34.527Z</updated>
+    <updated>2018-06-02T09:10:08.769Z</updated>
     
-    <content type="html"><![CDATA[<p>🤔</p><hr><a id="more"></a><ul><li>C# 是一种面向对象的语言。不仅如此，C# 还进一步支持面向组件的编程。 当代软件设计越来越依赖采用自描述的独立功能包形式的软件组件。 此类组件的关键特征包括：为编程模型提供属性、方法和事件；包含提供组件声明性信息的特性；包含自己的文档。 C# 提供了语言构造来直接支持这些概念，让 C# 成为一种非常自然的语言，可用于创建和使用软件组件。</li><li>多项 C# 功能有助于构造可靠耐用的应用程序：垃圾回收可自动回收无法访问的未使用对象占用的内存；异常处理提供了一种结构化的可扩展方法来执行错误检测和恢复；C# 语言的类型安全设计禁止读取未初始化的变量、为范围之外的数组编制索引或执行未检查的类型转换。</li><li>C# 采用统一的类型系统。 所有 C# 类型（包括 int 和 double 等基元类型）均继承自一个根 object 类型。 因此，所有类型共用一组通用运算，任何类型的值都可以一致地进行存储、传输和处理。 此外，C# 还支持用户定义的引用类型和值类型，从而支持对象动态分配以及轻量级结构的内嵌式存储。<br>为了确保 C# 程序和库能够随着时间的推移以兼容的方式发展，C# 设计更强调版本控制。 许多编程语言很少关注这个问题，因此，当引入新版依赖库时，用这些语言编写的程序会出现更多不必要的中断现象。 由于更强调版本控制，直接受影响的 C# 设计方面包括单独的 virtual 和 override 修饰符、关于方法重载决策的规则，以及对显式接口成员声明的支持。</li><li>C# 是专为公共语言基础结构（CLI）设计的。CLI 由可执行代码和运行时环境组成，允许在不同的计算机平台和体系结构上使用各种高级语言。<br>下面列出了 C# 成为一种广泛应用的专业语言的原因：<br>现代的、通用的编程语言。<br>面向对象。<br>面向组件。<br>容易学习。<br>结构化语言。<br>它产生高效率的程序。<br>它可以在多种计算机平台上编译。<br>.Net 框架的一部分。<br>C# 强大的编程功能<br>虽然 C# 的构想十分接近于传统高级语言 C 和 C++，是一门面向对象的编程语言，但是它与 Java 非常相似，有许多强大的编程功能，因此得到广大程序员的青睐。<br>下面列出 C# 一些重要的功能：<br>布尔条件（Boolean Conditions）<br>自动垃圾回收（Automatic Garbage Collection）<br>标准库（Standard Library）<br>组件版本（Assembly Versioning）<br>属性（Properties）和事件（Events）<br>委托（Delegates）和事件管理（Events Management）<br>易于使用的泛型（Generics）<br>索引器（Indexers）<br>条件编译（Conditional Compilation）<br>简单的多线程（Multithreading）<br>LINQ 和 Lambda 表达式<br>集成 Windows<br>详细指南可参考msdn，.net官方指南</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>🤔</p><hr><a id="more"></a><p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1frwxc9xza1j31kw1ajnpe.jpg" alt=" "></p>]]></content>
     
     <summary type="html">
     
@@ -408,13 +408,13 @@
   </entry>
   
   <entry>
-    <title>C#结构导图</title>
-    <link href="http://gyunch.org/2016/05/01/Csharp%E7%BB%93%E6%9E%84%E5%AF%BC%E5%9B%BE/"/>
-    <id>http://gyunch.org/2016/05/01/Csharp结构导图/</id>
+    <title>C#简介</title>
+    <link href="http://gyunch.org/2016/05/01/Csharp%E7%AE%80%E4%BB%8B/"/>
+    <id>http://gyunch.org/2016/05/01/Csharp简介/</id>
     <published>2016-04-30T16:00:00.000Z</published>
-    <updated>2018-06-02T09:10:08.769Z</updated>
+    <updated>2018-06-02T09:10:34.527Z</updated>
     
-    <content type="html"><![CDATA[<p>🤔</p><hr><a id="more"></a><p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1frwxc9xza1j31kw1ajnpe.jpg" alt=" "></p>]]></content>
+    <content type="html"><![CDATA[<p>🤔</p><hr><a id="more"></a><ul><li>C# 是一种面向对象的语言。不仅如此，C# 还进一步支持面向组件的编程。 当代软件设计越来越依赖采用自描述的独立功能包形式的软件组件。 此类组件的关键特征包括：为编程模型提供属性、方法和事件；包含提供组件声明性信息的特性；包含自己的文档。 C# 提供了语言构造来直接支持这些概念，让 C# 成为一种非常自然的语言，可用于创建和使用软件组件。</li><li>多项 C# 功能有助于构造可靠耐用的应用程序：垃圾回收可自动回收无法访问的未使用对象占用的内存；异常处理提供了一种结构化的可扩展方法来执行错误检测和恢复；C# 语言的类型安全设计禁止读取未初始化的变量、为范围之外的数组编制索引或执行未检查的类型转换。</li><li>C# 采用统一的类型系统。 所有 C# 类型（包括 int 和 double 等基元类型）均继承自一个根 object 类型。 因此，所有类型共用一组通用运算，任何类型的值都可以一致地进行存储、传输和处理。 此外，C# 还支持用户定义的引用类型和值类型，从而支持对象动态分配以及轻量级结构的内嵌式存储。<br>为了确保 C# 程序和库能够随着时间的推移以兼容的方式发展，C# 设计更强调版本控制。 许多编程语言很少关注这个问题，因此，当引入新版依赖库时，用这些语言编写的程序会出现更多不必要的中断现象。 由于更强调版本控制，直接受影响的 C# 设计方面包括单独的 virtual 和 override 修饰符、关于方法重载决策的规则，以及对显式接口成员声明的支持。</li><li>C# 是专为公共语言基础结构（CLI）设计的。CLI 由可执行代码和运行时环境组成，允许在不同的计算机平台和体系结构上使用各种高级语言。<br>下面列出了 C# 成为一种广泛应用的专业语言的原因：<br>现代的、通用的编程语言。<br>面向对象。<br>面向组件。<br>容易学习。<br>结构化语言。<br>它产生高效率的程序。<br>它可以在多种计算机平台上编译。<br>.Net 框架的一部分。<br>C# 强大的编程功能<br>虽然 C# 的构想十分接近于传统高级语言 C 和 C++，是一门面向对象的编程语言，但是它与 Java 非常相似，有许多强大的编程功能，因此得到广大程序员的青睐。<br>下面列出 C# 一些重要的功能：<br>布尔条件（Boolean Conditions）<br>自动垃圾回收（Automatic Garbage Collection）<br>标准库（Standard Library）<br>组件版本（Assembly Versioning）<br>属性（Properties）和事件（Events）<br>委托（Delegates）和事件管理（Events Management）<br>易于使用的泛型（Generics）<br>索引器（Indexers）<br>条件编译（Conditional Compilation）<br>简单的多线程（Multithreading）<br>LINQ 和 Lambda 表达式<br>集成 Windows<br>详细指南可参考msdn，.net官方指南</li></ul>]]></content>
     
     <summary type="html">
     
