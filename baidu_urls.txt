@@ -17,8 +17,8 @@ http://gyunch.org/2016/06/17/python函数式编程/
 http://gyunch.org/2016/05/01/Csharp结构导图/
 http://gyunch.org/2016/05/01/Csharp简介/
 http://gyunch.org/2016/04/20/Web渗透测试/
-http://gyunch.org/2016/04/01/Python面向对象/
 http://gyunch.org/2016/04/01/Python数据结构/
+http://gyunch.org/2016/04/01/Python面向对象/
 http://gyunch.org/2016/03/30/Python基础(2)/
 http://gyunch.org/2016/03/27/Python基础(1)/
 http://gyunch.org/2015/10/01/反汇编基础(不同语言的反汇编入口)/
