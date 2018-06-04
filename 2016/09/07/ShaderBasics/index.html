@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  
+<meta name="baidu-site-verification" content="sUSruv2T4z" />
+<meta name="google-site-verification" content="t9kbS6ZKGC1uubicZbDjOzsnNyGfd-yixSDADIqtW5Q" />
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="图形学," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Etnly's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="🤔">
+<meta name="keywords" content="图形学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Shader入门">
+<meta property="og:url" content="http://gyunch.org/2016/09/07/ShaderBasics/index.html">
+<meta property="og:site_name" content="Etnly&#39;s Blog">
+<meta property="og:description" content="🤔">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1frmelhilk7j30f006emx8.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1frmf8dwj2jj30u50eft8r.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1frmg6jpapzj31gm1feqv5.jpg">
+<meta property="og:updated_time" content="2018-05-24T07:33:49.751Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Shader入门">
+<meta name="twitter:description" content="🤔">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1frmelhilk7j30f006emx8.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://gyunch.org/2016/09/07/ShaderBasics/"/>
+
+
+
+
+
+  <title>Shader入门 | Etnly's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?61b813d8af160c039644564e41f21082";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Etnly's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Hello,World</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            站内搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://gyunch.org/2016/09/07/ShaderBasics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="宇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Etnly's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Shader入门</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-07T00:00:00+08:00">
+                2016-09-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shader/" itemprop="url" rel="index">
+                    <span itemprop="name">Shader</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/09/07/ShaderBasics/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/09/07/ShaderBasics/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>🤔</p>
+<hr>
+<a id="more"></a>
+<h2 id="渲染流水线"><a href="#渲染流水线" class="headerlink" title="渲染流水线"></a><strong>渲染流水线</strong></h2><h3 id="流水线"><a href="#流水线" class="headerlink" title="流水线"></a>流水线</h3><ul>
+<li>在了解什么是渲染流水线前先看一下现实生活中的<strong>流水线</strong>。<blockquote>
+<p>流水线是一种工业上的生产方式，每一个生产单位只专注处理一个片段的工作。<br>比如一个制造手机的工厂，一台手机的制造流程可以分为四个步骤，第一步，制作外壳；第二步，制作屏幕模组；第三步，制作主板；第四步组装手机并进行产品包装。<br>在没有流水线时，只有在每台手机四个工序完成后才能开始制作下一台，这是非常耗时的。<br>如果我们加入流水线，虽然制作一台手机任需要四个步骤，但不需要从头到尾完成全部步骤，而是每个步骤由专人来完成，所有步骤并行进行。<br>使用流水线的好处在于可以提高单位时间的生产量。  </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="渲染流水线-1"><a href="#渲染流水线-1" class="headerlink" title="渲染流水线"></a>渲染流水线</h3><ul>
+<li>流水线的概念同样可以用于计算机的图像渲染中。计算机需要从一系列的顶点数据、纹理等信息出发，把这些信息最终转换成一张人眼可以观察到的图像。这个工作通常有CPU和GPU共同完成</li>
+<li>渲染流水线通常分为三个阶段：应用阶段 ———&gt; 几何阶段 ————&gt; 光栅化阶段<br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1frmelhilk7j30f006emx8.jpg" alt=" "></li>
+</ul>
+<ol>
+<li>应用阶段： 这个阶段有应用主导，通常由CPU负责实现。这一阶段开发者有三个主要任务，首先，需要准备好场景数据（摄相机位置、视锥体、模型和光源等）。其次，为了提高渲染性能，需要做粗粒度的剔除工作。最后，需要设置好每个模型的渲染状态（使用的材质、使用的纹理、使用的Shader等）这一阶段最重要的输出是渲染所需的几何信息，即渲染图元。</li>
+<li>几何阶段：几何阶段主要用于处理所有和我们绘制的几何相关的事情。几何阶段负责和每个渲染图元打交道，进行逐顶点、逐多边形的操作。这个阶段可以进一步分成更小的流水线阶段。几何阶段的一个重要任务就是把顶点坐标变换到屏幕空间中，再交给光栅器进行处理。</li>
+<li>光栅化阶段： 这一阶段会使用上个阶段传递的数据来产生屏幕上的像素，并渲染出最终的图像。</li>
+</ol>
+<hr>
+<h2 id="CPU和GPU之间的通信"><a href="#CPU和GPU之间的通信" class="headerlink" title="CPU和GPU之间的通信"></a><strong>CPU和GPU之间的通信</strong></h2><p>渲染流水线的起点是CPU，即应用阶段。大致可分为三个阶段：</p>
+<ol>
+<li>把数据加载到显存中：所有渲染所需的数据都需要从硬盘中加载到系统内存，然后，网格和纹理等数据又被加载到显存。</li>
+<li>设置渲染状态：这些状态定义了场景中的网格如何被渲染。</li>
+<li>调用Draw Call：Draw Call实际上就是一个命令，它的发起方是CPU,接收方是GPU，这个命令仅仅会指向一个需要被渲染的图元列表，而不会再包含任何材质信息。 当给定一个Draw Call时，GPU就会根据渲染状态和所有输入的顶点数据来进行计算，最终输出成屏幕上显示的像素。</li>
+</ol>
+<hr>
+<h2 id="GPU流水线"><a href="#GPU流水线" class="headerlink" title="GPU流水线"></a><strong>GPU流水线</strong></h2><ul>
+<li>当GPU从CPU得到渲染命令后，就会进行一系列的流水线操作，最终把图元渲染到屏幕上（就是上边的调用Draw Call）</li>
+<li>对于渲染流水线中的后两个阶段（几何阶段和光栅化阶段）开发者无法拥有绝对的控制权，其实现的载体是GPU。GPU通过实现流水线化，大大加快了渲染速度，虽然我们无法完全控制这两个阶段的实现细节，但其向开发者开放了很多控制权。<br>下图展示了不同流水线阶段以及它们的可配执性和可编程性：<br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1frmf8dwj2jj30u50eft8r.jpg" alt=" "></li>
+</ul>
+<h3 id="顶点着色器"><a href="#顶点着色器" class="headerlink" title="顶点着色器"></a>顶点着色器</h3><ul>
+<li>顶点着色器是流水线的第一个阶段，它的输入来自于CPU。顶点着色器的处理单位是顶点,输入进来的每个顶点都会调用一次顶点着色器。顶点着色器本身不可以创建或销毁任何顶点，并无法得到顶点与顶点之间的关系</li>
+<li>顶点着色器是完全可编程的，它通常用于实现顶点的坐标变换和逐顶点光照。<blockquote>
+<p>坐标变换：就是对顶点的坐标进行某种变换—把顶点坐标从模型空间转换到齐次裁剪空间。我们可以通过坐标变换来模拟水面、面料等。  </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="曲面细分着色器"><a href="#曲面细分着色器" class="headerlink" title="曲面细分着色器"></a>曲面细分着色器</h3><ul>
+<li>是一个可选的着色器，主要用于细分图元。</li>
+</ul>
+<h3 id="几何着色器"><a href="#几何着色器" class="headerlink" title="几何着色器"></a>几何着色器</h3><ul>
+<li>是一个可选的着色器，可用于执行逐图元的着色操作，或者被用于产生更多的图元。</li>
+</ul>
+<h3 id="裁剪"><a href="#裁剪" class="headerlink" title="裁剪"></a>裁剪</h3><ul>
+<li>这一阶段是可配置的。目的是把那些不在视野内的顶点裁剪掉，并剔除某些三角形图元的面片。</li>
+<li>一个图元与摄像机视野的关系有3种：完全在视野内、部分在视野内、完全在视野外。</li>
+</ul>
+<ol>
+<li>完全在视野内的图元会继续传递给下一个流水线阶段</li>
+<li>完全在视野外的图元不会继续向下传递</li>
+<li>部分在视野内的图元需要做裁剪处理<blockquote>
+<p>和顶点着色器不同的是，这一步是不可编程的。我们无法通过编程来控制裁剪的过程，而是硬件上的固定操作。  </p>
+</blockquote>
+</li>
+</ol>
+<h3 id="屏幕映射"><a href="#屏幕映射" class="headerlink" title="屏幕映射"></a>屏幕映射</h3><ul>
+<li>这一阶段是不可配置和编程的，负责把每个图元的坐标转换成屏幕坐标。</li>
+<li>这一步输入的坐标仍然是三维坐标系下的坐标。屏幕映射的任务是把每个图元的x和y坐标转换到屏幕坐标系下。</li>
+<li>屏幕映射得到的屏幕坐标决定了这个顶点对应屏幕上哪个像素以及距离这个像素的距离。<blockquote>
+<p>一个需要注意的地方，屏幕坐标系在OpenGL和DirectX中，OpenGL把屏幕左下角当作最小的窗口坐标值，DirectX则在屏幕左上角为最小窗口坐标值。  </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="三角形设置"><a href="#三角形设置" class="headerlink" title="三角形设置"></a>三角形设置</h3><ul>
+<li>由这一步开始进入光栅化阶段。</li>
+<li>上一阶段输出的信息是屏幕坐标系下的顶点位置以及和它们相关的其他信息，如深度值、法线方向、视角方向等。</li>
+<li>光栅化阶段的目标：1.计算每个图元覆盖了哪些像素 2.为这些像素计算它们的颜色</li>
+<li>三角形设置作为光栅化的第一个阶段，会计算出光栅化一个三角网格所需要的信息。上一阶段的输出是三角网格的顶点，如果想得到整个三角网格的覆盖情况，就必须计算每条边上的像素坐标，为了计算边界像素的坐标信息，我们就需要得到三角形边界的表示方式。这样一个得到三角形边界表示方式的过程就是三角形设置。</li>
+<li>它的输出是为下一个阶段做准备</li>
+</ul>
+<h3 id="三角形遍历"><a href="#三角形遍历" class="headerlink" title="三角形遍历"></a>三角形遍历</h3><ul>
+<li>三角形遍历阶段将会检查每个像素是否被一个三角网格所覆盖。如果被覆盖，就会生成一个片元。而这样一个找到哪些像素被三角网格覆盖的过程，就是三角形遍历，这个阶段也被称为扫描变换。</li>
+<li>三角形遍历阶段会根据上一个阶段的计算结果来判断一个三角网格覆盖了哪些像素，并使用三角网格三个顶点的顶点信息对整个覆盖区域的像素进行插值。</li>
+<li>这一步的输出就是得到一个片元序列。<blockquote>
+<p>一个片元并不是真正意义上的像素，而是包含了很多状态的几何，这些状态用于计算每个像素的最终颜色  </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="片元着色器"><a href="#片元着色器" class="headerlink" title="片元着色器"></a>片元着色器</h3><ul>
+<li>片元着色器是另一个非常重要的可编程着色器阶段，在DirectX中，片元着色器被称为像素着色器。</li>
+<li>片元着色器的输入就是上一阶段对顶点信息插值得到的结果，更具体点说，是根据从顶点着色器中输出的数据插值得到的。而其的输出是一个或者多个颜色值。</li>
+<li>这一阶段可以完成很多重要的渲染技术，如纹理采样，但是它的局限在于，它仅可以影响单个片元。</li>
+</ul>
+<h3 id="逐片元操作"><a href="#逐片元操作" class="headerlink" title="逐片元操作"></a>逐片元操作</h3><ul>
+<li>这是渲染流水线的最后一步，这一步骤的目的是：合并</li>
+<li>这一阶段有几个主要任务：</li>
+</ul>
+<ol>
+<li>决定每个片元的可见性。这涉及了深度测试、模板测试等</li>
+<li>如果一个片元通过了所有的测试，就需要把这个片元的颜色值和已经存储在颜色缓冲区中的颜色进行合并，或者说是混合。<blockquote>
+<p>这一阶段是高度可配置性的  </p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>这个阶段首先需要解决每个片元的可见性问题。这需要进行一系列的测试。<blockquote>
+<p>片元 ——&gt; 模版测试 ——&gt; 深度测试 ——&gt; 混合 ——&gt; 颜色缓冲区  </p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>深度测试和模版测试的简化流程图：<br><img src="https://ws1.sinaimg.cn/large/006tNc79gy1frmg6jpapzj31gm1feqv5.jpg" alt=" "></p>
+</blockquote>
+<h4 id="模板测试："><a href="#模板测试：" class="headerlink" title="模板测试："></a>模板测试：</h4><p>如果开启了模板测试，GPU会首先读取模板缓冲区中该片元位置的模板值，然后将该值和读取到的参考值（可以开发者自己指定）进行比较，开发者可以设定成小于时舍弃或者大于等于时舍弃该片元。模板测试通常用于限制渲染的区域，另外模板测试还有别的高级用法，如渲染阴影，轮廓渲染。</p>
+<h4 id="深度测试："><a href="#深度测试：" class="headerlink" title="深度测试："></a>深度测试：</h4><p>如果一个片元幸运的通过了模板测试，那么就会进行深度测试，如果开启了深度深度，GPU就会把该片的深度值和已经存在于深度缓冲区中的深度值进行比较，这个比较函数也是由开发者设定的，可以选择大于此值时舍弃也可以选择小于等于此值时舍弃。但通常这个比较函数是小于等于的关系，这是因为我们我们总想只显示出离摄像机最近的物体，而那些被其他物体遮挡的片元就不需要出现在屏幕上。和模板测试不同的是，如果一个片元没有通过深度测试，他就没有权利修改深度缓冲区中的值。而如果通过了测试，开发者可以通开启/关闭深度写入来决定是否要利用这个片元的深度值覆盖缓冲区中的值。</p>
+<h4 id="合并："><a href="#合并：" class="headerlink" title="合并："></a>合并：</h4><p>我们所讨论的渲染过程是一个物体接着一个物体渲染到屏幕上，而每个像素的颜色信息被存储在一个名为颜色缓冲的地方，因此当我们执行这次渲染时，颜色缓冲中往往已经有了上次渲染的颜色结果，那么我们是使用这次渲染得到的颜色完全覆盖掉之前的结果，还是进行其他处理，这就是合并需要解决的问题。<br>对于不透明物体，开发者可以关闭混合操作，这样片元着色器计算得到的颜色值就会直接覆盖掉颜色缓冲区中的像素值。但对于半透明的物体，我们就需要开启混合操作来让这个物体看起来是半透明的。混合操作是高度可配置的，开发者可以选择开启/关闭混合功能。如果开启了，GPU会取出源颜色和目标颜色，将两种颜色进行混合。源颜色是指片元着色器得到的颜色值，而目标颜色则是已经存在于颜色缓冲区中的颜色值。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>真正实现渲染流水线的过程远比描述的要复杂，但Unity为我们封装了很多功能，我们只需要在一个Unity Shader设置一些输入、编写顶点着色器和片元着色器、设置一些状态，就可以实现大部分屏幕效果。在最新的unity中还集成了Shader蓝图工具供开发者使用。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="https://ws4.sinaimg.cn/large/006tNc79gy1frdb4gczj2j3076076wey.jpg" alt="宇 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫描二维码，订阅微信公众号</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/图形学/" rel="tag"># 图形学</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/02/KNN/" rel="next" title="K-近邻算法">
+                <i class="fa fa-chevron-left"></i> K-近邻算法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/22/MVC/" rel="prev" title="MVC">
+                MVC <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="宇" />
+            
+              <p class="site-author-name" itemprop="name">宇</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+               <a title="收藏到书签，偶尔High一下^_^" rel="alternate" class="mw-harlem_shake_slow wobble shake" href='javascript:(function() {
+    function c() {
+        var e = document.createElement("link");
+        e.setAttribute("type", "text/css");
+        e.setAttribute("rel", "stylesheet");
+        e.setAttribute("href", f);
+        e.setAttribute("class", l);
+        document.body.appendChild(e)
+    }
+ 
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+ 
+    function p() {
+        var e = document.createElement("div");
+        e.setAttribute("class", a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+ 
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+ 
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+ 
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+ 
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+ 
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+ 
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+ 
+    function S() {
+        var e = document.createElement("audio");
+        e.setAttribute("class", l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener("canplay", function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener("ended", function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+        document.body.appendChild(e);
+        e.play()
+    }
+ 
+    function x(e) {
+        e.className += " " + s + " " + o
+    }
+ 
+    function T(e) {
+        e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+    }
+ 
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp("\\b" + s + "\\b");
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, "")
+        }
+    }
+ 
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = "https://etnly.oss-cn-shanghai.aliyuncs.com/harlem-shake.mov";
+    var s = "mw-harlem_shake_me";
+    var o = "im_first";
+    var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+    var a = "mw-strobe_light";
+    var f = "https://etnly.oss-cn-shanghai.aliyuncs.com/harlem-shake-style.css";
+    var l = "mw_added_css";
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName("*");
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn("Could not find a node of the right size. Please try a different page.");
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+})()'><i class="fa fa-music"></i> High</a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Etnly" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/guo-shuo-yu/" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>知乎</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/users/6716553/yu-etnl" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/u/0/116333049392525409304" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/etnly" target="_blank" title="Facebook">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>Facebook</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/Etnly7" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://zh.wikipedia.org/wiki/User:Etnly" target="_blank" title="关于">
+                      
+                        <i class="fa fa-fw fa-user"></i>关于</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://yuguyou.github.io/blog/" title="VK" target="_blank">VK</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://goodwaf.com" title="Wangex" target="_blank">Wangex</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=396334&auto=1&height=66"></iframe>
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染流水线"><span class="nav-number">1.</span> <span class="nav-text">渲染流水线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#流水线"><span class="nav-number">1.1.</span> <span class="nav-text">流水线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渲染流水线-1"><span class="nav-number">1.2.</span> <span class="nav-text">渲染流水线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CPU和GPU之间的通信"><span class="nav-number">2.</span> <span class="nav-text">CPU和GPU之间的通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GPU流水线"><span class="nav-number">3.</span> <span class="nav-text">GPU流水线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#顶点着色器"><span class="nav-number">3.1.</span> <span class="nav-text">顶点着色器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#曲面细分着色器"><span class="nav-number">3.2.</span> <span class="nav-text">曲面细分着色器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几何着色器"><span class="nav-number">3.3.</span> <span class="nav-text">几何着色器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#裁剪"><span class="nav-number">3.4.</span> <span class="nav-text">裁剪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏幕映射"><span class="nav-number">3.5.</span> <span class="nav-text">屏幕映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三角形设置"><span class="nav-number">3.6.</span> <span class="nav-text">三角形设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三角形遍历"><span class="nav-number">3.7.</span> <span class="nav-text">三角形遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#片元着色器"><span class="nav-number">3.8.</span> <span class="nav-text">片元着色器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逐片元操作"><span class="nav-number">3.9.</span> <span class="nav-text">逐片元操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模板测试："><span class="nav-number">3.9.1.</span> <span class="nav-text">模板测试：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#深度测试："><span class="nav-number">3.9.2.</span> <span class="nav-text">深度测试：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合并："><span class="nav-number">3.9.3.</span> <span class="nav-text">合并：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">宇</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Etnl</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Content By Yu </div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://http-gyunch-org.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://gyunch.org/2016/09/07/ShaderBasics/';
+          this.page.identifier = '2016/09/07/ShaderBasics/';
+          this.page.title = 'Shader入门';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://http-gyunch-org.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
