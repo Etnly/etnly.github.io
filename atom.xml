@@ -63,6 +63,29 @@
   </entry>
   
   <entry>
+    <title>Unity性能优化</title>
+    <link href="http://gyunch.org/2017/11/26/UnityPerformance%20Optimization/"/>
+    <id>http://gyunch.org/2017/11/26/UnityPerformance Optimization/</id>
+    <published>2017-11-25T16:00:00.000Z</published>
+    <updated>2018-06-05T08:49:26.756Z</updated>
+    
+    <content type="html"><![CDATA[<p>🤔</p><hr><a id="more"></a><ul><li>性能优化是游戏项目开发过程中一个永恒的话题。玩家和项目的需求在并且会一直增长，同屏人数、游戏特效和场景复杂度永远在向着“榨干”硬件的趋势逼近。所以，无论硬件设备发展到何种程度，无论研发团队有多么丰富的经验积累，性能优化永远是一个非常棘手而又无法绕开的问题。</li><li>对于Unity性能优化，官方有非常好的教程，（参见<a href="https://unity3d.com/cn/learn/tutorials/topics/performance-optimization" target="_blank" rel="noopener">官方教程</a>）。如果英文水平一般，可以参考<a href="http://www.cnblogs.com/alan777/p/6204759.html" target="_blank" rel="noopener">官方教程翻译</a></li><li>同时我们也可以去看看<a href="http://wetest.qq.com/lab/view/108.html?from=content_zhihu" target="_blank" rel="noopener">腾讯是如何做Unity手游性能优化的</a></li><li>这里我说一些自己的经验，以及常用的优化方法</li></ul><hr><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a><strong>工具</strong></h2><ul><li>首先从Unity性能优化工具说起</li><li><strong>Unity Profile</strong><br>Unity中最常用的官方性能分析工具，Unity Profiler能定量地找到C#的GC Alloc问题</li><li><p><strong>XCode Capture GPU frame</strong><br>能高效且定量地定位到GPU中shader的消耗。苹果平台下图形调试最好的选择。</p></li><li><p><strong>TimeProfiler</strong><br>Instruments的TimeProfiler能高效且定量地定位C#脚本的CPU占用，甚至包括部分Unity引擎代码的CPU占用函数消耗，而不必麻烦地添加BeginSample()、EndSample()。</p></li></ul><hr><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a><strong>方法</strong></h2><ul><li>性能优化主要是围绕CPU、GPU和内存三大方面进行，所以我们可以从这三方面展开。</li></ul><h3 id="CPU优化"><a href="#CPU优化" class="headerlink" title="CPU优化"></a><strong>CPU优化</strong></h3><ol><li>使用对象池优化游戏物体的创建与销毁；</li><li>使用对象池时，应当可以支持把物体移除屏幕，连续使用的物体可以只是移出屏幕，只有长时间不使用的物体才隐藏；</li><li>减少对粒子系统Play()的调用；</li><li>避免实例化对象时造成cpu峰值。比如某一个特定时间，集中创建很多对象，这里可以使用协程做一些间隔；</li><li>尽量删除脚本中为空或不需要的方法；</li><li>同一脚本中频繁使用的变量建议声明其为全局变量，脚本之间频繁调用的变量或方法建议声明为全局静态变量或方法；</li><li>不要去频繁获取组件，将其声明为全局变量；</li><li>处理Rigidbody时，使用FixedUpdate，设置Fixed timestep，减少物理计算次数；</li><li>如果可以，尽量不用MeshCollider，如果不能避免的话，尽量用减少Mesh的面片数，或用较少面片的代理体来代替；</li><li>减少GetComponent()的使用频率，GetComponent()会有一定的GC产生，有少量的CPU消耗；</li><li>使用内建数组如使用Vector3.zero而不是new Vector(0,0,0);</li></ol><h3 id="GPU优化"><a href="#GPU优化" class="headerlink" title="GPU优化"></a><strong>GPU优化</strong></h3><ol><li>保持材质的数目尽可能少；</li><li>Mesh合并，可以在3dMax或其他建模软件上进行操作，也可在Unity中进行操作；</li><li>使用“全局光照+光照探头”代替实时局部光照；</li><li>避免使用实时阴影，如果必须使用实时阴影，可以在 Quality 质量设置中选择合适的阴影质量，在画面效果和渲染效率之间找到平衡点；</li><li>LOD层级细节，根据距离的远近使用不同模型级别，这样就可以减少模型上面的顶点和面片数量从而提高性能；</li><li>使用纹理图集（一张大贴图里包含了很多子贴图）来代替一系列单独的小贴图；</li><li>使用遮挡剔除（Occlusion Culling）当场景中有大量模型需要渲染时，应用遮挡剔除可实现减少DrawCall提升性能的效果；</li><li>Lightmapping光照贴图技术，首先将需要进行光照贴图的游戏物体设置为Lightmap Static，其次将用于光照贴图的所有光源设置为Baked模式，最后进行烘焙；</li><li>静态物体尽量将法线渲染到贴图。</li><li>使用静态批处理，静态批处理允许游戏引擎尽可能多的去降低绘制任意大小的物体所产生的DrawCall</li></ol><h3 id="内存优化"><a href="#内存优化" class="headerlink" title="内存优化"></a><strong>内存优化</strong></h3><ol><li>使用压缩纹理</li><li>及时释放资源</li><li>减少使用的库</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;🤔&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="Unity" scheme="http://gyunch.org/categories/Unity/"/>
+    
+    
+      <category term="优化" scheme="http://gyunch.org/tags/%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
     <title>LuaFramework</title>
     <link href="http://gyunch.org/2017/09/13/LuaFramework/"/>
     <id>http://gyunch.org/2017/09/13/LuaFramework/</id>
@@ -438,29 +461,6 @@
     <updated>2018-06-02T09:10:08.769Z</updated>
     
     <content type="html"><![CDATA[<p>🤔</p><hr><a id="more"></a><p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1frwxc9xza1j31kw1ajnpe.jpg" alt=" "></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;🤔&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="C#" scheme="http://gyunch.org/categories/C/"/>
-    
-    
-      <category term="基础" scheme="http://gyunch.org/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C#简介</title>
-    <link href="http://gyunch.org/2016/05/01/Csharpintroduce/"/>
-    <id>http://gyunch.org/2016/05/01/Csharpintroduce/</id>
-    <published>2016-04-30T16:00:00.000Z</published>
-    <updated>2018-06-02T09:10:34.527Z</updated>
-    
-    <content type="html"><![CDATA[<p>🤔</p><hr><a id="more"></a><ul><li>C# 是一种面向对象的语言。不仅如此，C# 还进一步支持面向组件的编程。 当代软件设计越来越依赖采用自描述的独立功能包形式的软件组件。 此类组件的关键特征包括：为编程模型提供属性、方法和事件；包含提供组件声明性信息的特性；包含自己的文档。 C# 提供了语言构造来直接支持这些概念，让 C# 成为一种非常自然的语言，可用于创建和使用软件组件。</li><li>多项 C# 功能有助于构造可靠耐用的应用程序：垃圾回收可自动回收无法访问的未使用对象占用的内存；异常处理提供了一种结构化的可扩展方法来执行错误检测和恢复；C# 语言的类型安全设计禁止读取未初始化的变量、为范围之外的数组编制索引或执行未检查的类型转换。</li><li>C# 采用统一的类型系统。 所有 C# 类型（包括 int 和 double 等基元类型）均继承自一个根 object 类型。 因此，所有类型共用一组通用运算，任何类型的值都可以一致地进行存储、传输和处理。 此外，C# 还支持用户定义的引用类型和值类型，从而支持对象动态分配以及轻量级结构的内嵌式存储。<br>为了确保 C# 程序和库能够随着时间的推移以兼容的方式发展，C# 设计更强调版本控制。 许多编程语言很少关注这个问题，因此，当引入新版依赖库时，用这些语言编写的程序会出现更多不必要的中断现象。 由于更强调版本控制，直接受影响的 C# 设计方面包括单独的 virtual 和 override 修饰符、关于方法重载决策的规则，以及对显式接口成员声明的支持。</li><li>C# 是专为公共语言基础结构（CLI）设计的。CLI 由可执行代码和运行时环境组成，允许在不同的计算机平台和体系结构上使用各种高级语言。<br>下面列出了 C# 成为一种广泛应用的专业语言的原因：<br>现代的、通用的编程语言。<br>面向对象。<br>面向组件。<br>容易学习。<br>结构化语言。<br>它产生高效率的程序。<br>它可以在多种计算机平台上编译。<br>.Net 框架的一部分。<br>C# 强大的编程功能<br>虽然 C# 的构想十分接近于传统高级语言 C 和 C++，是一门面向对象的编程语言，但是它与 Java 非常相似，有许多强大的编程功能，因此得到广大程序员的青睐。<br>下面列出 C# 一些重要的功能：<br>布尔条件（Boolean Conditions）<br>自动垃圾回收（Automatic Garbage Collection）<br>标准库（Standard Library）<br>组件版本（Assembly Versioning）<br>属性（Properties）和事件（Events）<br>委托（Delegates）和事件管理（Events Management）<br>易于使用的泛型（Generics）<br>索引器（Indexers）<br>条件编译（Conditional Compilation）<br>简单的多线程（Multithreading）<br>LINQ 和 Lambda 表达式<br>集成 Windows<br>详细指南可参考msdn，.net官方指南</li></ul>]]></content>
     
     <summary type="html">
     
