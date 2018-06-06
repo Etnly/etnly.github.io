@@ -7,6 +7,7 @@ http://gyunch.org/2017/07/17/Astar/
 http://gyunch.org/2017/05/13/Ulysses/
 http://gyunch.org/2017/03/22/MVC/
 http://gyunch.org/2016/12/08/Product Manager/
+http://gyunch.org/2016/10/19/GameManager/
 http://gyunch.org/2016/09/07/ShaderBasics/
 http://gyunch.org/2016/09/02/KNN/
 http://gyunch.org/2016/08/19/Observer/
@@ -25,8 +26,8 @@ http://gyunch.org/2016/05/01/Csharpconstruction(al)drawing/
 http://gyunch.org/2016/05/01/Csharpintroduce/
 http://gyunch.org/2016/04/20/Webpenetration test/
 http://gyunch.org/2016/04/14/greedy algorithm/
-http://gyunch.org/2016/04/01/PythonOOP/
 http://gyunch.org/2016/04/01/Pythondata structure/
+http://gyunch.org/2016/04/01/PythonOOP/
 http://gyunch.org/2016/03/30/PythonBasics(2)/
 http://gyunch.org/2016/03/27/Python Basics(1)/
 http://gyunch.org/2015/10/01/Disassembly Basics/

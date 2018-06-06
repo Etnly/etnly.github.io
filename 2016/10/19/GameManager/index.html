@@ -71,7 +71,7 @@
 
 
 
-  <meta name="keywords" content="机器学习," />
+  <meta name="keywords" content="设计模式," />
 
 
 
@@ -85,16 +85,16 @@
 
 
 <meta name="description" content="🤔">
-<meta name="keywords" content="机器学习">
+<meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="K-近邻算法">
-<meta property="og:url" content="http://gyunch.org/2016/09/02/KNN/index.html">
+<meta property="og:title" content="GameManager">
+<meta property="og:url" content="http://gyunch.org/2016/10/19/GameManager/index.html">
 <meta property="og:site_name" content="Etnly&#39;s Blog">
 <meta property="og:description" content="🤔">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-04T06:44:13.182Z">
+<meta property="og:updated_time" content="2018-06-06T14:35:47.336Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="K-近邻算法">
+<meta name="twitter:title" content="GameManager">
 <meta name="twitter:description" content="🤔">
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://gyunch.org/2016/09/02/KNN/"/>
+  <link rel="canonical" href="http://gyunch.org/2016/10/19/GameManager/"/>
 
 
 
 
 
-  <title>K-近邻算法 | Etnly's Blog</title>
+  <title>GameManager | Etnly's Blog</title>
   
 
 
@@ -322,7 +322,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://gyunch.org/2016/09/02/KNN/">
+    <link itemprop="mainEntityOfPage" href="http://gyunch.org/2016/10/19/GameManager/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="宇">
@@ -339,7 +339,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">K-近邻算法</h2>
+          <h2 class="post-title" itemprop="name headline">GameManager</h2>
         
 
         <div class="post-meta">
@@ -351,8 +351,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-02T00:00:00+08:00">
-                2016-09-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-19T00:00:00+08:00">
+                2016-10-19
               </time>
             
 
@@ -374,8 +374,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/Unity/" itemprop="url" rel="index">
+                    <span itemprop="name">Unity</span>
                   </a>
                 </span>
 
@@ -392,9 +392,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/09/02/KNN/#comments" itemprop="discussionUrl">
+                <a href="/2016/10/19/GameManager/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/09/02/KNN/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2016/10/19/GameManager/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -430,27 +430,19 @@
         <p>🤔</p>
 <hr>
 <a id="more"></a>
-<h2 id="K-近邻算法概述"><a href="#K-近邻算法概述" class="headerlink" title="K-近邻算法概述"></a><strong>K-近邻算法概述</strong></h2><ul>
-<li>简单的说，K-近邻算法采用测量不同特征值之间的距离方法进行分类。</li>
-<li>优点：精度高，对异常值不敏感，无数据输入假定。</li>
-<li>缺点：计算复杂度高，空间复杂度高。</li>
-<li>适用范围：数值型和标称型。</li>
-</ul>
+<p><strong>这片文章主要介绍之前的项目中使用过的各类管理器</strong></p>
 <hr>
-<h2 id="K-近邻算法工作原理"><a href="#K-近邻算法工作原理" class="headerlink" title="K-近邻算法工作原理"></a><strong>K-近邻算法工作原理</strong></h2><p>存在一个样本数据集合，可以称之为训练样本集，并且样本集中每个数据都存在标签，即我们知道样本集中每一数据与所属分类的对应关系。输入没有标签的新数据后，将新数据的每个特征与样本集中数据对应的特征进行比较，然后算法提取样本集中特征最邻近数据的分类标签。一般来说我们只选择样本数据集中前k个最相似的数据，这就是K-近邻算法中k的由来，通常k是不大于20的整数。最后选择k个最相似数据中出现次数最多的分类，作为新数据的分类。</p>
+<h2 id="组建单例模版类"><a href="#组建单例模版类" class="headerlink" title="组建单例模版类"></a><strong>组建单例模版类</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 组建单例模版</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class AD_MonoSingleten&lt;T&gt; : MonoBehaviour where T : MonoBehaviour&#123;</span><br><span class="line">    private static T instance;</span><br><span class="line">    public static T Instance&#123;</span><br><span class="line">        get&#123;</span><br><span class="line">            if (instance == null)&#123;</span><br><span class="line">                GameObject go = new GameObject(typeof(T).Name);</span><br><span class="line">                instance = go.AddComponent&lt;T&gt;();</span><br><span class="line">            &#125;</span><br><span class="line">            return instance;</span><br><span class="line">        &#125;</span><br><span class="line">        set &#123;</span><br><span class="line">            instance = value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    protected virtual void Awake()&#123;</span><br><span class="line">        Instance = this as T;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<ul>
-<li>下边是K-近邻算法的一个示例：</li>
-</ul>
-<ol>
-<li>收集数据：提供文本文件。</li>
-<li>准备数据：使用python解析文件。</li>
-<li>分析数据：使用Matplotlib画二维扩散图</li>
-<li>训练算法：</li>
-<li>测试算法：以文件部分数据作为测试样本</li>
-<li>使用算法：可以输入特征数据以判断是否正确</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">&apos;&apos;&apos;</span><br><span class="line">在文件datingTest中存放着某约会网站的样本数据，每个样本占据一行，共1000行。</span><br><span class="line">其中主要包括： 每年飞行里程数， 玩游戏所耗时间比， 每周消费的冰淇淋数。</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line"></span><br><span class="line">from numpy import *</span><br><span class="line">import os</span><br><span class="line">import operator</span><br><span class="line">import matplotlib</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">from os import listdir</span><br><span class="line"></span><br><span class="line">def file2matrix(filename):</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    处理输入格式</span><br><span class="line">    :param filename:</span><br><span class="line">    :return:</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    fr = open(filename)</span><br><span class="line">    numberOfLines = len(fr.readlines())       #得到文件行数</span><br><span class="line">    returnMat = zeros((numberOfLines,3))      #创建返回的NumPy矩阵</span><br><span class="line">    classLabelVector = []</span><br><span class="line">    fr = open(filename)</span><br><span class="line">    index = 0</span><br><span class="line">    for line in fr.readlines():                #解析文件数据到列表</span><br><span class="line">        line = line.strip()</span><br><span class="line">        listFromLine = line.split(&apos;\t&apos;)</span><br><span class="line">        returnMat[index,:] = listFromLine[0:3]</span><br><span class="line">        classLabelVector.append(int(listFromLine[-1]))</span><br><span class="line">        index += 1</span><br><span class="line">    return returnMat,classLabelVector</span><br><span class="line"></span><br><span class="line">def autoNorm(dataSet):</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    将每列的最小值放在变量minVals中，最大值放在maxVals中，</span><br><span class="line">    其中dataSet.min（0）中的参数0使得函数可以从列中取最小值，而不是选取当前行最小值。</span><br><span class="line">    然后函数计算可能的取之范围，并创建新的矩阵返回</span><br><span class="line">    :param dataSet:</span><br><span class="line">    :return:</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    minVals = dataSet.min(0)</span><br><span class="line">    maxVals = dataSet.max(0)</span><br><span class="line">    ranges = maxVals - minVals</span><br><span class="line">    normDataSet = zeros(shape(dataSet))</span><br><span class="line">    m = dataSet.shape[0]</span><br><span class="line">    normDataSet = dataSet - tile(minVals, (m, 1))</span><br><span class="line">    normDataSet = normDataSet / tile(ranges, (m, 1))  #特征值相除</span><br><span class="line">    return normDataSet, ranges, minVals</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def classify0(inX, dataSet, labels, k):</span><br><span class="line">    dataSetSize = dataSet.shape[0]</span><br><span class="line">	 #距离计算</span><br><span class="line">    diffMat = tile(inX, (dataSetSize,1)) - dataSet</span><br><span class="line">    sqDiffMat = diffMat**2</span><br><span class="line">    sqDistances = sqDiffMat.sum(axis=1)</span><br><span class="line">    distances = sqDistances**0.5</span><br><span class="line">    sortedDistIndicies = distances.argsort()</span><br><span class="line">    classCount=&#123;&#125;</span><br><span class="line">    for i in range(k):</span><br><span class="line">   #选择距离最小的k个点</span><br><span class="line">        voteIlabel = labels[sortedDistIndicies[i]]</span><br><span class="line">        classCount[voteIlabel] = classCount.get(voteIlabel,0) + 1</span><br><span class="line">    #排序</span><br><span class="line">    sortedClassCount = sorted(classCount.iteritems(), key=operator.itemgetter(1), reverse=True)</span><br><span class="line">    return sortedClassCount[0][0]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def datingClassTest():</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    使用file2matrix和autoNorm函数从文件中读取数据并转换为归一化特征值</span><br><span class="line">    接着计算测试向量的数量，决定normMat向量中哪些数据用于测试，哪些用于训练样本</span><br><span class="line">    然后将两部分数据输入到原始分类起函数classify0，</span><br><span class="line">    最后计算错误率并返回</span><br><span class="line">    :return:</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    hoRatio = 0.10</span><br><span class="line">    datingDataMat, datingLabels = file2matrix(&apos;datingTestSet.txt&apos;)</span><br><span class="line">    normMat, range, minvals = autoNorm(datingDataMat)</span><br><span class="line">    m = normMat.shape[0]</span><br><span class="line">    numTestVecs = int(m*hoRatio)</span><br><span class="line">    errorCount = 0.0</span><br><span class="line">    for i in range(numTestVecs):</span><br><span class="line">        classifierResult = classify0(normMat[i,:], normMat[numTestVecs:m, :], datingLabels[numTestVecs:m], 3)</span><br><span class="line">        print(&quot;the classifier came back with : %d, the real answer is : %d&quot; %(classifierResult, datingLabels[i]))</span><br><span class="line">        if(classifierResult != datingLabels[i]):</span><br><span class="line">            errorCount += 1.0</span><br><span class="line">    print(&quot;the total error rate is : %f&quot; %(errorCount/float(numTestVecs)))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">datingClassTest()</span><br><span class="line">datingDataMat, datingLabels = file2matrix(&apos;datingTestSet2.txt&apos;)</span><br><span class="line">fig = plt.figure()</span><br><span class="line">ax = fig.add_subplot(111)</span><br><span class="line">ax.scatter(datingDataMat[:,1], datingDataMat[:,2])</span><br><span class="line">ax.scatter(datingDataMat[:, 1], datingDataMat[:, 2], 15.0*array(datingLabels), 15.0*array(datingLabels))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h2 id="预制体管理器"><a href="#预制体管理器" class="headerlink" title="预制体管理器"></a>预制体管理器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 文件名：AD_PrefabManager</span><br><span class="line">/// 功能说明：预制体管理器</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line"></span><br><span class="line">public class AD_PrefabManager : AD_Singleton&lt;AD_PrefabManager&gt; &#123;</span><br><span class="line"></span><br><span class="line">    /// &lt;summary&gt;</span><br><span class="line">    /// 实例化预制体</span><br><span class="line">    /// &lt;/summary&gt;</span><br><span class="line">    /// &lt;typeparam name=&quot;T&quot;&gt;&lt;/typeparam&gt;</span><br><span class="line">    /// &lt;param name=&quot;name&quot;&gt;&lt;/param&gt;</span><br><span class="line">    /// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">    public GameObject Spawn(AD_PrefabType type, string name, Vector3 pos, Quaternion rotation, Transform parent)</span><br><span class="line">    &#123;</span><br><span class="line">        string path = AD_ResourcesPath.GetPath(type, name);</span><br><span class="line">        GameObject obj = AD_ResourceFactory.Instance.Load&lt;GameObject&gt;(path);</span><br><span class="line">        if(obj != null)</span><br><span class="line">        &#123;</span><br><span class="line">            obj = GameObject.Instantiate(obj) as GameObject;</span><br><span class="line">            obj.transform.SetParent(parent);</span><br><span class="line">            obj.transform.localPosition = pos;</span><br><span class="line">            obj.transform.localRotation = rotation;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            Debug.LogError(&quot;perfab not find !&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        return obj;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public GameObject Spawn(AD_PrefabType type, string name)</span><br><span class="line">    &#123;</span><br><span class="line">        return Spawn(type, name, Vector3.zero,  Quaternion.identity, null);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public GameObject Spawn(AD_PrefabType type, string name, Transform parent)</span><br><span class="line">    &#123;</span><br><span class="line">        return Spawn(type, name, Vector3.zero, Quaternion.identity, parent);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="音效管理器"><a href="#音效管理器" class="headerlink" title="音效管理器"></a><strong>音效管理器</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 文件名:AD_AudioManager</span><br><span class="line">/// 功能说明:音效管理器</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line"></span><br><span class="line">[RequireComponent(typeof(AudioSource))]</span><br><span class="line">public class AD_AudioManager : AD_MonoSingleton&lt;AD_AudioManager&gt; &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    private AudioSource mAudioSource;</span><br><span class="line"></span><br><span class="line">    protected override void Awake()</span><br><span class="line">    &#123;</span><br><span class="line">        base.Awake();</span><br><span class="line">        mAudioSource = GetComponent&lt;AudioSource&gt;();</span><br><span class="line">        // 跨场景不销毁</span><br><span class="line">        DontDestroyOnLoad(gameObject);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /// &lt;summary&gt;</span><br><span class="line">    /// 播放背景音乐</span><br><span class="line">    /// &lt;/summary&gt;</span><br><span class="line">    /// &lt;param name=&quot;audioName&quot;&gt;&lt;/param&gt;</span><br><span class="line">    public void PlayBGAudio(string audioName)</span><br><span class="line">    &#123;</span><br><span class="line">        // 加载背景音乐</span><br><span class="line">        AudioClip bg = AD_ResourceFactory.Instance.Load&lt;AudioClip&gt;(AD_ResourcesPath.Audio_Environment + audioName);</span><br><span class="line">        // 设置背景音乐</span><br><span class="line">        mAudioSource.clip = bg;</span><br><span class="line">        // 循环播放</span><br><span class="line">        mAudioSource.loop = true;</span><br><span class="line">        // 播放</span><br><span class="line">        mAudioSource.Play();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /// &lt;summary&gt;</span><br><span class="line">    /// 播放指定音乐</span><br><span class="line">    /// &lt;/summary&gt;</span><br><span class="line">    /// &lt;param name=&quot;audioName&quot;&gt;&lt;/param&gt;</span><br><span class="line">    public void PlayAudio(AD_AudioType type, string audioName)</span><br><span class="line">    &#123;</span><br><span class="line">        string path = AD_ResourcesPath.GetPath(type, audioName);</span><br><span class="line">        AudioClip clip = AD_ResourceFactory.Instance.Load&lt;AudioClip&gt;(path);</span><br><span class="line">        AudioSource.PlayClipAtPoint(clip, transform.position);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="场景加载管理器"><a href="#场景加载管理器" class="headerlink" title="场景加载管理器"></a><strong>场景加载管理器</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">using System.Collections;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 文件名：AD_Singleton</span><br><span class="line">/// 功能说明：场景单例</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class AD_Singleton&lt;T&gt; where T : new() &#123;</span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 场景单例</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	private static readonly T instance = new T();</span><br><span class="line">	public static T Instance &#123;</span><br><span class="line">		get&#123;</span><br><span class="line">			return instance;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">using System.Collections;</span><br><span class="line">using UnityEngine;</span><br><span class="line">using UnityEngine.SceneManagement;</span><br><span class="line"></span><br><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 文件名:AD_ScenesManager</span><br><span class="line">/// 功能说明:场景加载管理器</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class AD_ScenesManager : AD_Singleton&lt;AD_ScenesManager&gt; &#123;</span><br><span class="line">	private string sceneName;  // 切换场景名</span><br><span class="line">	private AsyncOperation asyncOper;</span><br><span class="line">	private float progress; // 进度</span><br><span class="line">	public float Progress&#123;</span><br><span class="line">		get&#123;</span><br><span class="line">			return progress;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 场景切换</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	/// &lt;param name=&quot;sceneName&quot;&gt;Scene name.&lt;/param&gt;</span><br><span class="line">	public void LoadScene(string sceneName)&#123;</span><br><span class="line">		this.sceneName = sceneName;</span><br><span class="line">		SceneManager.LoadScene (ScenesName.SceneLoading);</span><br><span class="line">	&#125;</span><br><span class="line">	/// &lt;summary&gt;</span><br><span class="line">	/// 异步加载场景</span><br><span class="line">	/// &lt;/summary&gt;</span><br><span class="line">	/// &lt;returns&gt;The scene async.&lt;/returns&gt;</span><br><span class="line">	public IEnumerator LoadSceneAsync()&#123;</span><br><span class="line">		asyncOper = SceneManager.LoadSceneAsync (sceneName);</span><br><span class="line">		//阻止场景自动跳转</span><br><span class="line">		AudioManager.Instance.PlayBG(&quot;Sound_SceneLoding&quot;);</span><br><span class="line">		asyncOper.allowSceneActivation = false;</span><br><span class="line">		//场景过度进度</span><br><span class="line">		while(asyncOper.progress &lt; 0.9f)&#123;</span><br><span class="line">			progress += 0.005f;</span><br><span class="line">			yield return 0;</span><br><span class="line">		&#125; </span><br><span class="line">		while (progress &lt; 1) &#123;</span><br><span class="line">			progress += 0.005f;</span><br><span class="line">			yield return 0;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		AudioManager.Instance.PlayBG (&quot;Sound_Background&quot;);</span><br><span class="line">		asyncOper.allowSceneActivation = true;</span><br><span class="line"></span><br><span class="line">		yield return 0;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong><a href="http://gyunch.org/2016/08/15/FSM/">有限状态机管理器</a>，<a href="http://gyunch.org/2016/08/10/unityObject%20pool/">对象池管理器</a> </strong>在之前有写过</p>
+
       
     </div>
     
@@ -475,7 +467,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
           
         </div>
       
@@ -488,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/19/Observer/" rel="next" title="观察者模式">
-                <i class="fa fa-chevron-left"></i> 观察者模式
+              <a href="/2016/09/07/ShaderBasics/" rel="next" title="Shader入门">
+                <i class="fa fa-chevron-left"></i> Shader入门
               </a>
             
           </div>
@@ -498,8 +490,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/07/ShaderBasics/" rel="prev" title="Shader入门">
-                Shader入门 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/08/Product Manager/" rel="prev" title="产品经理基础手册">
+                产品经理基础手册 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -875,7 +867,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#K-近邻算法概述"><span class="nav-number">1.</span> <span class="nav-text">K-近邻算法概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#K-近邻算法工作原理"><span class="nav-number">2.</span> <span class="nav-text">K-近邻算法工作原理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#组建单例模版类"><span class="nav-number">1.</span> <span class="nav-text">组建单例模版类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预制体管理器"><span class="nav-number">2.</span> <span class="nav-text">预制体管理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#音效管理器"><span class="nav-number">3.</span> <span class="nav-text">音效管理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#场景加载管理器"><span class="nav-number">4.</span> <span class="nav-text">场景加载管理器</span></a></li></ol></div>
             
 
           </div>
@@ -1058,9 +1050,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://gyunch.org/2016/09/02/KNN/';
-          this.page.identifier = '2016/09/02/KNN/';
-          this.page.title = 'K-近邻算法';
+          this.page.url = 'http://gyunch.org/2016/10/19/GameManager/';
+          this.page.identifier = '2016/10/19/GameManager/';
+          this.page.title = 'GameManager';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://http-gyunch-org.disqus.com/embed.js';
