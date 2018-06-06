@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://gyunch.org/2015/07/23/Hello,World/</loc>
+    
+    <lastmod>2018-06-06T15:15:07.114Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://gyunch.org/2016/10/18/GameManager/</loc>
     
     <lastmod>2018-06-06T14:38:02.718Z</lastmod>
@@ -124,13 +131,6 @@
     <loc>http://gyunch.org/2015/10/01/Disassembly%20Basics/</loc>
     
     <lastmod>2018-05-24T08:00:06.444Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://gyunch.org/2015/07/23/Hello,World/</loc>
-    
-    <lastmod>2018-05-24T07:35:48.697Z</lastmod>
     
   </url>
   
