@@ -431,29 +431,6 @@
   </entry>
   
   <entry>
-    <title>二叉树</title>
-    <link href="http://gyunch.org/2016/06/21/Binary%20Tree/"/>
-    <id>http://gyunch.org/2016/06/21/Binary Tree/</id>
-    <published>2016-06-20T16:00:00.000Z</published>
-    <updated>2018-06-06T04:06:29.238Z</updated>
-    
-    <content type="html"><![CDATA[<p>🤔</p><hr><a id="more"></a><p><strong>二叉树是一个连通的无环图，并且每一个顶点的度不大于3。有根二叉树还要满足根结点的度不大于2。有了根结点之后，每个顶点定义了唯一的父结点，和最多2个子结点。然而，没有足够的信息来区分左结点和右结点。如果不考虑连通性，允许图中有多个连通分量，这样的结构叫做森林。</strong></p><ul><li>下面我们通过python来实现二叉树及其遍历</li></ul><blockquote><p>构建二叉树<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Node:</span><br><span class="line">    def __init__(self, value = None, left = None, right = None):</span><br><span class="line">        self.value = value</span><br><span class="line">        self.left = left</span><br><span class="line">        self.right = right</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>遍历二叉树<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">def PreTraverse(root):</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    前序遍历</span><br><span class="line">    :param root:</span><br><span class="line">    :return:</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    if root == None:</span><br><span class="line">        return</span><br><span class="line">    print(root.value)</span><br><span class="line">    PreTraverse(root.left)</span><br><span class="line">    PreTraverse(root.right)</span><br><span class="line"></span><br><span class="line">def MidTraverse(root):</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    中序遍历</span><br><span class="line">    :param root:</span><br><span class="line">    :return:</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    if root == None:</span><br><span class="line">        return</span><br><span class="line">    MidTraverse(root.left)</span><br><span class="line">    print(root.value)</span><br><span class="line">    MidTraverse(root.right)</span><br><span class="line"></span><br><span class="line">def AfterTraverse(root):</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    后序遍历</span><br><span class="line">    :param root:</span><br><span class="line">    :return:</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    if root == None:</span><br><span class="line">        return</span><br><span class="line">    AfterTraverse(root.left)</span><br><span class="line">    AfterTraverse(root.right)</span><br><span class="line">    print(root.value)</span><br></pre></td></tr></table></figure></p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;🤔&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="Python" scheme="http://gyunch.org/categories/Python/"/>
-    
-    
-      <category term="数据结构" scheme="http://gyunch.org/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Python函数式编程</title>
     <link href="http://gyunch.org/2016/06/17/python%20Functional/"/>
     <id>http://gyunch.org/2016/06/17/python Functional/</id>
@@ -473,6 +450,29 @@
     
     
       <category term="Functional" scheme="http://gyunch.org/tags/Functional/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二叉树</title>
+    <link href="http://gyunch.org/2016/05/09/Binary%20Tree/"/>
+    <id>http://gyunch.org/2016/05/09/Binary Tree/</id>
+    <published>2016-05-08T16:00:00.000Z</published>
+    <updated>2018-06-06T04:10:31.969Z</updated>
+    
+    <content type="html"><![CDATA[<p>🤔</p><hr><a id="more"></a><p><strong>二叉树是一个连通的无环图，并且每一个顶点的度不大于3。有根二叉树还要满足根结点的度不大于2。有了根结点之后，每个顶点定义了唯一的父结点，和最多2个子结点。然而，没有足够的信息来区分左结点和右结点。如果不考虑连通性，允许图中有多个连通分量，这样的结构叫做森林。</strong></p><ul><li>下面我们通过python来实现二叉树及其遍历</li></ul><blockquote><p>构建二叉树<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Node:</span><br><span class="line">    def __init__(self, value = None, left = None, right = None):</span><br><span class="line">        self.value = value</span><br><span class="line">        self.left = left</span><br><span class="line">        self.right = right</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>遍历二叉树<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">def PreTraverse(root):</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    前序遍历</span><br><span class="line">    :param root:</span><br><span class="line">    :return:</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    if root == None:</span><br><span class="line">        return</span><br><span class="line">    print(root.value)</span><br><span class="line">    PreTraverse(root.left)</span><br><span class="line">    PreTraverse(root.right)</span><br><span class="line"></span><br><span class="line">def MidTraverse(root):</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    中序遍历</span><br><span class="line">    :param root:</span><br><span class="line">    :return:</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    if root == None:</span><br><span class="line">        return</span><br><span class="line">    MidTraverse(root.left)</span><br><span class="line">    print(root.value)</span><br><span class="line">    MidTraverse(root.right)</span><br><span class="line"></span><br><span class="line">def AfterTraverse(root):</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    后序遍历</span><br><span class="line">    :param root:</span><br><span class="line">    :return:</span><br><span class="line">    &apos;&apos;&apos;</span><br><span class="line">    if root == None:</span><br><span class="line">        return</span><br><span class="line">    AfterTraverse(root.left)</span><br><span class="line">    AfterTraverse(root.right)</span><br><span class="line">    print(root.value)</span><br></pre></td></tr></table></figure></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;🤔&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://gyunch.org/categories/Python/"/>
+    
+    
+      <category term="数据结构" scheme="http://gyunch.org/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
