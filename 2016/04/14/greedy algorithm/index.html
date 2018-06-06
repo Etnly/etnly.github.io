@@ -71,7 +71,7 @@
 
 
 
-  <meta name="keywords" content="图形学," />
+  <meta name="keywords" content="算法," />
 
 
 
@@ -85,21 +85,23 @@
 
 
 <meta name="description" content="🤔">
-<meta name="keywords" content="图形学">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Shader入门">
-<meta property="og:url" content="http://gyunch.org/2016/09/07/ShaderBasics/index.html">
+<meta property="og:title" content="贪心算法">
+<meta property="og:url" content="http://gyunch.org/2016/04/14/greedy algorithm/index.html">
 <meta property="og:site_name" content="Etnly&#39;s Blog">
 <meta property="og:description" content="🤔">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1frmelhilk7j30f006emx8.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1frmf8dwj2jj30u50eft8r.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1frmg6jpapzj31gm1feqv5.jpg">
-<meta property="og:updated_time" content="2018-05-24T07:33:49.751Z">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1fs1k0za3ocj30he0a4glp.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1fs1k33cglaj30cf02rdg2.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fs1k3i1cfdj30jt09674y.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fs1k3zyb18j306301k745.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fs1k4irv0rj30jg08eq3o.jpg">
+<meta property="og:updated_time" content="2018-06-06T08:56:59.596Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shader入门">
+<meta name="twitter:title" content="贪心算法">
 <meta name="twitter:description" content="🤔">
-<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1frmelhilk7j30f006emx8.jpg">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1fs1k0za3ocj30he0a4glp.jpg">
 
 
 
@@ -129,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://gyunch.org/2016/09/07/ShaderBasics/"/>
+  <link rel="canonical" href="http://gyunch.org/2016/04/14/greedy algorithm/"/>
 
 
 
 
 
-  <title>Shader入门 | Etnly's Blog</title>
+  <title>贪心算法 | Etnly's Blog</title>
   
 
 
@@ -326,7 +328,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://gyunch.org/2016/09/07/ShaderBasics/">
+    <link itemprop="mainEntityOfPage" href="http://gyunch.org/2016/04/14/greedy algorithm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="宇">
@@ -343,7 +345,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Shader入门</h2>
+          <h2 class="post-title" itemprop="name headline">贪心算法</h2>
         
 
         <div class="post-meta">
@@ -355,8 +357,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-07T00:00:00+08:00">
-                2016-09-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-14T00:00:00+08:00">
+                2016-04-14
               </time>
             
 
@@ -378,8 +380,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Shader/" itemprop="url" rel="index">
-                    <span itemprop="name">Shader</span>
+                  <a href="/categories/C-C/" itemprop="url" rel="index">
+                    <span itemprop="name">C/C++</span>
                   </a>
                 </span>
 
@@ -396,9 +398,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/09/07/ShaderBasics/#comments" itemprop="discussionUrl">
+                <a href="/2016/04/14/greedy algorithm/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/09/07/ShaderBasics/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2016/04/14/greedy algorithm/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -434,110 +436,46 @@
         <p>🤔</p>
 <hr>
 <a id="more"></a>
-<h2 id="渲染流水线"><a href="#渲染流水线" class="headerlink" title="渲染流水线"></a><strong>渲染流水线</strong></h2><h3 id="流水线"><a href="#流水线" class="headerlink" title="流水线"></a>流水线</h3><ul>
-<li>在了解什么是渲染流水线前先看一下现实生活中的<strong>流水线</strong>。<blockquote>
-<p>流水线是一种工业上的生产方式，每一个生产单位只专注处理一个片段的工作。<br>比如一个制造手机的工厂，一台手机的制造流程可以分为四个步骤，第一步，制作外壳；第二步，制作屏幕模组；第三步，制作主板；第四步组装手机并进行产品包装。<br>在没有流水线时，只有在每台手机四个工序完成后才能开始制作下一台，这是非常耗时的。<br>如果我们加入流水线，虽然制作一台手机任需要四个步骤，但不需要从头到尾完成全部步骤，而是每个步骤由专人来完成，所有步骤并行进行。<br>使用流水线的好处在于可以提高单位时间的生产量。  </p>
-</blockquote>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a><strong>概念</strong></h2><ul>
+<li><strong>贪心算法</strong>是一种在每一步选择中都采取在当前状态下最好或最优（即最有利）的选择，从而希望导致结果是最好或最优的 算法 。比如在 <a href="http://www.wikiwand.com/zh/%E6%97%85%E8%A1%8C%E6%8E%A8%E9%94%80%E5%91%98%E9%97%AE%E9%A2%98" target="_blank" rel="noopener">旅行推销员问题</a> 中，如果旅行员每次都选择最近的城市，那这就是一种贪心算法。</li>
+<li></li>
+<li><p>贪心算法在有最优子结构的问题中尤为有效。最优子结构的意思是局部最优解能决定全局最优解。简单地说，问题能够分解成子问题来解决，子问题的最优解能递推到最终问题的最优解。</p>
+</li>
+<li><p>贪心算法与 <a href="http://www.wikiwand.com/zh/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92" target="_blank" rel="noopener">动态规划</a> 的不同在于它对每个子问题的解决方案都做出选择，不能回退。动态规划则会保存以前的运算结果，并根据以前的结果对当前进行选择，有回退功能。<br>贪心法可以解决一些 <a href="http://www.wikiwand.com/zh/%E6%9C%80%E4%BC%98%E5%8C%96" target="_blank" rel="noopener">最优化</a> 问题，如：求中的 <a href="http://www.wikiwand.com/zh/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91" target="_blank" rel="noopener">最小生成树</a> 、求 <a href="http://www.wikiwand.com/zh/%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81" target="_blank" rel="noopener">哈夫曼编码</a> ……对于其他问题，贪心法一般不能得到我们所要求的答案。一旦一个问题可以通过贪心法来解决，那么贪心法一般是解决这个问题的最好办法。由于贪心法的高效性以及其所求得的答案比较接近最优结果，贪心法也可以用作辅助算法或者直接解决一些要求结果不特别精确的问题。</p>
 </li>
 </ul>
-<h3 id="渲染流水线-1"><a href="#渲染流水线-1" class="headerlink" title="渲染流水线"></a>渲染流水线</h3><ul>
-<li>流水线的概念同样可以用于计算机的图像渲染中。计算机需要从一系列的顶点数据、纹理等信息出发，把这些信息最终转换成一张人眼可以观察到的图像。这个工作通常有CPU和GPU共同完成</li>
-<li>渲染流水线通常分为三个阶段：应用阶段 ———&gt; 几何阶段 ————&gt; 光栅化阶段<br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1frmelhilk7j30f006emx8.jpg" alt=" "></li>
-</ul>
-<ol>
-<li>应用阶段： 这个阶段有应用主导，通常由CPU负责实现。这一阶段开发者有三个主要任务，首先，需要准备好场景数据（摄相机位置、视锥体、模型和光源等）。其次，为了提高渲染性能，需要做粗粒度的剔除工作。最后，需要设置好每个模型的渲染状态（使用的材质、使用的纹理、使用的Shader等）这一阶段最重要的输出是渲染所需的几何信息，即渲染图元。</li>
-<li>几何阶段：几何阶段主要用于处理所有和我们绘制的几何相关的事情。几何阶段负责和每个渲染图元打交道，进行逐顶点、逐多边形的操作。这个阶段可以进一步分成更小的流水线阶段。几何阶段的一个重要任务就是把顶点坐标变换到屏幕空间中，再交给光栅器进行处理。</li>
-<li>光栅化阶段： 这一阶段会使用上个阶段传递的数据来产生屏幕上的像素，并渲染出最终的图像。</li>
-</ol>
-<hr>
-<h2 id="CPU和GPU之间的通信"><a href="#CPU和GPU之间的通信" class="headerlink" title="CPU和GPU之间的通信"></a><strong>CPU和GPU之间的通信</strong></h2><p>渲染流水线的起点是CPU，即应用阶段。大致可分为三个阶段：</p>
-<ol>
-<li>把数据加载到显存中：所有渲染所需的数据都需要从硬盘中加载到系统内存，然后，网格和纹理等数据又被加载到显存。</li>
-<li>设置渲染状态：这些状态定义了场景中的网格如何被渲染。</li>
-<li>调用Draw Call：Draw Call实际上就是一个命令，它的发起方是CPU,接收方是GPU，这个命令仅仅会指向一个需要被渲染的图元列表，而不会再包含任何材质信息。 当给定一个Draw Call时，GPU就会根据渲染状态和所有输入的顶点数据来进行计算，最终输出成屏幕上显示的像素。</li>
-</ol>
-<hr>
-<h2 id="GPU流水线"><a href="#GPU流水线" class="headerlink" title="GPU流水线"></a><strong>GPU流水线</strong></h2><ul>
-<li>当GPU从CPU得到渲染命令后，就会进行一系列的流水线操作，最终把图元渲染到屏幕上（就是上边的调用Draw Call）</li>
-<li>对于渲染流水线中的后两个阶段（几何阶段和光栅化阶段）开发者无法拥有绝对的控制权，其实现的载体是GPU。GPU通过实现流水线化，大大加快了渲染速度，虽然我们无法完全控制这两个阶段的实现细节，但其向开发者开放了很多控制权。<br>下图展示了不同流水线阶段以及它们的可配执性和可编程性：<br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1frmf8dwj2jj30u50eft8r.jpg" alt=" "></li>
-</ul>
-<h3 id="顶点着色器"><a href="#顶点着色器" class="headerlink" title="顶点着色器"></a>顶点着色器</h3><ul>
-<li>顶点着色器是流水线的第一个阶段，它的输入来自于CPU。顶点着色器的处理单位是顶点,输入进来的每个顶点都会调用一次顶点着色器。顶点着色器本身不可以创建或销毁任何顶点，并无法得到顶点与顶点之间的关系</li>
-<li>顶点着色器是完全可编程的，它通常用于实现顶点的坐标变换和逐顶点光照。<blockquote>
-<p>坐标变换：就是对顶点的坐标进行某种变换—把顶点坐标从模型空间转换到齐次裁剪空间。我们可以通过坐标变换来模拟水面、面料等。  </p>
-</blockquote>
-</li>
-</ul>
-<h3 id="曲面细分着色器"><a href="#曲面细分着色器" class="headerlink" title="曲面细分着色器"></a>曲面细分着色器</h3><ul>
-<li>是一个可选的着色器，主要用于细分图元。</li>
-</ul>
-<h3 id="几何着色器"><a href="#几何着色器" class="headerlink" title="几何着色器"></a>几何着色器</h3><ul>
-<li>是一个可选的着色器，可用于执行逐图元的着色操作，或者被用于产生更多的图元。</li>
-</ul>
-<h3 id="裁剪"><a href="#裁剪" class="headerlink" title="裁剪"></a>裁剪</h3><ul>
-<li>这一阶段是可配置的。目的是把那些不在视野内的顶点裁剪掉，并剔除某些三角形图元的面片。</li>
-<li>一个图元与摄像机视野的关系有3种：完全在视野内、部分在视野内、完全在视野外。</li>
-</ul>
-<ol>
-<li>完全在视野内的图元会继续传递给下一个流水线阶段</li>
-<li>完全在视野外的图元不会继续向下传递</li>
-<li>部分在视野内的图元需要做裁剪处理<blockquote>
-<p>和顶点着色器不同的是，这一步是不可编程的。我们无法通过编程来控制裁剪的过程，而是硬件上的固定操作。  </p>
-</blockquote>
-</li>
-</ol>
-<h3 id="屏幕映射"><a href="#屏幕映射" class="headerlink" title="屏幕映射"></a>屏幕映射</h3><ul>
-<li>这一阶段是不可配置和编程的，负责把每个图元的坐标转换成屏幕坐标。</li>
-<li>这一步输入的坐标仍然是三维坐标系下的坐标。屏幕映射的任务是把每个图元的x和y坐标转换到屏幕坐标系下。</li>
-<li>屏幕映射得到的屏幕坐标决定了这个顶点对应屏幕上哪个像素以及距离这个像素的距离。<blockquote>
-<p>一个需要注意的地方，屏幕坐标系在OpenGL和DirectX中，OpenGL把屏幕左下角当作最小的窗口坐标值，DirectX则在屏幕左上角为最小窗口坐标值。  </p>
-</blockquote>
-</li>
-</ul>
-<h3 id="三角形设置"><a href="#三角形设置" class="headerlink" title="三角形设置"></a>三角形设置</h3><ul>
-<li>由这一步开始进入光栅化阶段。</li>
-<li>上一阶段输出的信息是屏幕坐标系下的顶点位置以及和它们相关的其他信息，如深度值、法线方向、视角方向等。</li>
-<li>光栅化阶段的目标：1.计算每个图元覆盖了哪些像素 2.为这些像素计算它们的颜色</li>
-<li>三角形设置作为光栅化的第一个阶段，会计算出光栅化一个三角网格所需要的信息。上一阶段的输出是三角网格的顶点，如果想得到整个三角网格的覆盖情况，就必须计算每条边上的像素坐标，为了计算边界像素的坐标信息，我们就需要得到三角形边界的表示方式。这样一个得到三角形边界表示方式的过程就是三角形设置。</li>
-<li>它的输出是为下一个阶段做准备</li>
-</ul>
-<h3 id="三角形遍历"><a href="#三角形遍历" class="headerlink" title="三角形遍历"></a>三角形遍历</h3><ul>
-<li>三角形遍历阶段将会检查每个像素是否被一个三角网格所覆盖。如果被覆盖，就会生成一个片元。而这样一个找到哪些像素被三角网格覆盖的过程，就是三角形遍历，这个阶段也被称为扫描变换。</li>
-<li>三角形遍历阶段会根据上一个阶段的计算结果来判断一个三角网格覆盖了哪些像素，并使用三角网格三个顶点的顶点信息对整个覆盖区域的像素进行插值。</li>
-<li>这一步的输出就是得到一个片元序列。<blockquote>
-<p>一个片元并不是真正意义上的像素，而是包含了很多状态的几何，这些状态用于计算每个像素的最终颜色  </p>
-</blockquote>
-</li>
-</ul>
-<h3 id="片元着色器"><a href="#片元着色器" class="headerlink" title="片元着色器"></a>片元着色器</h3><ul>
-<li>片元着色器是另一个非常重要的可编程着色器阶段，在DirectX中，片元着色器被称为像素着色器。</li>
-<li>片元着色器的输入就是上一阶段对顶点信息插值得到的结果，更具体点说，是根据从顶点着色器中输出的数据插值得到的。而其的输出是一个或者多个颜色值。</li>
-<li>这一阶段可以完成很多重要的渲染技术，如纹理采样，但是它的局限在于，它仅可以影响单个片元。</li>
-</ul>
-<h3 id="逐片元操作"><a href="#逐片元操作" class="headerlink" title="逐片元操作"></a>逐片元操作</h3><ul>
-<li>这是渲染流水线的最后一步，这一步骤的目的是：合并</li>
-<li>这一阶段有几个主要任务：</li>
-</ul>
-<ol>
-<li>决定每个片元的可见性。这涉及了深度测试、模板测试等</li>
-<li>如果一个片元通过了所有的测试，就需要把这个片元的颜色值和已经存储在颜色缓冲区中的颜色进行合并，或者说是混合。<blockquote>
-<p>这一阶段是高度可配置性的  </p>
-</blockquote>
-</li>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a><strong>思路</strong></h2><ol>
+<li>建立数学模型来描述问题。</li>
+<li>把求解的问题分成若干个子问题。</li>
+<li>对每一子问题求解，得到子问题的局部最优解。</li>
+<li>把子问题的解局部最优解合成原来解问题的一个解。</li>
 </ol>
 <ul>
-<li>这个阶段首先需要解决每个片元的可见性问题。这需要进行一系列的测试。<blockquote>
-<p>片元 ——&gt; 模版测试 ——&gt; 深度测试 ——&gt; 混合 ——&gt; 颜色缓冲区  </p>
-</blockquote>
-</li>
+<li>实现该算法的过程：<br>从问题的某一初始解出发；while 能朝给定总目标前进一步 do ,求出可行解的一个解元素；最后，由所有解元素组合成问题的一个可行解。</li>
 </ul>
-<blockquote>
-<p>深度测试和模版测试的简化流程图：<br><img src="https://ws1.sinaimg.cn/large/006tNc79gy1frmg6jpapzj31gm1feqv5.jpg" alt=" "></p>
-</blockquote>
-<h4 id="模板测试："><a href="#模板测试：" class="headerlink" title="模板测试："></a>模板测试：</h4><p>如果开启了模板测试，GPU会首先读取模板缓冲区中该片元位置的模板值，然后将该值和读取到的参考值（可以开发者自己指定）进行比较，开发者可以设定成小于时舍弃或者大于等于时舍弃该片元。模板测试通常用于限制渲染的区域，另外模板测试还有别的高级用法，如渲染阴影，轮廓渲染。</p>
-<h4 id="深度测试："><a href="#深度测试：" class="headerlink" title="深度测试："></a>深度测试：</h4><p>如果一个片元幸运的通过了模板测试，那么就会进行深度测试，如果开启了深度深度，GPU就会把该片的深度值和已经存在于深度缓冲区中的深度值进行比较，这个比较函数也是由开发者设定的，可以选择大于此值时舍弃也可以选择小于等于此值时舍弃。但通常这个比较函数是小于等于的关系，这是因为我们我们总想只显示出离摄像机最近的物体，而那些被其他物体遮挡的片元就不需要出现在屏幕上。和模板测试不同的是，如果一个片元没有通过深度测试，他就没有权利修改深度缓冲区中的值。而如果通过了测试，开发者可以通开启/关闭深度写入来决定是否要利用这个片元的深度值覆盖缓冲区中的值。</p>
-<h4 id="合并："><a href="#合并：" class="headerlink" title="合并："></a>合并：</h4><p>我们所讨论的渲染过程是一个物体接着一个物体渲染到屏幕上，而每个像素的颜色信息被存储在一个名为颜色缓冲的地方，因此当我们执行这次渲染时，颜色缓冲中往往已经有了上次渲染的颜色结果，那么我们是使用这次渲染得到的颜色完全覆盖掉之前的结果，还是进行其他处理，这就是合并需要解决的问题。<br>对于不透明物体，开发者可以关闭混合操作，这样片元着色器计算得到的颜色值就会直接覆盖掉颜色缓冲区中的像素值。但对于半透明的物体，我们就需要开启混合操作来让这个物体看起来是半透明的。混合操作是高度可配置的，开发者可以选择开启/关闭混合功能。如果开启了，GPU会取出源颜色和目标颜色，将两种颜色进行混合。源颜色是指片元着色器得到的颜色值，而目标颜色则是已经存在于颜色缓冲区中的颜色值。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>真正实现渲染流水线的过程远比描述的要复杂，但Unity为我们封装了很多功能，我们只需要在一个Unity Shader设置一些输入、编写顶点着色器和片元着色器、设置一些状态，就可以实现大部分屏幕效果。在最新的unity中还集成了Shader蓝图工具供开发者使用。</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a><strong>案例</strong></h2><ol>
+<li><p>这是《算法导论》上的例子，也是一个非常经典的问题。有n个需要在同一天使用同一个教室的活动a1,a2,…,an，教室同一时刻只能由一个活动使用。每个活动ai都有一个开始时间si和结束时间fi 。一旦被选择后，活动ai就占据半开时间区间[si,fi)。如果[si,fi]和[sj,fj]互不重叠，ai和aj两个活动就可以被安排在这一天。该问题就是要安排这些活动使得尽量多的活动能不冲突的举行。<br>可以用数学归纳法证明，我们的贪心策略应该是每次选取结束时间最早的活动。直观上也很好理解，按这种方法选择相容活动为未安排活动留下尽可能多的时间。这也是把各项活动按照结束时间单调递增排序的原因</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">include&lt;cstdio&gt;</span><br><span class="line">#include&lt;iostream&gt; </span><br><span class="line">#include&lt;algorithm&gt; </span><br><span class="line">using namespace std;    </span><br><span class="line">int N;</span><br><span class="line">struct Act</span><br><span class="line">&#123;</span><br><span class="line">	int start;</span><br><span class="line">	int end;</span><br><span class="line">&#125;act[100010];</span><br><span class="line"></span><br><span class="line">bool cmp(Act a,Act b)  </span><br><span class="line">&#123;  </span><br><span class="line">    return a.end&lt;b.end;  </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">int greedy_activity_selector()  </span><br><span class="line">&#123;  </span><br><span class="line">	int num=1,i=1;   </span><br><span class="line">    for(int j=2;j&lt;=N;j++)  </span><br><span class="line">    &#123;  </span><br><span class="line">        if(act[j].start&gt;=act[i].end)  </span><br><span class="line">        &#123;  </span><br><span class="line">            i=j;  </span><br><span class="line">            num++;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    return num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()  </span><br><span class="line">&#123;  </span><br><span class="line">	int t;</span><br><span class="line">	scanf(&quot;%d&quot;,&amp;t);</span><br><span class="line">	while(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		scanf(&quot;%d&quot;,&amp;N);</span><br><span class="line">		for(int i=1;i&lt;=N;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			scanf(&quot;%lld %lld&quot;,&amp;act[i].start,&amp;act[i].end);</span><br><span class="line">		&#125;</span><br><span class="line">		act[0].start=-1;</span><br><span class="line">		act[0].end=-1;</span><br><span class="line">	 	sort(act+1,act+N+1,cmp); </span><br><span class="line">    	int res=greedy_activity_selector();</span><br><span class="line">		cout&lt;&lt;res&lt;&lt;endl;  </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>钱币找零问题<br>这个问题在我们的日常生活中就更加普遍了。假设1元、2元、5元、10元、20元、50元、100元的纸币分别有c0, c1, c2, c3, c4, c5, c6张。现在要用这些钱来支付K元，至少要用多少张纸币？用贪心算法的思想，很显然，每一步尽可能用面值大的纸币即可。在日常生活中我们自然而然也是这么做的。在程序中已经事先将Value按照从小到大的顺序排好。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int N=7; </span><br><span class="line">int Count[N]=&#123;3,0,2,1,0,3,5&#125;;</span><br><span class="line">int Value[N]=&#123;1,2,5,10,20,50,100&#125;;</span><br><span class="line">  </span><br><span class="line">int solve(int money) </span><br><span class="line">&#123;</span><br><span class="line">	int num=0;</span><br><span class="line">	for(int i=N-1;i&gt;=0;i--) </span><br><span class="line">	&#123;</span><br><span class="line">		int c=min(money/Value[i],Count[i]);</span><br><span class="line">		money=money-c*Value[i];</span><br><span class="line">		num+=c;</span><br><span class="line">	&#125;</span><br><span class="line">	if(money&gt;0) num=-1;</span><br><span class="line">	return num;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int main() </span><br><span class="line">&#123;</span><br><span class="line">	int money;</span><br><span class="line">	cin&gt;&gt;money;</span><br><span class="line">	int res=solve(money);</span><br><span class="line">	if(res!=-1) cout&lt;&lt;res&lt;&lt;endl;</span><br><span class="line">	else cout&lt;&lt;&quot;NO&quot;&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>背包问题<br>有一个背包，背包容量是M。有n个重量和价值分别为Wi和Vi的物品，物品可以分割成任意大小，要求尽可能让装入背包中的物品总价值最大，但不能超过总容量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;   </span><br><span class="line">using namespace std;   </span><br><span class="line">const int N=4;  </span><br><span class="line">void knapsack(float M,float v[],float w[],float x[]);  </span><br><span class="line">  </span><br><span class="line">int main()  </span><br><span class="line">&#123;  </span><br><span class="line">    float M=50;</span><br><span class="line">	//背包所能容纳的重量   </span><br><span class="line">    float w[]=&#123;0,10,30,20,5&#125;;</span><br><span class="line">	//每种物品的重量  </span><br><span class="line">    float v[]=&#123;0,200,400,100,10&#125;;  </span><br><span class="line">  	//每种物品的价值 </span><br><span class="line">    float x[N+1]=&#123;0&#125;;  </span><br><span class="line">    //记录结果的数组 </span><br><span class="line">    knapsack(M,v,w,x);  </span><br><span class="line">    cout&lt;&lt;&quot;选择装下的物品比例：&quot;&lt;&lt;endl;  </span><br><span class="line">    for(int i=1;i&lt;=N;i++) cout&lt;&lt;&quot;[&quot;&lt;&lt;i&lt;&lt;&quot;]:&quot;&lt;&lt;x[i]&lt;&lt;endl;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line">void knapsack(float M,float v[],float w[],float x[])  </span><br><span class="line">&#123;  </span><br><span class="line">    int i;  </span><br><span class="line">    //物品整件被装下  </span><br><span class="line">    for(i=1;i&lt;=N;i++)</span><br><span class="line">    &#123;  </span><br><span class="line">        if(w[i]&gt;M) break;   </span><br><span class="line">        x[i]=1;  </span><br><span class="line">        M-=w[i];  </span><br><span class="line">    &#125;   </span><br><span class="line">    //物品部分被装下  </span><br><span class="line">    if(i&lt;=N) x[i]=M/w[i];   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多机调度问题<br>N个作业组成的作业集，可由m台相同机器加工处理。要求给出一种作业调度方案，使所给的n个作业在尽可能短的时间内由m台机器加工处理完成。作业不能拆分成更小的子作业；每个作业均可在任何一台机器上加工处理。这个问题是NP完全问题，还没有有效的解法(求最优解)，但是可以用贪心选择策略设计出较好的近似算法(求次优解)。当n&lt;=m时，只要将作业时间区间分配给作业即可；当n&gt;m时，首先将n个作业从大到小排序，然后依此顺序将作业分配给空闲的处理机。也就是说从剩下的作业中，选择需要处理时间最长的，然后依次选择处理时间次长的，直到所有的作业全部处理完毕，或者机器不能再处理其他作业为止。如果我们每次是将需要处理时间最短的作业分配给空闲的机器，那么可能就会出现其它所有作业都处理完了只剩所需时间最长的作业在处理的情况，这样势必效率较低。在下面的代码中没有讨论n和m的大小关系，把这两种情况合二为一了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;  </span><br><span class="line">#include&lt;algorithm&gt;    </span><br><span class="line">using namespace std;  </span><br><span class="line">int speed[10010];  </span><br><span class="line">int mintime[110];  </span><br><span class="line"></span><br><span class="line">bool cmp( const int &amp;x,const int &amp;y)  </span><br><span class="line">&#123;  </span><br><span class="line">    return x&gt;y;  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line">int main()  </span><br><span class="line">&#123;  </span><br><span class="line">	int n,m;         </span><br><span class="line">	memset(speed,0,sizeof(speed));  </span><br><span class="line"> 	memset(mintime,0,sizeof(mintime));  </span><br><span class="line">  	cin&gt;&gt;n&gt;&gt;m;  </span><br><span class="line">   	for(int i=0;i&lt;n;++i) cin&gt;&gt;speed[i];  </span><br><span class="line">    sort(speed,speed+n,cmp);  </span><br><span class="line">    for(int i=0;i&lt;n;++i)   </span><br><span class="line">    &#123; </span><br><span class="line">    	*min_element(mintime,mintime+m)+=speed[i];   </span><br><span class="line">   	&#125;   </span><br><span class="line">    cout&lt;&lt;*max_element(mintime,mintime+m)&lt;&lt;endl; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>小船过河问题<br>POJ1700是一道经典的贪心算法例题。题目大意是只有一艘船，能乘2人，船的运行速度为2人中较慢一人的速度，过去后还需一个人把船划回来，问把n个人运到对岸，最少需要多久。先将所有人过河所需的时间按照升序排序，我们考虑把单独过河所需要时间最多的两个旅行者送到对岸去，有两种方式：<br>1.最快的和次快的过河，然后最快的将船划回来；次慢的和最慢的过河，然后次快的将船划回来，所需时间为：t[0]+2<em>t[1]+t[n-1]；<br>2.最快的和最慢的过河，然后最快的将船划回来，最快的和次慢的过河，然后最快的将船划回来，所需时间为：2</em>t[0]+t[n-2]+t[n-1]。<br>算一下就知道，除此之外的其它情况用的时间一定更多。每次都运送耗时最长的两人而不影响其它人，问题具有贪心子结构的性质。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int a[1000],t,n,sum;</span><br><span class="line">	scanf(&quot;%d&quot;,&amp;t);</span><br><span class="line">	while(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">		sum=0;</span><br><span class="line">        for(int i=0;i&lt;n;i++) scanf(&quot;%d&quot;,&amp;a[i]);</span><br><span class="line">        while(n&gt;3)</span><br><span class="line">		&#123;</span><br><span class="line">			sum=min(sum+a[1]+a[0]+a[n-1]+a[1],sum+a[n-1]+a[0]+a[n-2]+a[0]);</span><br><span class="line">            n-=2;</span><br><span class="line">        &#125;</span><br><span class="line">        if(n==3) sum+=a[0]+a[1]+a[2];</span><br><span class="line">        else if(n==2) sum+=a[1];</span><br><span class="line">        else sum+=a[0];</span><br><span class="line">        printf(&quot;%d\n&quot;,sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>区间覆盖问题<br>POJ1328是一道经典的贪心算法例题。题目大意是假设海岸线是一条无限延伸的直线。陆地在海岸线的一侧，而海洋在另一侧。每一个小的岛屿是海洋上的一个点。雷达坐落于海岸线上，只能覆盖d距离，所以如果小岛能够被覆盖到的话，它们之间的距离最多为d。题目要求计算出能够覆盖给出的所有岛屿的最少雷达数目。对于每个小岛，我们可以计算出一个雷达所在位置的区间。<br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fs1k0za3ocj30he0a4glp.jpg" alt=" "><br>问题转化为如何用尽可能少的点覆盖这些区间。先将所有区间按照左端点大小排序，初始时需要一个点。如果两个区间相交而不重合，我们什么都不需要做；如果一个区间完全包含于另外一个区间，我们需要更新区间的右端点；如果两个区间不相交，我们需要增加点并更新右端点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">struct Point</span><br><span class="line">&#123;</span><br><span class="line">	double x;</span><br><span class="line">	double y;</span><br><span class="line">&#125;point[1000];</span><br><span class="line"></span><br><span class="line">int cmp(const void *a, const void *b)</span><br><span class="line">&#123;</span><br><span class="line">    return (*(Point *)a).x&gt;(*(Point *)b).x?1:-1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n,d;</span><br><span class="line">	int num=1;</span><br><span class="line">	while(cin&gt;&gt;n&gt;&gt;d)</span><br><span class="line">	&#123;</span><br><span class="line">		int counting=1;</span><br><span class="line">		if(n==0&amp;&amp;d==0) break;</span><br><span class="line">		for(int i=0;i&lt;n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			int x,y;</span><br><span class="line">			cin&gt;&gt;x&gt;&gt;y;</span><br><span class="line">			if(y&gt;d)</span><br><span class="line">			&#123;</span><br><span class="line">				counting=-1;</span><br><span class="line">			&#125;</span><br><span class="line">			double t=sqrt(d*d-y*y);</span><br><span class="line">			//转化为最少区间的问题 </span><br><span class="line">			point[i].x=x-t;</span><br><span class="line">			//区间左端点 </span><br><span class="line">			point[i].y=x+t;</span><br><span class="line">			//区间右端点 </span><br><span class="line">		&#125;</span><br><span class="line">		if(counting!=-1)</span><br><span class="line">		&#123;</span><br><span class="line">			qsort(point,n,sizeof(point[0]),cmp);</span><br><span class="line">			//按区间左端点排序 </span><br><span class="line">			double s=point[0].y;</span><br><span class="line">			//区间右端点 </span><br><span class="line">			for(int i=1;i&lt;n;i++)</span><br><span class="line">			&#123;</span><br><span class="line">				if(point[i].x&gt;s)</span><br><span class="line">				//如果两个区间没有重合,增加雷达数目并更新右端点 </span><br><span class="line">				&#123;</span><br><span class="line">					counting++;</span><br><span class="line">					s=point[i].y; </span><br><span class="line">				&#125;</span><br><span class="line">				else if(point[i].y&lt;s)</span><br><span class="line">				//如果第二个区间被完全包含于第一个区间,更新右端点 </span><br><span class="line">				&#123;</span><br><span class="line">					s=point[i].y;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		cout&lt;&lt;&quot;Case &quot;&lt;&lt;num&lt;&lt;&apos;:&apos;&lt;&lt;&apos; &apos;&lt;&lt;counting&lt;&lt;endl;</span><br><span class="line">		num++; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Huffman编码<br>这同样是《算法导论》上的例子。Huffman编码是广泛用于数据文件压缩的十分有效的编码方法。我们可以有多种方式表示文件中的信息，如果用01串表示字符，采用定长编码表示，则需要3位表示一个字符，整个文件编码需要300000位；采用变长编码表示，给频率高的字符较短的编码，频率低的字符较长的编码，达到整体编码减少的目的，则整个文件编码需要(45×1+13×3+12×3+16×3+9×4+5×4)×1000=224000位，由此可见，变长码比定长码方案好，总码长减小约25%。<br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fs1k33cglaj30cf02rdg2.jpg" alt=" "><br>对每一个字符规定一个01串作为其代码，并要求任一字符的代码都不是其他字符代码的前缀，这种编码称为前缀码。可能无前缀码是一个更好的名字，但是前缀码是一致认可的标准术语。编码的前缀性质可以使译码非常简单：例如001011101可以唯一的分解为0,0,101,1101，因而其译码为aabe。译码过程需要方便的取出编码的前缀，为此可以用二叉树作为前缀码的数据结构：树叶表示给定字符；从树根到树叶的路径当作该字符的前缀码；代码中每一位的0或1分别作为指示某节点到左儿子或右儿子的路标。<br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fs1k3i1cfdj30jt09674y.jpg" alt=" "><br>从上图可以看出，最优前缀编码码的二叉树总是一棵完全二叉树，而定长编码的二叉树不是一棵完全二叉树。 给定编码字符集C及频率分布f，C的一个前缀码编码方案对应于一棵二叉树T。字符c在树T中的深度记为dT(c)，dT(c)也是字符c的前缀码长。则平均码长定义为：<br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fs1k3zyb18j306301k745.jpg" alt=" "><br>使平均码长达到最小的前缀码编码方案称为C的最优前缀码。<br>Huffman编码的构造方法：先合并最小频率的2个字符对应的子树，计算合并后的子树的频率；重新排序各个子树；对上述排序后的子树序列进行合并；重复上述过程，将全部结点合并成1棵完整的二叉树；对二叉树中的边赋予0、1，得到各字符的变长编码。<br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fs1k4irv0rj30jg08eq3o.jpg" alt=" "><br>POJ3253一道就是利用这一思想的典型例题。题目大意是有把一块无限长的木板锯成几块给定长度的小木板，每次锯都需要一定费用，费用就是当前锯的木板的长度。给定各个要求的小木板的长度以及小木板的个数，求最小的费用。以要求3块长度分别为5,8,5的木板为例：先从无限长的木板上锯下长度为21的木板，花费21；再从长度为21的木板上锯下长度为5的木板，花费5；再从长度为16的木板上锯下长度为8的木板，花费8；总花费=21+5+8=34。利用Huffman思想，要使总费用最小，那么每次只选取最小长度的两块木板相加，再把这些和累加到总费用中即可。为了提高效率，使用优先队列优化，并且还要注意使用long long int保存结果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    long long int sum;</span><br><span class="line">    int i,n,t,a,b;</span><br><span class="line">    while(~scanf(&quot;%d&quot;,&amp;n))</span><br><span class="line">    &#123;</span><br><span class="line">        priority_queue&lt;int,vector&lt;int&gt;,greater&lt;int&gt; &gt;q;</span><br><span class="line">        for(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">			scanf(&quot;%d&quot;,&amp;t);</span><br><span class="line">			q.push(t);</span><br><span class="line">        &#125;</span><br><span class="line">        sum=0;</span><br><span class="line">        if(q.size()==1)</span><br><span class="line">        &#123;</span><br><span class="line">            a=q.top();</span><br><span class="line">            sum+=a;</span><br><span class="line">            q.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        while(q.size()&gt;1)</span><br><span class="line">        &#123;</span><br><span class="line">            a=q.top();</span><br><span class="line">            q.pop();</span><br><span class="line">            b=q.top();</span><br><span class="line">            q.pop();</span><br><span class="line">            t=a+b;</span><br><span class="line">            sum+=t;</span><br><span class="line">            q.push(t);</span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;%lld\n&quot;,sum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
     </div>
@@ -563,7 +501,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/图形学/" rel="tag"># 图形学</a>
+            <a href="/tags/算法/" rel="tag"># 算法</a>
           
         </div>
       
@@ -576,8 +514,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/02/KNN/" rel="next" title="K-近邻算法">
-                <i class="fa fa-chevron-left"></i> K-近邻算法
+              <a href="/2016/04/01/PythonOOP/" rel="next" title="Python面向对象">
+                <i class="fa fa-chevron-left"></i> Python面向对象
               </a>
             
           </div>
@@ -586,8 +524,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/22/MVC/" rel="prev" title="MVC">
-                MVC <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/20/Webpenetration test/" rel="prev" title="Web渗透测试">
+                Web渗透测试 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -963,7 +901,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染流水线"><span class="nav-number">1.</span> <span class="nav-text">渲染流水线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#流水线"><span class="nav-number">1.1.</span> <span class="nav-text">流水线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渲染流水线-1"><span class="nav-number">1.2.</span> <span class="nav-text">渲染流水线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CPU和GPU之间的通信"><span class="nav-number">2.</span> <span class="nav-text">CPU和GPU之间的通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GPU流水线"><span class="nav-number">3.</span> <span class="nav-text">GPU流水线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#顶点着色器"><span class="nav-number">3.1.</span> <span class="nav-text">顶点着色器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#曲面细分着色器"><span class="nav-number">3.2.</span> <span class="nav-text">曲面细分着色器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几何着色器"><span class="nav-number">3.3.</span> <span class="nav-text">几何着色器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#裁剪"><span class="nav-number">3.4.</span> <span class="nav-text">裁剪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏幕映射"><span class="nav-number">3.5.</span> <span class="nav-text">屏幕映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三角形设置"><span class="nav-number">3.6.</span> <span class="nav-text">三角形设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三角形遍历"><span class="nav-number">3.7.</span> <span class="nav-text">三角形遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#片元着色器"><span class="nav-number">3.8.</span> <span class="nav-text">片元着色器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逐片元操作"><span class="nav-number">3.9.</span> <span class="nav-text">逐片元操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模板测试："><span class="nav-number">3.9.1.</span> <span class="nav-text">模板测试：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#深度测试："><span class="nav-number">3.9.2.</span> <span class="nav-text">深度测试：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合并："><span class="nav-number">3.9.3.</span> <span class="nav-text">合并：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例"><span class="nav-number">3.</span> <span class="nav-text">案例</span></a></li></ol></div>
             
 
           </div>
@@ -1146,9 +1084,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://gyunch.org/2016/09/07/ShaderBasics/';
-          this.page.identifier = '2016/09/07/ShaderBasics/';
-          this.page.title = 'Shader入门';
+          this.page.url = 'http://gyunch.org/2016/04/14/greedy algorithm/';
+          this.page.identifier = '2016/04/14/greedy algorithm/';
+          this.page.title = '贪心算法';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://http-gyunch-org.disqus.com/embed.js';
