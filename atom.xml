@@ -155,6 +155,29 @@
   </entry>
   
   <entry>
+    <title>产品经理基础手册</title>
+    <link href="http://gyunch.org/2017/04/30/Product%20Manager/"/>
+    <id>http://gyunch.org/2017/04/30/Product Manager/</id>
+    <published>2017-04-29T16:00:00.000Z</published>
+    <updated>2018-06-06T09:27:55.383Z</updated>
+    
+    <content type="html"><![CDATA[<p>🤔</p><hr><a id="more"></a><h2 id="什么是产品经理"><a href="#什么是产品经理" class="headerlink" title="什么是产品经理"></a><strong>什么是产品经理</strong></h2><p>产品经理（Product Manager）是 企业中专门负责产品管理的职位，产品经理负责市场调查并根据用户的需求，确定开发何种产品，选择何种技术、商业模式等。并推动相应产品的开发组织，他还要根据产品的生命周期，协调 研发、运营、营销等，确定和组织实施相应的产品策略，以及其他一系列相关的产品管理活动。<br>（来源：<a href="https://baike.baidu.com/item/%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/11013391?fr=aladdin" target="_blank" rel="noopener">产品经理_百度百科</a>）</p><hr><h2 id="产品部门在公司中的组织结构"><a href="#产品部门在公司中的组织结构" class="headerlink" title="产品部门在公司中的组织结构"></a><strong>产品部门在公司中的组织结构</strong></h2><p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fs1kvsfxumj30se0inn19.jpg" alt=" "></p><hr><h2 id="完整的产品案例"><a href="#完整的产品案例" class="headerlink" title="完整的产品案例"></a><strong>完整的产品案例</strong></h2><p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fs1kwaoo0dj30z40gy78h.jpg" alt=" "></p><hr><h2 id="产品经理发展线"><a href="#产品经理发展线" class="headerlink" title="产品经理发展线"></a><strong>产品经理发展线</strong></h2><p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fs1kwqu2n7j30tp0m2te1.jpg" alt=" "></p><hr><h2 id="产品经理职责"><a href="#产品经理职责" class="headerlink" title="产品经理职责"></a><strong>产品经理职责</strong></h2><ol><li>从兴趣爱好聊出痛点发现用户需求</li><li>找到目标用户找到有该需求的其他用户</li><li>开始需求调研进行需求调研，输出需求调研问卷，记录用户调研明细，输出访谈结果汇总</li><li>提炼用户画像把用户访谈结果抽象成三类用户画像，方便研发理解需求的直接使用对象</li><li>写竞品分析撰写竞品分析，了解满足当前需求的竞品情况，看看是否有，以及有的话，如何借鉴和超越</li><li>用思维导图梳理功能结构化梳理满足需求功能的更为细分的子功能，并找老大做需求优先级排期</li><li>绘制流程图梳理满足用户需求方案的整个流程，细化业务逻辑</li><li>画产品原型结合自己的前期的准备和产品知识储备，输出符合要求的产品原型</li><li>写需求文档撰写用于研发、测试、UI等同事开展后续工作的需求说明文档</li><li>需求评审发会议邮件，约项目组相关人一起进行需求宣讲</li><li>项目管理对子项目功能(大功能)进行排期，找相关同事进行确认。</li><li>提测、验收和上线确人设计稿，解决在开发过程中遇到的问题，提测后，进行验收功能是否正确，UI还原是否正确，确认完成后，准备上线的物料，提App包到各大应用商店</li><li>版本迭代关注数据和用户反馈，收集整理下个版本的需求，列出优先级，准备下一版本的需求</li></ol><hr><p>以上是产品经理的基本介绍，在之后我会抽时间通过一个我之前做的完整的案例以详细介绍产品经理的职责和技能。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;🤔&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="产品" scheme="http://gyunch.org/categories/%E4%BA%A7%E5%93%81/"/>
+    
+    
+      <category term="PM" scheme="http://gyunch.org/tags/PM/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MVC</title>
     <link href="http://gyunch.org/2017/03/22/MVC/"/>
     <id>http://gyunch.org/2017/03/22/MVC/</id>
@@ -450,29 +473,6 @@
     
     
       <category term="设计模式" scheme="http://gyunch.org/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python函数式编程</title>
-    <link href="http://gyunch.org/2016/06/17/python%20Functional/"/>
-    <id>http://gyunch.org/2016/06/17/python Functional/</id>
-    <published>2016-06-16T16:00:00.000Z</published>
-    <updated>2018-05-17T10:19:58.603Z</updated>
-    
-    <content type="html"><![CDATA[<p>🤔</p><hr><a id="more"></a><h2 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a><strong>函数式编程</strong></h2><p>函数是Python内建支持的一种封装，我们通过把大段代码拆成函数，通过一层一层的函数调用，就可以把复杂任务分解成简单的任务，这种分解可以称之为面向过程的程序设计。函数就是面向过程的程序设计的基本单元。</p><p>函数式编程Functional Programming，虽然也可以归结到面向过程的程序设计，但其思想更接近数学计算。函数式编程就是一种抽象程度很高的编程范式。<br>在计算机的层次上，CPU执行的是加减乘除的指令代码，以及各种条件判断和跳转指令，所以，汇编语言是最贴近计算机的语言。<br>而计算则指数学意义上的计算，越是抽象的计算，离计算机硬件越远。<br>对应到编程语言，就是越低级的语言，越贴近计算机，抽象程度低，执行效率高，比如C语言；越高级的语言，越贴近计算，抽象程度高，执行效率低，比如Lisp语言。<br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1freb7yyae5j30jm07pwf0.jpg" alt=" "><br>函数式编程就是一种抽象程度很高的编程范式，纯粹的函数式编程语言编写的函数没有变量，因此，任意一个函数，只要输入是确定的，输出就是确定的，这种纯函数我们称之为没有副作用。而允许使用变量的程序设计语言，由于函数内部的变量状态不确定，同样的输入，可能得到不同的输出，因此，这种函数是有副作用的。<br>函数式编程的一个特点就是，允许把函数本身作为参数传入另一个函数，还允许返回一个函数！<br>Python对函数式编程提供部分支持。由于Python允许使用变量，因此，Python不是纯函数式编程语言</p><hr><h2 id="函数式编程的优点"><a href="#函数式编程的优点" class="headerlink" title="函数式编程的优点"></a><strong>函数式编程的优点</strong></h2><ol><li><strong>逻辑可证</strong> <blockquote><p>这是一个学术上的优点：没有”边界效应”使得更容易从逻辑上证明程序是正确的。  </p></blockquote></li></ol><ul><li>边界效应是指在进行程序设计时，我们的编程思想、算法以及分析测试的数据有可能会接近我们所没有注意的边界。所有的操作设计都会有一个边界，例如整形数据的内存，很多情况下在进行程序设计时，往往会被我们所忽略</li></ul><ol start="2"><li><p><strong>模块化</strong> </p><blockquote><p>函数式编程推崇简单原则，一个函数只做一件事情，将大的功能拆分成尽可能小的模块。小的函数更易于阅读和检查错误。  </p></blockquote></li><li><p><strong>组件化</strong> </p><blockquote><p>小的函数更容易加以组合形成新的功能。  </p></blockquote></li><li><p><strong>易于调试</strong> </p><blockquote><p>细化的、定义清晰的函数使得调试更加简单。当程序不正常运行时，每一个函数都是检查数据是否正确的接口，能更快速地排除没有问题的代码，定位到出现问题的地方。  </p></blockquote></li><li><p><strong>易于测试</strong> </p><blockquote><p>不依赖于系统状态的函数无须在测试前构造测试桩，使得编写单元测试更加容易。  </p></blockquote></li><li><p><strong>更高的生产率</strong> </p><blockquote><p>函数式编程产生的代码比其他技术更少（往往是其他技术的一半左右），并且更容易阅读和维护。  </p></blockquote></li></ol><hr><h2 id="函数式编程的特征"><a href="#函数式编程的特征" class="headerlink" title="函数式编程的特征"></a><strong>函数式编程的特征</strong></h2><p>在支持函数式编程的语言中，大量使用如下特征的代码即可被认为是函数式：</p><ol><li><p><strong>函数是一等公民</strong></p><blockquote><p>函数能作为参数传递，或者是作为返回值返回。  </p></blockquote></li><li><p><strong>匿名函数(lambda)</strong></p><blockquote><p>lambda提供了快速编写简单函数的能力  </p></blockquote></li><li><p><strong>闭包</strong></p><blockquote><p>闭包引用了外层函数的变量，然后返回内层函数  </p></blockquote></li><li><p><strong>内置的不可变数据结构</strong></p><blockquote><p>如python中的元组  </p></blockquote></li><li><p><strong>内置模板函数</strong><br>::见下文中的高阶函数::</p></li><li><p>递归</p></li></ol><hr><h2 id="匿名函数-lambda"><a href="#匿名函数-lambda" class="headerlink" title="匿名函数(lambda)"></a><strong>匿名函数(lambda)</strong></h2><p>当我们在传入函数时，有些时候，不需要显式地定义函数，直接传入匿名函数更方便。<br>例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p = lambda x: x+x</span><br><span class="line">print(p(10)</span><br></pre></td></tr></table></figure></p><p>其等价于：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def test(x):</span><br><span class="line">    return x+x</span><br><span class="line">p = test(10)</span><br><span class="line">print(p)</span><br></pre></td></tr></table></figure></p><ul><li>这里我建议尽量避免使用lambda。lambda功能十分有限，只能有一个表达式，返回值就是该表达式的结果。最主要是语句过于复杂，lambda表达式会很难阅读</li></ul><h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a><strong>高阶函数</strong></h2><ul><li>能接收函数做参数的函数:</li><li>变量可以指向函数</li><li>函数的参数可以接收变量</li><li><p>一个函数可以接收另一个函数作为参数<br>如：python内置函数，map()函数、reduce()函数、filter()函数等</p><blockquote><p>Python的函数不但可以返回int、str、list、dict等数据类型，还可以返回函数  </p></blockquote></li><li><p>例：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def test(x, y, z):</span><br><span class="line">    return z(x, y)</span><br><span class="line">print(test(2, 3, pow)) </span><br><span class="line">这里x，y是两个数值，z是一个函数</span><br></pre></td></tr></table></figure></li></ul><h2 id="偏函数"><a href="#偏函数" class="headerlink" title="偏函数"></a><strong>偏函数</strong></h2><p>Python的functools模块提供了很多有用的功能，偏函数是其中之一，偏函数把一个函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会更简单。<br>如int()函数，其提供了base参数，默认值为10。如果传入base参数，就可以做进制的转换<br><code>int(&#39;101010&#39;, base=2)</code><br>如果经常需要做二进制转换我们就可以自己定义一个int2()函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def int2(x, base=2):</span><br><span class="line">    return int(x, base)</span><br></pre></td></tr></table></figure></p><p>这里如果我们使用functools.partial，就可以非常方便的直接创建一个int2()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from functools import partial</span><br><span class="line">int2 = partial(int, base=2)</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;🤔&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="Python" scheme="http://gyunch.org/categories/Python/"/>
-    
-    
-      <category term="Functional" scheme="http://gyunch.org/tags/Functional/"/>
     
   </entry>
   
