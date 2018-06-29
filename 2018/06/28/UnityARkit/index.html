@@ -98,7 +98,7 @@
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fss82hfrbzj30cq09at9n.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fss80e0kh8j306r0b7q6f.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fss81iwca1j309g0fi114.jpg">
-<meta property="og:updated_time" content="2018-06-29T10:39:27.317Z">
+<meta property="og:updated_time" content="2018-06-29T10:42:22.619Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UnityAR详解（UnityARkit）">
 <meta name="twitter:description" content="🤔">
@@ -453,11 +453,11 @@
 <ol start="2">
 <li><strong>ARKit Plugin中的示例场景</strong><br>在ARKit Plugin中，有如下示例场景，大家可以自行测试<br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fsruaamawjj30c80aumy9.jpg" alt=" "></li>
 </ol>
-<p>Unity-ARKit官方提供的demon展示功能和特性解析，根据官方介绍、演示的Demon和研究实践，Unity-ARKit主要涉及到的技术有：<br><strong>1.世界跟踪</strong><br>初始化时ARKit会生成一个三维的世界坐标系(相当于unity的坐标系)，定义原点(0，0，0)即为初始的ARKit摄像机对应的位置点。其他虚拟的物体空间坐标点都可以参考此为世界坐标原点进行规划。</p>
-<p><strong>2.实时视频渲染</strong><br>ARKit默认打开设备的摄像头，可以在展示现实场景的同时渲染展示虚拟物体，如图展示的现实场景与虚拟场景结合效果。并且摄像头会把当前实时画面数据传输到ARKit SDK中进行处理，SDK处理功能包括识别返回较小特征点(feature points)数据、识别返回平面数据、识别返回环境光数据，并且这些数据是实时更新获取的，根据这些数据和功能我们就可以与unity游戏相结合，实现AR产品和创意。<br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fss82hfrbzj30cq09at9n.jpg" alt=" "></p>
-<p><strong>3.平面估计和更新（核心特色）</strong><br>摄像头会把当前实时画面数据传输到ARKit SDK中进行处理后，相关API可以获取生成的平面数据，如：平面在空间坐标矩阵的位置，大小，方向等。并且摄像机在不断扫描平面或物体时，平面的数据信息会不断更新和融合，ARKit可以扫描和生成多个平面，多个平面在扫描当中如确定是同一平面，它会把多个平面合并成一整块平面，<strong>如图</strong>。<br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fss80e0kh8j306r0b7q6f.jpg" alt=" "></p>
-<p><strong>4.命中测试的API</strong><br>在摄像机开启时，ARKit可以识别特征点（现实物体的平面点），图中的黄色点。示例中点击手机摄像机中的现实物体可以放置虚拟物体在平面上（不至于悬空），<strong>如图</strong>。<br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fss81iwca1j309g0fi114.jpg" alt=" "></p>
-<p><strong>5.环境光估计</strong><br>ARKit可以收集摄像机现实的光源信息并返回，所以调用相关API表现为虚拟物体随着现实化境的光照强度改变，它会变亮或产生阴影。</p>
+<p>Unity-ARKit官方提供的demon展示功能和特性解析，根据官方介绍、演示的Demon和研究实践，Unity-ARKit主要涉及到的技术有：<br>1).世界跟踪<br>初始化时ARKit会生成一个三维的世界坐标系(相当于unity的坐标系)，定义原点(0，0，0)即为初始的ARKit摄像机对应的位置点。其他虚拟的物体空间坐标点都可以参考此为世界坐标原点进行规划。</p>
+<p>2).实时视频渲染<br>ARKit默认打开设备的摄像头，可以在展示现实场景的同时渲染展示虚拟物体，如图展示的现实场景与虚拟场景结合效果。并且摄像头会把当前实时画面数据传输到ARKit SDK中进行处理，SDK处理功能包括识别返回较小特征点(feature points)数据、识别返回平面数据、识别返回环境光数据，并且这些数据是实时更新获取的，根据这些数据和功能我们就可以与unity游戏相结合，实现AR产品和创意。<br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fss82hfrbzj30cq09at9n.jpg" alt=" "></p>
+<p>3).平面估计和更新（核心特色）<br>摄像头会把当前实时画面数据传输到ARKit SDK中进行处理后，相关API可以获取生成的平面数据，如：平面在空间坐标矩阵的位置，大小，方向等。并且摄像机在不断扫描平面或物体时，平面的数据信息会不断更新和融合，ARKit可以扫描和生成多个平面，多个平面在扫描当中如确定是同一平面，它会把多个平面合并成一整块平面，<strong>如图</strong>。<br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fss80e0kh8j306r0b7q6f.jpg" alt=" "></p>
+<p>4).命中测试的API<br>在摄像机开启时，ARKit可以识别特征点（现实物体的平面点），图中的黄色点。示例中点击手机摄像机中的现实物体可以放置虚拟物体在平面上（不至于悬空），<strong>如图</strong>。<br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fss81iwca1j309g0fi114.jpg" alt=" "></p>
+<p>5).环境光估计<br>ARKit可以收集摄像机现实的光源信息并返回，所以调用相关API表现为虚拟物体随着现实化境的光照强度改变，它会变亮或产生阴影。</p>
 <ol start="3">
 <li><strong>ARKit Plugin中的重要文件</strong><br>在ARKit Plugin中有几个非常重要的文件，<a href="https://developer.apple.com/documentation/arkit?changes=latest_minor&amp;language=objc" target="_blank" rel="noopener">具体参考</a>，这里举例介绍：</li>
 </ol>
