@@ -1,4 +1,6 @@
-http://gyunch.org/2018/06/29/UnityARkit/
+http://gyunch.org/2018/06/29/Unity vuforia/
+http://gyunch.org/2018/06/29/UnityARcore/
+http://gyunch.org/2018/06/28/UnityARkit/
 http://gyunch.org/2018/06/26/UnityARBasics/
 http://gyunch.org/2018/06/01/Macintroduce/
 http://gyunch.org/2018/01/30/Blockchain/
