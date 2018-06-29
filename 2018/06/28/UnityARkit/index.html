@@ -98,7 +98,7 @@
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fss82hfrbzj30cq09at9n.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fss80e0kh8j306r0b7q6f.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fss81iwca1j309g0fi114.jpg">
-<meta property="og:updated_time" content="2018-06-29T10:42:22.619Z">
+<meta property="og:updated_time" content="2018-06-29T10:43:04.325Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UnityAR详解（UnityARkit）">
 <meta name="twitter:description" content="🤔">
@@ -504,7 +504,28 @@
 </li>
 </ul>
 <blockquote>
-<p>1.在最新的arkit2.0中，加入了全新的USDZ文件格式，该文件格式由苹果与Adobe共同推出，同时ARkit也将于Valve合作，从而增加Mac对 SteamVR的支持。<br>2.加入了ARWorldMap技术，ARWorldMap是ARKit 2一个非常有用的新功能，可支持AR体验的持续性和多人AR体验。随着你移动并检测到更多的特征点，每次会话都将建立一个ARWorldMap。你可以从C＃的会话中获取当前的ARWorldMap，并将其保存到Application.persistence DataPath上的某个位置。你同时可以从保存的地方加载保存的ARWorldMap。这允许虚拟对象维持在相同的坐标空间中。ARWorldMap可以序列化为一个字节数组，并通过WiFi，蓝牙或其他共享方式发送至另一台设备。它同时可以反序列化，并用于将其他设备重新定位到与第一个设备相同的世界映射，这样你就可以拥有一种共享的多人游戏体验。无论通过加载，还是说从另一个设备接收，一旦拥有了ARWorldMap，设备就可以利用这个ARWorldMap共享坐标系，方法是将其设置为配置中的参数，并使用这个配置来重置ARSession。这将重设会话，而随着你的移动，它将尝试匹配ARWorldMap中的特征点与其在环境中检测到的特征点。当彼此匹配时，它将重新定位你的设备坐标，从而匹配保存在ARWorldMap中的坐标。<br>3.ARReferenceObjectandARObjectAnchor，与ARKit1.5中用于图像识别的ARReferenceImage和ARImageAnchor类似，我们现在有了ARReferenceObject和ARObjectAnchor来进行对象识别。<br>4.UnityARObjectAnchor，这个示例假设你已经拥有了.arobject文件来描述希望识别的对象。你可以通过下面介绍的UnityObjectScanner示例，或者是苹果的ARKit Object Scanner应用程序来创建.arobject文件，这两者都可以生成相同格式的文件。与ARReferenceImage非常相似，我们将设置一个ARReferenceObjectsSetAsset，它包含对ARReferenceObjectAssets的引用。接下来，我们将为ARSession的配置添加对ARReferenceObjectsSetAsset的引用，从而在会话中尝试检测集合中的ARReferenceObjects。所有这一切都可以通过Unity Editor来完成。每当识别出一个对象时，系统将创建一个ARObjectAnchor，而就像是其他锚定一样，你可以订阅一个告诉你什么时候添加，更新或删除了锚定的活动。当活动触发时，你可以自行决定要执行的操作（比如在这个位置创建一个预制件）。<br>5.UnityObjectScanner，Examples/ARKit2.0/UnityARObjectScanner/UnityARObjectScanner.unity是一个更为完整的示例，它既可使用可选边界框来创建对象，也使用进行对象检测。你可以保存使用该示例扫描的.arobjects，然后使用iTunesFileSharing将它们传输至Mac。当文件出现在Mac时，你就可以重命名它们，然后再放入Unity项目之中。这个示例有不同的模式：扫描模式和检测模式。对于扫描模式，我们菜肴能够ARKitObjectScanningSessionConfiguration，这将能对场景进行更为详细的探索，但会使用更多的CPU和功率。利用这个配置，对于你希望扫描的对象，你可以轻触其附近的平面以生成一个红色的边界框。你可以操作方框来覆盖目标对象。接下来，扫描方框的周围，尽可能多地获取对象上的特征点。然后通过轻触按钮来创建一个ARReferenceObject。创建的对象将保存到一个列表中。按下Detect按钮将进入检测模式，而这个模式的工作原理与上面的对象锚定示例类似，但采用一种将arreferenceobject动态添加到被检测对象列表中的函数。按下Save按钮，将至今扫描到的所有对象都保存至设备上的文件夹。这会把它们保存为.arobjects，并可以使用iTunesFileSharing将它们传输到Mac上。当文件出现在Mac后，你就可以重命名它们，然后再放到Unity项目中。<br>6.AREnvironmentProbeAnchor，AREnvironmentProbeAnchor是一种新的锚定，它可以自动生成，而你也可以指定在哪里创建它。这个锚定将根据ARKit视频帧和世界追踪数据来创建，并更新区域的反射环境映射。它同时采用了机器学习算法，对尚未看到的场景部分近似算出环境纹理。<br>会话配置中有一个新的参数来控制这个功能，而它将有以下三个值中的一个:UnityAREnvironmentTexturingNone、UnityAREnvironmentTexturingManual或UnityAREnvironmentTexturingAutomatic。对于UnityAREnvironmentTexturingManual模式，你必须自行创建一个AREnvironmentProbeAnchor，但ARKit将更新从环境中捕获的纹理。如果你使用的是UnityAREnvironmentTexturingAutomatic模式，ARKit将根据它从会话中输入的数据和你在空间中的运动，以空间间隔地生成AREnvironmentProbeAnchor。这两个示例都生成一个包含Unity ReflectionProbe组件的预制件，并使用来自AREnvironmentProbeAnchor的环境纹理更新它。这个ReflectionProbe现在加入至标准的Unity渲染管道，并将增强使用它的任何GameObject。<br>7.图像追踪，参考图像与ARKit 1.5中的工作原理相同，但现在ARKit不仅只是识别图像，它同时允许你追踪它们:当你移动参考图像时，与它们相关的ARImageAnchor将与图像一起移动，这样你就可以移动与这些移动图像锚定的内容。会话配置中有一个额外的参数，它可以通过说明你希望在会话期间同时追踪多少图像来实现这一点。现有的示例已经进行了更新以支持使用这个新功能。<br>8.面部追踪优化，ARKit 2同时优化了iPhoneX的人脸追踪功能。首先，有一个名为TongueOut的额外混合变形系数。取决于ARKit2人脸追踪所能感知的舌头伸出程度，这将返回0.0到1.0之间的值。苹果在WWDC上展示了他们的Animojis，而这看起来很受观众的欢迎。另一项改进是，它现在可以追踪眼睛注视点。你会接收到一个描述每只眼睛指向的变换，以及注视对象的位置。</p>
+<p>1.在最新的arkit2.0中，加入了全新的USDZ文件格式，该文件格式由苹果与Adobe共同推出，同时ARkit也将于Valve合作，从而增加Mac对 SteamVR的支持。</p>
+</blockquote>
+<blockquote>
+<p>2.加入了ARWorldMap技术，ARWorldMap是ARKit 2一个非常有用的新功能，可支持AR体验的持续性和多人AR体验。随着你移动并检测到更多的特征点，每次会话都将建立一个ARWorldMap。你可以从C＃的会话中获取当前的ARWorldMap，并将其保存到Application.persistence DataPath上的某个位置。你同时可以从保存的地方加载保存的ARWorldMap。这允许虚拟对象维持在相同的坐标空间中。ARWorldMap可以序列化为一个字节数组，并通过WiFi，蓝牙或其他共享方式发送至另一台设备。它同时可以反序列化，并用于将其他设备重新定位到与第一个设备相同的世界映射，这样你就可以拥有一种共享的多人游戏体验。无论通过加载，还是说从另一个设备接收，一旦拥有了ARWorldMap，设备就可以利用这个ARWorldMap共享坐标系，方法是将其设置为配置中的参数，并使用这个配置来重置ARSession。这将重设会话，而随着你的移动，它将尝试匹配ARWorldMap中的特征点与其在环境中检测到的特征点。当彼此匹配时，它将重新定位你的设备坐标，从而匹配保存在ARWorldMap中的坐标。</p>
+</blockquote>
+<blockquote>
+<p>3.ARReferenceObjectandARObjectAnchor，与ARKit1.5中用于图像识别的ARReferenceImage和ARImageAnchor类似，我们现在有了ARReferenceObject和ARObjectAnchor来进行对象识别。</p>
+</blockquote>
+<blockquote>
+<p>4.UnityARObjectAnchor，这个示例假设你已经拥有了.arobject文件来描述希望识别的对象。你可以通过下面介绍的UnityObjectScanner示例，或者是苹果的ARKit Object Scanner应用程序来创建.arobject文件，这两者都可以生成相同格式的文件。与ARReferenceImage非常相似，我们将设置一个ARReferenceObjectsSetAsset，它包含对ARReferenceObjectAssets的引用。接下来，我们将为ARSession的配置添加对ARReferenceObjectsSetAsset的引用，从而在会话中尝试检测集合中的ARReferenceObjects。所有这一切都可以通过Unity Editor来完成。每当识别出一个对象时，系统将创建一个ARObjectAnchor，而就像是其他锚定一样，你可以订阅一个告诉你什么时候添加，更新或删除了锚定的活动。当活动触发时，你可以自行决定要执行的操作（比如在这个位置创建一个预制件）。</p>
+</blockquote>
+<blockquote>
+<p>5.UnityObjectScanner，Examples/ARKit2.0/UnityARObjectScanner/UnityARObjectScanner.unity是一个更为完整的示例，它既可使用可选边界框来创建对象，也使用进行对象检测。你可以保存使用该示例扫描的.arobjects，然后使用iTunesFileSharing将它们传输至Mac。当文件出现在Mac时，你就可以重命名它们，然后再放入Unity项目之中。这个示例有不同的模式：扫描模式和检测模式。对于扫描模式，我们菜肴能够ARKitObjectScanningSessionConfiguration，这将能对场景进行更为详细的探索，但会使用更多的CPU和功率。利用这个配置，对于你希望扫描的对象，你可以轻触其附近的平面以生成一个红色的边界框。你可以操作方框来覆盖目标对象。接下来，扫描方框的周围，尽可能多地获取对象上的特征点。然后通过轻触按钮来创建一个ARReferenceObject。创建的对象将保存到一个列表中。按下Detect按钮将进入检测模式，而这个模式的工作原理与上面的对象锚定示例类似，但采用一种将arreferenceobject动态添加到被检测对象列表中的函数。按下Save按钮，将至今扫描到的所有对象都保存至设备上的文件夹。这会把它们保存为.arobjects，并可以使用iTunesFileSharing将它们传输到Mac上。当文件出现在Mac后，你就可以重命名它们，然后再放到Unity项目中。</p>
+</blockquote>
+<blockquote>
+<p>6.AREnvironmentProbeAnchor，AREnvironmentProbeAnchor是一种新的锚定，它可以自动生成，而你也可以指定在哪里创建它。这个锚定将根据ARKit视频帧和世界追踪数据来创建，并更新区域的反射环境映射。它同时采用了机器学习算法，对尚未看到的场景部分近似算出环境纹理。<br>会话配置中有一个新的参数来控制这个功能，而它将有以下三个值中的一个:UnityAREnvironmentTexturingNone、UnityAREnvironmentTexturingManual或UnityAREnvironmentTexturingAutomatic。对于UnityAREnvironmentTexturingManual模式，你必须自行创建一个AREnvironmentProbeAnchor，但ARKit将更新从环境中捕获的纹理。如果你使用的是UnityAREnvironmentTexturingAutomatic模式，ARKit将根据它从会话中输入的数据和你在空间中的运动，以空间间隔地生成AREnvironmentProbeAnchor。这两个示例都生成一个包含Unity ReflectionProbe组件的预制件，并使用来自AREnvironmentProbeAnchor的环境纹理更新它。这个ReflectionProbe现在加入至标准的Unity渲染管道，并将增强使用它的任何GameObject。</p>
+</blockquote>
+<blockquote>
+<p>7.图像追踪，参考图像与ARKit 1.5中的工作原理相同，但现在ARKit不仅只是识别图像，它同时允许你追踪它们:当你移动参考图像时，与它们相关的ARImageAnchor将与图像一起移动，这样你就可以移动与这些移动图像锚定的内容。会话配置中有一个额外的参数，它可以通过说明你希望在会话期间同时追踪多少图像来实现这一点。现有的示例已经进行了更新以支持使用这个新功能。</p>
+</blockquote>
+<blockquote>
+<p>8.面部追踪优化，ARKit 2同时优化了iPhoneX的人脸追踪功能。首先，有一个名为TongueOut的额外混合变形系数。取决于ARKit2人脸追踪所能感知的舌头伸出程度，这将返回0.0到1.0之间的值。苹果在WWDC上展示了他们的Animojis，而这看起来很受观众的欢迎。另一项改进是，它现在可以追踪眼睛注视点。你会接收到一个描述每只眼睛指向的变换，以及注视对象的位置。</p>
 </blockquote>
 
       
