@@ -115,7 +115,7 @@
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1ft5218jh52j31kw0opti1.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1ft5218xnkmj31kw0omaiy.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1ft5219d94mj31kw0omtim.jpg">
-<meta property="og:updated_time" content="2018-07-10T12:51:00.676Z">
+<meta property="og:updated_time" content="2018-07-11T03:43:35.956Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity3D性能优化——工具篇">
 <meta name="twitter:description" content="🤔">
@@ -524,7 +524,7 @@
 <p>垂直和水平是CRT显示器中两个基本的同步信号，水平同步信号决定了CRT画出一条横越屏幕线的时间，垂直同步信号决定了CRT从屏幕顶部画到底部，再返回原始位置的时间，而垂直同步代表着CRT显示器的刷新率水准。  </p>
 <p>在游戏项目中，如果我们选择等待垂直同步信号也就是打开垂直同步，在游戏中或许性能较强的显卡会迅速的绘制完一屏的图像，但是没有垂直同步信号的到达，显卡无法绘制下一屏，只有等85单位的信号到达，才可以绘制。这样FPS自然要受到刷新率运行值的制约。  </p>
 <p>而如果我们选择不等待垂直同步信号，那么游戏中绘制完一屏画面，显卡和显示器无需等待垂直同步信号就可以开始下一屏图像的绘制，自然可以完全发挥显卡的实力。  </p>
-<p>但是，正是因为垂直同步的存在，才能使得游戏进程和显示器刷新率同步，使得画面更加平滑和稳定。取消了垂直同步信号，固然可以换来更快的速度，但是在图像的连续性上势必会打折扣。  </p>
+<p>但是，正是因为垂直同步的存在，才能使得游戏进程和显示器刷新率同步，使得画面更加平滑和稳定。取消了垂直同步信号，固然可以换来更快的速度，但是在图像的连续性上势必会打折扣。<br>需要注意，LCD显示器其实也是存在刷新率的，所以垂直同步和水平同步对于LCD显示器来说，一样是有必要的。</p>
 </blockquote>
 <p>在关闭垂直同步后，我们继续看我们的项目<br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1ft51xdvilwj31kw0sa7c2.jpg" alt=" "></p>
 <p>可以看到，我们以Total和Time ms排序，在图中拉黑的项（Camera Render）始终排在最前面。<br>Camera Render是相机渲染工作的CPU占用量，在实际项目中，渲染是最常见的引起性能问题的原因。 而因为渲染而引起的性能问题的优化是一个非常大的工程，这方面的优化方法在我们<strong>后续的文章中</strong>会有详细的教程去学习和分析。在这里，我们只需要先了解。<br>我们这个项目的优化中，无疑，渲染造成的性能损耗是一个大头。</p>
